@@ -432,7 +432,7 @@ def getQAComplexModel(s):
     return "\t\t'<parameter name=\"cost\" class=\"numeric\">{0}</parameter>' +\n\t\t'<parameter name=\"likelihood\" class=\"ordinal\">{1}</parameter>' +\n\t\t'<parameter name=\"difficulty\" class=\"ordinal\">{2}</parameter>' +\n\t\t'<parameter name=\"time\" class=\"ordinal\">{3}</parameter>' +\n".format(cost, likelihood, difficulty, time)
 
 
-scenario = '/Users/gumin/Documents/thesis/test-model/trees/ANM-generated_TREsPASS_model_combined.xml'
+scenario = '/Users/gumin/Documents/thesis/IPTV/result/TREsPASS_IPTV_model_Fred.xml'
 #model = 'simple'
 #scenario = 'Cloud/ANM-generated_TREsPASS_model_combined_refined.xml'
 model = 'complex'
