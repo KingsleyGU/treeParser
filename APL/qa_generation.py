@@ -36,24 +36,85 @@ def parseTree(node):
     (label,children) = getChildElements(node)
     currentNodeProperty = {}
     nodeChildrenSet = set()
-    nodeChildrenTotalCount = 0
+    nodeChildrenTotalCount = {}
     
     if len(children) == 0:
         leafCount += 1
         leafs.add(label)
-        nodeChildrenTotalCount = currentId
+        nodeChildrenTotalCount = getLabelCount(label)
     
     for c in children:
         (childId,childrenCount)=parseTree(c)
         nodeChildrenSet.add(childId-1)
-        nodeChildrenTotalCount += childrenCount
+        if node.getAttribute("refinement") == "conjunctive":
+            nodeChildrenTotalCount = unionCountMap(nodeChildrenTotalCount,childrenCount)
+        else:
+            nodeChildrenTotalCount = intersectionCountMap(nodeChildrenTotalCount,childrenCount)
+    if node.getAttribute("refinement") == "conjunctive":
+        currentNodeProperty['connection'] = "add"
+    else:
+        currentNodeProperty['connection'] = "or"
     currentNodeProperty['childrenSet'] = nodeChildrenSet
     currentNodeProperty['childrenCount'] = nodeChildrenTotalCount
     currentNodeProperty['label'] = label
     occuranceCountMap[currentId] = currentNodeProperty
     currentId += 1
     return (currentId,nodeChildrenTotalCount)
-  
+
+
+#define a function to get the count for each label
+def getLabelCount(label):
+    countMap = {}
+    # format for FULFILL is fulfill actor trusts actor
+    if label.strip().upper().startswith('FULFILL'):
+        labelArray = label.split()
+        countMap = updateCountMap(countMap,labelArray[1])
+        countMap = updateCountMap(countMap,labelArray[3])
+        return countMap
+    # format for FORCE or MOVE is force/move actor location locality
+    elif label.strip().upper().startswith('FORCE') or label.strip().upper().startswith('MOVE'):
+        labelArray = label.split()
+        countMap = updateCountMap(countMap,labelArray[1])
+        countMap = updateCountMap(countMap,labelArray[4])
+        return countMap     
+    # format for IN or IN actor component Actor/Location some extra stuff also be added 
+    elif label.strip().upper().startswith('IN'):
+        labelArray = label.split()
+        countMap = updateCountMap(countMap,labelArray[1])
+        countMap = updateCountMap(countMap,labelArray[4])
+        countMap = updateCountMap(countMap,labelArray[7])
+        return countMap   
+    # the format of MAKE is MAKE actor victim + previous cases
+    elif label.strip().upper().startswith('MAKE'):
+        labelArray = label.split()
+        countMap = updateCountMap(countMap,labelArray[1])
+        countMap = updateCountMap(countMap,labelArray[2])
+        return unionCountMap(countMap,getLabelCount(label[label.index(labelArray[3]):]))
+   
+
+# make the count union of two count map 
+def unionCountMap(mainCountMap,subCountMap):
+    for key in subCountMap:
+        if key in mainCountMap:
+            mainCountMap[key] += subCountMap[key]
+        else:
+            mainCountMap[key] = subCountMap[key]
+    return mainCountMap
+
+def intersectionCountMap(mainCountMap,subCountMap):
+    for key in subCountMap:
+        if key in mainCountMap:
+            if(mainCountMap[key] < subCountMap[key]):
+                mainCountMap[key] = subCountMap[key]
+        else:
+            mainCountMap[key] = subCountMap[key]
+    return mainCountMap    
+def updateCountMap(countMap,componentName):
+    if componentName in countMap:
+        countMap[componentName] += 1
+    else:
+        countMap[componentName] = 1
+    return countMap
 def createQA(leafs, model):
     file = open("quantitative_annotations.py", "w")
     qa = "\t#################\n\t# Quantitative Annotations #\n\t#################\nqa = {\n"
@@ -371,7 +432,7 @@ def getQAComplexModel(s):
     return "\t\t'<parameter name=\"cost\" class=\"numeric\">{0}</parameter>' +\n\t\t'<parameter name=\"likelihood\" class=\"ordinal\">{1}</parameter>' +\n\t\t'<parameter name=\"difficulty\" class=\"ordinal\">{2}</parameter>' +\n\t\t'<parameter name=\"time\" class=\"ordinal\">{3}</parameter>' +\n".format(cost, likelihood, difficulty, time)
 
 
-scenario = '/Users/gumin/Documents/thesis/IPTV/result/TREsPASS_IPTV_model_Fred.xml'
+scenario = '/Users/gumin/Documents/thesis/test-model/trees/ANM-generated_TREsPASS_model_combined.xml'
 #model = 'simple'
 #scenario = 'Cloud/ANM-generated_TREsPASS_model_combined_refined.xml'
 model = 'complex'
@@ -391,12 +452,23 @@ parseTree(xmlRoot)
 print("Node count: {0}".format(nodeCount))
 print("Leaf count: {0}".format(leafCount))
 print("occuranceCountMap  length: {0}".format(len(occuranceCountMap)))
+# labelArray = getLabelCount(" FULFILL Fred trusts Margrethe ")
+# print("{0}".format(labelArray))
+# print(', '.join(labelArray.reverse()))
+# print("1: {0} 2:{1} 3:{2} 4:{3}".format(labelArray[0],labelArray[1],labelArray[2],labelArray[3]))
+
+# countMap = {}
+# countMap = getLabelCount("MAKE Fred Margrethe IN Margrethe ITEM card x004 ACTOR Margrethe Margrethe")
+# for k in countMap:
+#     print("key:{0}, value:{1}".format(k,countMap[k]))
+
+
 #print("Unique leafs: {0}".format(len(leafs)))
 #for c in leafs:
 #    print("{0},".format(c))
 
 for node in occuranceCountMap:
-    print("id:{0} count:{1} children:{2} label:{3}".format(node,occuranceCountMap[node]['childrenCount'],repr(occuranceCountMap[node]['childrenSet']),occuranceCountMap[node]['label']))
+    print("id:{0} count:{1} children:{2} connection:{3} label:{4}".format(node,repr(occuranceCountMap[node]['childrenCount']),repr(occuranceCountMap[node]['childrenSet']),occuranceCountMap[node]['connection'],occuranceCountMap[node]['label']))
 createQA(leafs, model)
 
 
