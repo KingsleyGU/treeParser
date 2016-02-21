@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<adtree>
+  <node refinement="disjunctive">
+    <label>get fileX at some location</label>
+    <node refinement="conjunctive">
+      <label>get item VM1 get fileX</label>
+      <node refinement="conjunctive">
+        <label>get item Server1 get VM1</label>
+        <node refinement="disjunctive">
+          <label> IN Terry ITEM Server1 Server1 LOCATION RoomDatacenter RoomDatacenter</label>
+        </node>
+        <node refinement="disjunctive">
+          <label> IN Terry ITEM VM1 VM1 ITEM Server1 Server1</label>
+        </node>
+      </node>
+      <node refinement="disjunctive">
+        <label> IN Terry DATA fileX fileX ITEM VM1 VM1</label>
+      </node>
+    </node>
+    <node refinement="conjunctive">
+      <label>get item Laptop get fileX</label>
+      <node refinement="disjunctive">
+        <label> IN Terry ITEM Laptop Laptop LOCATION RoomInternal RoomInternal</label>
+      </node>
+      <node refinement="disjunctive">
+        <label> IN Terry DATA fileX fileX ITEM Laptop Laptop</label>
+      </node>
+    </node>
+    <node refinement="conjunctive">
+      <label>get item Switch1 get fileX</label>
+      <node refinement="disjunctive">
+        <label> IN Terry ITEM Switch1 Switch1 LOCATION RoomInternal RoomInternal</label>
+      </node>
+      <node refinement="disjunctive">
+        <label> IN Terry DATA fileX fileX ITEM Switch1 Switch1</label>
+      </node>
+    </node>
+    <node refinement="conjunctive">
+      <label>get item Switch2 get fileX</label>
+      <node refinement="disjunctive">
+        <label> IN Terry ITEM Switch2 Switch2 LOCATION RoomDatacenter RoomDatacenter</label>
+      </node>
+      <node refinement="disjunctive">
+        <label> IN Terry DATA fileX fileX ITEM Switch2 Switch2</label>
+      </node>
+    </node>
+  </node>
+</adtree>

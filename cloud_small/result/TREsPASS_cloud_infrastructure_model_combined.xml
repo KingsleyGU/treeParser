@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<adtree>
+  <node refinement="disjunctive">
+    <label>get ids</label>
+    <node refinement="disjunctive">
+      <label>get fileX at some location</label>
+      <node refinement="conjunctive">
+        <label>get item VM1 get fileX</label>
+        <node refinement="conjunctive">
+          <label>get item Server1 get VM1</label>
+          <node refinement="conjunctive">
+            <label>goto RoomDatacenter and get Server1</label>
+            <node refinement="disjunctive">
+              <label>attacker Finn get ids for some policy at DoorDatacenter</label>
+              <node refinement="conjunctive">
+                <label>attacker Finn get all ids x002 x006</label>
+                <node refinement="disjunctive">
+                  <label>get x002</label>
+                  <node refinement="disjunctive">
+                    <label>make some actor get x002</label>
+                    <node refinement="disjunctive">
+                      <label>make Ethan get x002</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Finn Ethan IN Ethan ITEM idcard x002 ACTOR Sydney Sydney</label>
+                      </node>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>make Terry get x002</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Finn Terry IN Terry ITEM idcard x002 ACTOR Sydney Sydney</label>
+                      </node>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label> IN Finn ITEM idcard x002 ACTOR Sydney Sydney</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label>get x006</label>
+                  <node refinement="disjunctive">
+                    <label>make some actor get x006</label>
+                    <node refinement="disjunctive">
+                      <label>make Ethan get x006</label>
+                      <node refinement="disjunctive">
+                        <label>attacker Ethan get data x006</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Finn Ethan IN Ethan DATA pin x006 ACTOR Sydney Sydney</label>
+                        </node>
+                        <node refinement="conjunctive">
+                          <label>get item x002 and extract data x006</label>
+                          <node refinement="disjunctive">
+                            <label>MAKE Finn Ethan IN Ethan ITEM idcard x002 ACTOR Sydney Sydney</label>
+                          </node>
+                          <node refinement="disjunctive">
+                            <label>MAKE Finn Ethan IN Ethan DATA pin x006 ITEM idcard x002</label>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>make Sydney get x006</label>
+                      <node refinement="conjunctive">
+                        <label>get item x002 and extract data x006</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Finn Sydney IN Sydney DATA pin x006 ITEM idcard x002</label>
+                        </node>
+                      </node>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>make Terry get x006</label>
+                      <node refinement="disjunctive">
+                        <label>attacker Terry get data x006</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Finn Terry IN Terry DATA pin x006 ACTOR Sydney Sydney</label>
+                        </node>
+                        <node refinement="conjunctive">
+                          <label>get item x002 and extract data x006</label>
+                          <node refinement="disjunctive">
+                            <label>MAKE Finn Terry IN Terry ITEM idcard x002 ACTOR Sydney Sydney</label>
+                          </node>
+                          <node refinement="disjunctive">
+                            <label>MAKE Finn Terry IN Terry DATA pin x006 ITEM idcard x002</label>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>attacker Finn get data x006</label>
+                    <node refinement="disjunctive">
+                      <label> IN Finn DATA pin x006 ACTOR Sydney Sydney</label>
+                    </node>
+                    <node refinement="conjunctive">
+                      <label>get item x002 and extract data x006</label>
+                      <node refinement="disjunctive">
+                        <label> IN Finn ITEM idcard x002 ACTOR Sydney Sydney</label>
+                      </node>
+                      <node refinement="disjunctive">
+                        <label> IN Finn DATA pin x006 ITEM idcard x002</label>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> FULFILL Finn role administrator </label>
+                </node>
+              </node>
+              <node refinement="conjunctive">
+                <label>attacker Finn get all ids x003 x007</label>
+                <node refinement="disjunctive">
+                  <label>get x003</label>
+                  <node refinement="disjunctive">
+                    <label>make some actor get x003</label>
+                    <node refinement="disjunctive">
+                      <label>make Ethan get x003</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Finn Ethan IN Ethan ITEM idcard x003 ACTOR Terry Terry</label>
+                      </node>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>make Sydney get x003</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Finn Sydney IN Sydney ITEM idcard x003 ACTOR Terry Terry</label>
+                      </node>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label> IN Finn ITEM idcard x003 ACTOR Terry Terry</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label>get x007</label>
+                  <node refinement="disjunctive">
+                    <label>make some actor get x007</label>
+                    <node refinement="disjunctive">
+                      <label>make Ethan get x007</label>
+                      <node refinement="disjunctive">
+                        <label>attacker Ethan get data x007</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Finn Ethan IN Ethan DATA pin x007 ACTOR Terry Terry</label>
+                        </node>
+                        <node refinement="conjunctive">
+                          <label>get item x003 and extract data x007</label>
+                          <node refinement="disjunctive">
+                            <label>MAKE Finn Ethan IN Ethan ITEM idcard x003 ACTOR Terry Terry</label>
+                          </node>
+                          <node refinement="disjunctive">
+                            <label>MAKE Finn Ethan IN Ethan DATA pin x007 ITEM idcard x003</label>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>make Sydney get x007</label>
+                      <node refinement="disjunctive">
+                        <label>attacker Sydney get data x007</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Finn Sydney IN Sydney DATA pin x007 ACTOR Terry Terry</label>
+                        </node>
+                        <node refinement="conjunctive">
+                          <label>get item x003 and extract data x007</label>
+                          <node refinement="disjunctive">
+                            <label>MAKE Finn Sydney IN Sydney ITEM idcard x003 ACTOR Terry Terry</label>
+                          </node>
+                          <node refinement="disjunctive">
+                            <label>MAKE Finn Sydney IN Sydney DATA pin x007 ITEM idcard x003</label>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>make Terry get x007</label>
+                      <node refinement="conjunctive">
+                        <label>get item x003 and extract data x007</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Finn Terry IN Terry DATA pin x007 ITEM idcard x003</label>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>attacker Finn get data x007</label>
+                    <node refinement="disjunctive">
+                      <label> IN Finn DATA pin x007 ACTOR Terry Terry</label>
+                    </node>
+                    <node refinement="conjunctive">
+                      <label>get item x003 and extract data x007</label>
+                      <node refinement="disjunctive">
+                        <label> IN Finn ITEM idcard x003 ACTOR Terry Terry</label>
+                      </node>
+                      <node refinement="disjunctive">
+                        <label> IN Finn DATA pin x007 ITEM idcard x003</label>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> FULFILL Finn role technician </label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label> FORCE Finn LOCATION DoorDatacenter DoorDatacenter</label>
+              </node>
+            </node>
+            <node refinement="disjunctive">
+              <label> IN Finn ITEM Server1 Server1 LOCATION RoomDatacenter RoomDatacenter</label>
+            </node>
+          </node>
+          <node refinement="disjunctive">
+            <label> IN Finn ITEM VM1 VM1 ITEM Server1 Server1</label>
+          </node>
+        </node>
+        <node refinement="disjunctive">
+          <label> IN Finn DATA fileX fileX ITEM VM1 VM1</label>
+        </node>
+      </node>
+      <node refinement="conjunctive">
+        <label>get item Laptop get fileX</label>
+        <node refinement="disjunctive">
+          <label> IN Finn ITEM Laptop Laptop LOCATION RoomInternal RoomInternal</label>
+        </node>
+        <node refinement="disjunctive">
+          <label> IN Finn DATA fileX fileX ITEM Laptop Laptop</label>
+        </node>
+      </node>
+      <node refinement="conjunctive">
+        <label>get item Switch1 get fileX</label>
+        <node refinement="disjunctive">
+          <label> IN Finn ITEM Switch1 Switch1 LOCATION RoomInternal RoomInternal</label>
+        </node>
+        <node refinement="disjunctive">
+          <label> IN Finn DATA fileX fileX ITEM Switch1 Switch1</label>
+        </node>
+      </node>
+      <node refinement="conjunctive">
+        <label>get item Switch2 get fileX</label>
+        <node refinement="conjunctive">
+          <label>goto RoomDatacenter and get Switch2</label>
+          <node refinement="disjunctive">
+            <label>attacker Finn get ids for some policy at DoorDatacenter</label>
+            <node refinement="conjunctive">
+              <label>attacker Finn get all ids x002 x006</label>
+              <node refinement="disjunctive">
+                <label>get x002</label>
+                <node refinement="disjunctive">
+                  <label>make some actor get x002</label>
+                  <node refinement="disjunctive">
+                    <label>make Ethan get x002</label>
+                    <node refinement="disjunctive">
+                      <label>MAKE Finn Ethan IN Ethan ITEM idcard x002 ACTOR Sydney Sydney</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>make Terry get x002</label>
+                    <node refinement="disjunctive">
+                      <label>MAKE Finn Terry IN Terry ITEM idcard x002 ACTOR Sydney Sydney</label>
+                    </node>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> IN Finn ITEM idcard x002 ACTOR Sydney Sydney</label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label>get x006</label>
+                <node refinement="disjunctive">
+                  <label>make some actor get x006</label>
+                  <node refinement="disjunctive">
+                    <label>make Ethan get x006</label>
+                    <node refinement="disjunctive">
+                      <label>attacker Ethan get data x006</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Finn Ethan IN Ethan DATA pin x006 ACTOR Sydney Sydney</label>
+                      </node>
+                      <node refinement="conjunctive">
+                        <label>get item x002 and extract data x006</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Finn Ethan IN Ethan ITEM idcard x002 ACTOR Sydney Sydney</label>
+                        </node>
+                        <node refinement="disjunctive">
+                          <label>MAKE Finn Ethan IN Ethan DATA pin x006 ITEM idcard x002</label>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>make Sydney get x006</label>
+                    <node refinement="conjunctive">
+                      <label>get item x002 and extract data x006</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Finn Sydney IN Sydney DATA pin x006 ITEM idcard x002</label>
+                      </node>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>make Terry get x006</label>
+                    <node refinement="disjunctive">
+                      <label>attacker Terry get data x006</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Finn Terry IN Terry DATA pin x006 ACTOR Sydney Sydney</label>
+                      </node>
+                      <node refinement="conjunctive">
+                        <label>get item x002 and extract data x006</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Finn Terry IN Terry ITEM idcard x002 ACTOR Sydney Sydney</label>
+                        </node>
+                        <node refinement="disjunctive">
+                          <label>MAKE Finn Terry IN Terry DATA pin x006 ITEM idcard x002</label>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label>attacker Finn get data x006</label>
+                  <node refinement="disjunctive">
+                    <label> IN Finn DATA pin x006 ACTOR Sydney Sydney</label>
+                  </node>
+                  <node refinement="conjunctive">
+                    <label>get item x002 and extract data x006</label>
+                    <node refinement="disjunctive">
+                      <label> IN Finn ITEM idcard x002 ACTOR Sydney Sydney</label>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label> IN Finn DATA pin x006 ITEM idcard x002</label>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label> FULFILL Finn role administrator </label>
+              </node>
+            </node>
+            <node refinement="conjunctive">
+              <label>attacker Finn get all ids x003 x007</label>
+              <node refinement="disjunctive">
+                <label>get x003</label>
+                <node refinement="disjunctive">
+                  <label>make some actor get x003</label>
+                  <node refinement="disjunctive">
+                    <label>make Ethan get x003</label>
+                    <node refinement="disjunctive">
+                      <label>MAKE Finn Ethan IN Ethan ITEM idcard x003 ACTOR Terry Terry</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>make Sydney get x003</label>
+                    <node refinement="disjunctive">
+                      <label>MAKE Finn Sydney IN Sydney ITEM idcard x003 ACTOR Terry Terry</label>
+                    </node>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> IN Finn ITEM idcard x003 ACTOR Terry Terry</label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label>get x007</label>
+                <node refinement="disjunctive">
+                  <label>make some actor get x007</label>
+                  <node refinement="disjunctive">
+                    <label>make Ethan get x007</label>
+                    <node refinement="disjunctive">
+                      <label>attacker Ethan get data x007</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Finn Ethan IN Ethan DATA pin x007 ACTOR Terry Terry</label>
+                      </node>
+                      <node refinement="conjunctive">
+                        <label>get item x003 and extract data x007</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Finn Ethan IN Ethan ITEM idcard x003 ACTOR Terry Terry</label>
+                        </node>
+                        <node refinement="disjunctive">
+                          <label>MAKE Finn Ethan IN Ethan DATA pin x007 ITEM idcard x003</label>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>make Sydney get x007</label>
+                    <node refinement="disjunctive">
+                      <label>attacker Sydney get data x007</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Finn Sydney IN Sydney DATA pin x007 ACTOR Terry Terry</label>
+                      </node>
+                      <node refinement="conjunctive">
+                        <label>get item x003 and extract data x007</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Finn Sydney IN Sydney ITEM idcard x003 ACTOR Terry Terry</label>
+                        </node>
+                        <node refinement="disjunctive">
+                          <label>MAKE Finn Sydney IN Sydney DATA pin x007 ITEM idcard x003</label>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>make Terry get x007</label>
+                    <node refinement="conjunctive">
+                      <label>get item x003 and extract data x007</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Finn Terry IN Terry DATA pin x007 ITEM idcard x003</label>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label>attacker Finn get data x007</label>
+                  <node refinement="disjunctive">
+                    <label> IN Finn DATA pin x007 ACTOR Terry Terry</label>
+                  </node>
+                  <node refinement="conjunctive">
+                    <label>get item x003 and extract data x007</label>
+                    <node refinement="disjunctive">
+                      <label> IN Finn ITEM idcard x003 ACTOR Terry Terry</label>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label> IN Finn DATA pin x007 ITEM idcard x003</label>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label> FULFILL Finn role technician </label>
+              </node>
+            </node>
+            <node refinement="disjunctive">
+              <label> FORCE Finn LOCATION DoorDatacenter DoorDatacenter</label>
+            </node>
+          </node>
+          <node refinement="disjunctive">
+            <label> IN Finn ITEM Switch2 Switch2 LOCATION RoomDatacenter RoomDatacenter</label>
+          </node>
+        </node>
+        <node refinement="disjunctive">
+          <label> IN Finn DATA fileX fileX ITEM Switch2 Switch2</label>
+        </node>
+      </node>
+    </node>
+    <node refinement="disjunctive">
+      <label>get fileX at some location</label>
+      <node refinement="conjunctive">
+        <label>get item VM1 get fileX</label>
+        <node refinement="conjunctive">
+          <label>get item Server1 get VM1</label>
+          <node refinement="conjunctive">
+            <label>goto RoomDatacenter and get Server1</label>
+            <node refinement="disjunctive">
+              <label>attacker Ethan get ids for some policy at DoorDatacenter</label>
+              <node refinement="conjunctive">
+                <label>attacker Ethan get all ids x002 x006</label>
+                <node refinement="disjunctive">
+                  <label>get x002</label>
+                  <node refinement="disjunctive">
+                    <label>make some actor get x002</label>
+                    <node refinement="disjunctive">
+                      <label>make Finn get x002</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Ethan Finn IN Finn ITEM idcard x002 ACTOR Sydney Sydney</label>
+                      </node>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>make Terry get x002</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Ethan Terry IN Terry ITEM idcard x002 ACTOR Sydney Sydney</label>
+                      </node>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label> IN Ethan ITEM idcard x002 ACTOR Sydney Sydney</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label>get x006</label>
+                  <node refinement="disjunctive">
+                    <label>make some actor get x006</label>
+                    <node refinement="disjunctive">
+                      <label>make Finn get x006</label>
+                      <node refinement="disjunctive">
+                        <label>attacker Finn get data x006</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Ethan Finn IN Finn DATA pin x006 ACTOR Sydney Sydney</label>
+                        </node>
+                        <node refinement="conjunctive">
+                          <label>get item x002 and extract data x006</label>
+                          <node refinement="disjunctive">
+                            <label>MAKE Ethan Finn IN Finn ITEM idcard x002 ACTOR Sydney Sydney</label>
+                          </node>
+                          <node refinement="disjunctive">
+                            <label>MAKE Ethan Finn IN Finn DATA pin x006 ITEM idcard x002</label>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>make Sydney get x006</label>
+                      <node refinement="conjunctive">
+                        <label>get item x002 and extract data x006</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Ethan Sydney IN Sydney DATA pin x006 ITEM idcard x002</label>
+                        </node>
+                      </node>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>make Terry get x006</label>
+                      <node refinement="disjunctive">
+                        <label>attacker Terry get data x006</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Ethan Terry IN Terry DATA pin x006 ACTOR Sydney Sydney</label>
+                        </node>
+                        <node refinement="conjunctive">
+                          <label>get item x002 and extract data x006</label>
+                          <node refinement="disjunctive">
+                            <label>MAKE Ethan Terry IN Terry ITEM idcard x002 ACTOR Sydney Sydney</label>
+                          </node>
+                          <node refinement="disjunctive">
+                            <label>MAKE Ethan Terry IN Terry DATA pin x006 ITEM idcard x002</label>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>attacker Ethan get data x006</label>
+                    <node refinement="disjunctive">
+                      <label> IN Ethan DATA pin x006 ACTOR Sydney Sydney</label>
+                    </node>
+                    <node refinement="conjunctive">
+                      <label>get item x002 and extract data x006</label>
+                      <node refinement="disjunctive">
+                        <label> IN Ethan ITEM idcard x002 ACTOR Sydney Sydney</label>
+                      </node>
+                      <node refinement="disjunctive">
+                        <label> IN Ethan DATA pin x006 ITEM idcard x002</label>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> FULFILL Ethan role administrator </label>
+                </node>
+              </node>
+              <node refinement="conjunctive">
+                <label>attacker Ethan get all ids x003 x007</label>
+                <node refinement="disjunctive">
+                  <label>get x003</label>
+                  <node refinement="disjunctive">
+                    <label>make some actor get x003</label>
+                    <node refinement="disjunctive">
+                      <label>make Finn get x003</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Ethan Finn IN Finn ITEM idcard x003 ACTOR Terry Terry</label>
+                      </node>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>make Sydney get x003</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Ethan Sydney IN Sydney ITEM idcard x003 ACTOR Terry Terry</label>
+                      </node>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label> IN Ethan ITEM idcard x003 ACTOR Terry Terry</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label>get x007</label>
+                  <node refinement="disjunctive">
+                    <label>make some actor get x007</label>
+                    <node refinement="disjunctive">
+                      <label>make Finn get x007</label>
+                      <node refinement="disjunctive">
+                        <label>attacker Finn get data x007</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Ethan Finn IN Finn DATA pin x007 ACTOR Terry Terry</label>
+                        </node>
+                        <node refinement="conjunctive">
+                          <label>get item x003 and extract data x007</label>
+                          <node refinement="disjunctive">
+                            <label>MAKE Ethan Finn IN Finn ITEM idcard x003 ACTOR Terry Terry</label>
+                          </node>
+                          <node refinement="disjunctive">
+                            <label>MAKE Ethan Finn IN Finn DATA pin x007 ITEM idcard x003</label>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>make Sydney get x007</label>
+                      <node refinement="disjunctive">
+                        <label>attacker Sydney get data x007</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Ethan Sydney IN Sydney DATA pin x007 ACTOR Terry Terry</label>
+                        </node>
+                        <node refinement="conjunctive">
+                          <label>get item x003 and extract data x007</label>
+                          <node refinement="disjunctive">
+                            <label>MAKE Ethan Sydney IN Sydney ITEM idcard x003 ACTOR Terry Terry</label>
+                          </node>
+                          <node refinement="disjunctive">
+                            <label>MAKE Ethan Sydney IN Sydney DATA pin x007 ITEM idcard x003</label>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>make Terry get x007</label>
+                      <node refinement="conjunctive">
+                        <label>get item x003 and extract data x007</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Ethan Terry IN Terry DATA pin x007 ITEM idcard x003</label>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>attacker Ethan get data x007</label>
+                    <node refinement="disjunctive">
+                      <label> IN Ethan DATA pin x007 ACTOR Terry Terry</label>
+                    </node>
+                    <node refinement="conjunctive">
+                      <label>get item x003 and extract data x007</label>
+                      <node refinement="disjunctive">
+                        <label> IN Ethan ITEM idcard x003 ACTOR Terry Terry</label>
+                      </node>
+                      <node refinement="disjunctive">
+                        <label> IN Ethan DATA pin x007 ITEM idcard x003</label>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> FULFILL Ethan role technician </label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label> FORCE Ethan LOCATION DoorDatacenter DoorDatacenter</label>
+              </node>
+            </node>
+            <node refinement="disjunctive">
+              <label> IN Ethan ITEM Server1 Server1 LOCATION RoomDatacenter RoomDatacenter</label>
+            </node>
+          </node>
+          <node refinement="disjunctive">
+            <label> IN Ethan ITEM VM1 VM1 ITEM Server1 Server1</label>
+          </node>
+        </node>
+        <node refinement="disjunctive">
+          <label> IN Ethan DATA fileX fileX ITEM VM1 VM1</label>
+        </node>
+      </node>
+      <node refinement="conjunctive">
+        <label>get item Laptop get fileX</label>
+        <node refinement="disjunctive">
+          <label> IN Ethan ITEM Laptop Laptop LOCATION RoomInternal RoomInternal</label>
+        </node>
+        <node refinement="disjunctive">
+          <label> IN Ethan DATA fileX fileX ITEM Laptop Laptop</label>
+        </node>
+      </node>
+      <node refinement="conjunctive">
+        <label>get item Switch1 get fileX</label>
+        <node refinement="disjunctive">
+          <label> IN Ethan ITEM Switch1 Switch1 LOCATION RoomInternal RoomInternal</label>
+        </node>
+        <node refinement="disjunctive">
+          <label> IN Ethan DATA fileX fileX ITEM Switch1 Switch1</label>
+        </node>
+      </node>
+      <node refinement="conjunctive">
+        <label>get item Switch2 get fileX</label>
+        <node refinement="conjunctive">
+          <label>goto RoomDatacenter and get Switch2</label>
+          <node refinement="disjunctive">
+            <label>attacker Ethan get ids for some policy at DoorDatacenter</label>
+            <node refinement="conjunctive">
+              <label>attacker Ethan get all ids x002 x006</label>
+              <node refinement="disjunctive">
+                <label>get x002</label>
+                <node refinement="disjunctive">
+                  <label>make some actor get x002</label>
+                  <node refinement="disjunctive">
+                    <label>make Finn get x002</label>
+                    <node refinement="disjunctive">
+                      <label>MAKE Ethan Finn IN Finn ITEM idcard x002 ACTOR Sydney Sydney</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>make Terry get x002</label>
+                    <node refinement="disjunctive">
+                      <label>MAKE Ethan Terry IN Terry ITEM idcard x002 ACTOR Sydney Sydney</label>
+                    </node>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> IN Ethan ITEM idcard x002 ACTOR Sydney Sydney</label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label>get x006</label>
+                <node refinement="disjunctive">
+                  <label>make some actor get x006</label>
+                  <node refinement="disjunctive">
+                    <label>make Finn get x006</label>
+                    <node refinement="disjunctive">
+                      <label>attacker Finn get data x006</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Ethan Finn IN Finn DATA pin x006 ACTOR Sydney Sydney</label>
+                      </node>
+                      <node refinement="conjunctive">
+                        <label>get item x002 and extract data x006</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Ethan Finn IN Finn ITEM idcard x002 ACTOR Sydney Sydney</label>
+                        </node>
+                        <node refinement="disjunctive">
+                          <label>MAKE Ethan Finn IN Finn DATA pin x006 ITEM idcard x002</label>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>make Sydney get x006</label>
+                    <node refinement="conjunctive">
+                      <label>get item x002 and extract data x006</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Ethan Sydney IN Sydney DATA pin x006 ITEM idcard x002</label>
+                      </node>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>make Terry get x006</label>
+                    <node refinement="disjunctive">
+                      <label>attacker Terry get data x006</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Ethan Terry IN Terry DATA pin x006 ACTOR Sydney Sydney</label>
+                      </node>
+                      <node refinement="conjunctive">
+                        <label>get item x002 and extract data x006</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Ethan Terry IN Terry ITEM idcard x002 ACTOR Sydney Sydney</label>
+                        </node>
+                        <node refinement="disjunctive">
+                          <label>MAKE Ethan Terry IN Terry DATA pin x006 ITEM idcard x002</label>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label>attacker Ethan get data x006</label>
+                  <node refinement="disjunctive">
+                    <label> IN Ethan DATA pin x006 ACTOR Sydney Sydney</label>
+                  </node>
+                  <node refinement="conjunctive">
+                    <label>get item x002 and extract data x006</label>
+                    <node refinement="disjunctive">
+                      <label> IN Ethan ITEM idcard x002 ACTOR Sydney Sydney</label>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label> IN Ethan DATA pin x006 ITEM idcard x002</label>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label> FULFILL Ethan role administrator </label>
+              </node>
+            </node>
+            <node refinement="conjunctive">
+              <label>attacker Ethan get all ids x003 x007</label>
+              <node refinement="disjunctive">
+                <label>get x003</label>
+                <node refinement="disjunctive">
+                  <label>make some actor get x003</label>
+                  <node refinement="disjunctive">
+                    <label>make Finn get x003</label>
+                    <node refinement="disjunctive">
+                      <label>MAKE Ethan Finn IN Finn ITEM idcard x003 ACTOR Terry Terry</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>make Sydney get x003</label>
+                    <node refinement="disjunctive">
+                      <label>MAKE Ethan Sydney IN Sydney ITEM idcard x003 ACTOR Terry Terry</label>
+                    </node>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> IN Ethan ITEM idcard x003 ACTOR Terry Terry</label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label>get x007</label>
+                <node refinement="disjunctive">
+                  <label>make some actor get x007</label>
+                  <node refinement="disjunctive">
+                    <label>make Finn get x007</label>
+                    <node refinement="disjunctive">
+                      <label>attacker Finn get data x007</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Ethan Finn IN Finn DATA pin x007 ACTOR Terry Terry</label>
+                      </node>
+                      <node refinement="conjunctive">
+                        <label>get item x003 and extract data x007</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Ethan Finn IN Finn ITEM idcard x003 ACTOR Terry Terry</label>
+                        </node>
+                        <node refinement="disjunctive">
+                          <label>MAKE Ethan Finn IN Finn DATA pin x007 ITEM idcard x003</label>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>make Sydney get x007</label>
+                    <node refinement="disjunctive">
+                      <label>attacker Sydney get data x007</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Ethan Sydney IN Sydney DATA pin x007 ACTOR Terry Terry</label>
+                      </node>
+                      <node refinement="conjunctive">
+                        <label>get item x003 and extract data x007</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Ethan Sydney IN Sydney ITEM idcard x003 ACTOR Terry Terry</label>
+                        </node>
+                        <node refinement="disjunctive">
+                          <label>MAKE Ethan Sydney IN Sydney DATA pin x007 ITEM idcard x003</label>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>make Terry get x007</label>
+                    <node refinement="conjunctive">
+                      <label>get item x003 and extract data x007</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Ethan Terry IN Terry DATA pin x007 ITEM idcard x003</label>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label>attacker Ethan get data x007</label>
+                  <node refinement="disjunctive">
+                    <label> IN Ethan DATA pin x007 ACTOR Terry Terry</label>
+                  </node>
+                  <node refinement="conjunctive">
+                    <label>get item x003 and extract data x007</label>
+                    <node refinement="disjunctive">
+                      <label> IN Ethan ITEM idcard x003 ACTOR Terry Terry</label>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label> IN Ethan DATA pin x007 ITEM idcard x003</label>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label> FULFILL Ethan role technician </label>
+              </node>
+            </node>
+            <node refinement="disjunctive">
+              <label> FORCE Ethan LOCATION DoorDatacenter DoorDatacenter</label>
+            </node>
+          </node>
+          <node refinement="disjunctive">
+            <label> IN Ethan ITEM Switch2 Switch2 LOCATION RoomDatacenter RoomDatacenter</label>
+          </node>
+        </node>
+        <node refinement="disjunctive">
+          <label> IN Ethan DATA fileX fileX ITEM Switch2 Switch2</label>
+        </node>
+      </node>
+    </node>
+    <node refinement="disjunctive">
+      <label>get fileX at some location</label>
+      <node refinement="conjunctive">
+        <label>get item VM1 get fileX</label>
+        <node refinement="conjunctive">
+          <label>get item Server1 get VM1</label>
+          <node refinement="disjunctive">
+            <label> IN Sydney ITEM Server1 Server1 LOCATION RoomDatacenter RoomDatacenter</label>
+          </node>
+          <node refinement="disjunctive">
+            <label> IN Sydney ITEM VM1 VM1 ITEM Server1 Server1</label>
+          </node>
+        </node>
+        <node refinement="disjunctive">
+          <label> IN Sydney DATA fileX fileX ITEM VM1 VM1</label>
+        </node>
+      </node>
+      <node refinement="conjunctive">
+        <label>get item Laptop get fileX</label>
+        <node refinement="disjunctive">
+          <label> IN Sydney ITEM Laptop Laptop LOCATION RoomInternal RoomInternal</label>
+        </node>
+        <node refinement="disjunctive">
+          <label> IN Sydney DATA fileX fileX ITEM Laptop Laptop</label>
+        </node>
+      </node>
+      <node refinement="conjunctive">
+        <label>get item Switch1 get fileX</label>
+        <node refinement="disjunctive">
+          <label> IN Sydney ITEM Switch1 Switch1 LOCATION RoomInternal RoomInternal</label>
+        </node>
+        <node refinement="disjunctive">
+          <label> IN Sydney DATA fileX fileX ITEM Switch1 Switch1</label>
+        </node>
+      </node>
+      <node refinement="conjunctive">
+        <label>get item Switch2 get fileX</label>
+        <node refinement="disjunctive">
+          <label> IN Sydney ITEM Switch2 Switch2 LOCATION RoomDatacenter RoomDatacenter</label>
+        </node>
+        <node refinement="disjunctive">
+          <label> IN Sydney DATA fileX fileX ITEM Switch2 Switch2</label>
+        </node>
+      </node>
+    </node>
+    <node refinement="disjunctive">
+      <label>get fileX at some location</label>
+      <node refinement="conjunctive">
+        <label>get item VM1 get fileX</label>
+        <node refinement="conjunctive">
+          <label>get item Server1 get VM1</label>
+          <node refinement="disjunctive">
+            <label> IN Terry ITEM Server1 Server1 LOCATION RoomDatacenter RoomDatacenter</label>
+          </node>
+          <node refinement="disjunctive">
+            <label> IN Terry ITEM VM1 VM1 ITEM Server1 Server1</label>
+          </node>
+        </node>
+        <node refinement="disjunctive">
+          <label> IN Terry DATA fileX fileX ITEM VM1 VM1</label>
+        </node>
+      </node>
+      <node refinement="conjunctive">
+        <label>get item Laptop get fileX</label>
+        <node refinement="disjunctive">
+          <label> IN Terry ITEM Laptop Laptop LOCATION RoomInternal RoomInternal</label>
+        </node>
+        <node refinement="disjunctive">
+          <label> IN Terry DATA fileX fileX ITEM Laptop Laptop</label>
+        </node>
+      </node>
+      <node refinement="conjunctive">
+        <label>get item Switch1 get fileX</label>
+        <node refinement="disjunctive">
+          <label> IN Terry ITEM Switch1 Switch1 LOCATION RoomInternal RoomInternal</label>
+        </node>
+        <node refinement="disjunctive">
+          <label> IN Terry DATA fileX fileX ITEM Switch1 Switch1</label>
+        </node>
+      </node>
+      <node refinement="conjunctive">
+        <label>get item Switch2 get fileX</label>
+        <node refinement="disjunctive">
+          <label> IN Terry ITEM Switch2 Switch2 LOCATION RoomDatacenter RoomDatacenter</label>
+        </node>
+        <node refinement="disjunctive">
+          <label> IN Terry DATA fileX fileX ITEM Switch2 Switch2</label>
+        </node>
+      </node>
+    </node>
+  </node>
+</adtree>

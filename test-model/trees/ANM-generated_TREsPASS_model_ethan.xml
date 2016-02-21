@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<adtree>
+  <node refinement="conjunctive">
+    <label>get item entity_vim.VirtualMachine_vm-51 get fileX</label>
+    <node refinement="disjunctive">
+      <label>get  entity_vim.VirtualMachine_vm-51</label>
+      <node refinement="conjunctive">
+        <label>get item entity_vim.Datastore_datastore-41 get entity_vim.VirtualMachine_vm-51</label>
+        <node refinement="disjunctive">
+          <label> IN ethan ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41 LOCATION RoomDatacenter RoomDatacenter</label>
+        </node>
+        <node refinement="disjunctive">
+          <label> IN ethan ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41</label>
+        </node>
+      </node>
+      <node refinement="conjunctive">
+        <label>get item entity_vim.Network_network-43 get entity_vim.VirtualMachine_vm-51</label>
+        <node refinement="disjunctive">
+          <label> IN ethan ITEM entity_vim.Network_network-43 entity_vim.Network_network-43 LOCATION RoomDatacenter RoomDatacenter</label>
+        </node>
+        <node refinement="disjunctive">
+          <label> IN ethan ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.Network_network-43 entity_vim.Network_network-43</label>
+        </node>
+      </node>
+      <node refinement="conjunctive">
+        <label>get item entity_vim.HostSystem_host-49 get entity_vim.VirtualMachine_vm-51</label>
+        <node refinement="disjunctive">
+          <label>get  entity_vim.HostSystem_host-49</label>
+          <node refinement="conjunctive">
+            <label>get item entity_vim.Datastore_datastore-41 get entity_vim.HostSystem_host-49</label>
+            <node refinement="disjunctive">
+              <label> IN ethan ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41 LOCATION RoomDatacenter RoomDatacenter</label>
+            </node>
+            <node refinement="disjunctive">
+              <label> IN ethan ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41</label>
+            </node>
+          </node>
+          <node refinement="conjunctive">
+            <label>get item entity_vim.Network_network-43 get entity_vim.HostSystem_host-49</label>
+            <node refinement="disjunctive">
+              <label> IN ethan ITEM entity_vim.Network_network-43 entity_vim.Network_network-43 LOCATION RoomDatacenter RoomDatacenter</label>
+            </node>
+            <node refinement="disjunctive">
+              <label> IN ethan ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-43 entity_vim.Network_network-43</label>
+            </node>
+          </node>
+          <node refinement="conjunctive">
+            <label>get item entity_vim.Network_network-44 get entity_vim.HostSystem_host-49</label>
+            <node refinement="disjunctive">
+              <label> IN ethan ITEM entity_vim.Network_network-44 entity_vim.Network_network-44 LOCATION RoomDatacenter RoomDatacenter</label>
+            </node>
+            <node refinement="disjunctive">
+              <label> IN ethan ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-44 entity_vim.Network_network-44</label>
+            </node>
+          </node>
+          <node refinement="conjunctive">
+            <label>get item entity_vim.Network_network-42 get entity_vim.HostSystem_host-49</label>
+            <node refinement="disjunctive">
+              <label> IN ethan ITEM entity_vim.Network_network-42 entity_vim.Network_network-42 LOCATION RoomDatacenter RoomDatacenter</label>
+            </node>
+            <node refinement="disjunctive">
+              <label> IN ethan ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-42 entity_vim.Network_network-42</label>
+            </node>
+          </node>
+          <node refinement="conjunctive">
+            <label>get item entity_vim.Network_network-45 get entity_vim.HostSystem_host-49</label>
+            <node refinement="disjunctive">
+              <label> IN ethan ITEM entity_vim.Network_network-45 entity_vim.Network_network-45 LOCATION RoomDatacenter RoomDatacenter</label>
+            </node>
+            <node refinement="disjunctive">
+              <label> IN ethan ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-45 entity_vim.Network_network-45</label>
+            </node>
+          </node>
+          <node refinement="disjunctive">
+            <label> IN ethan ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 LOCATION RoomDatacenter RoomDatacenter</label>
+          </node>
+        </node>
+        <node refinement="disjunctive">
+          <label> IN ethan ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49</label>
+        </node>
+      </node>
+    </node>
+    <node refinement="disjunctive">
+      <label> IN ethan DATA fileX fileX ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51</label>
+    </node>
+  </node>
+</adtree>

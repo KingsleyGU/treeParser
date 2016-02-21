@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system 
+    xmlns="https://www.trespass-project.eu/schemas/TREsPASS_model"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.trespass-project.eu/schemas/TREsPASS_model.xsd" 
+    author="Christian W Probst" 
+    date="14-12-2014" 
+    version="1.0">
+  <title>TREsPASS cloud infrastructure model</title>
+  <locations>
+    <!-- rooms in building --> 
+    <location id="Outside"/>
+    <location id="DoorExternal"/>
+    <location id="Hallway"/>
+    <location id="DoorInternal"/>
+    <location id="RoomInternal"/>         
+    <location id="WindowInternal"/>         
+    <location id="DoorDatacenter"/>  
+    <location id="RoomDatacenter"/>
+    <location id="WindowDatacenter"/>
+  </locations>
+  <edges>
+    <!-- connectivity building -->
+    <edge>
+      <source>Outside</source><target>DoorExternal</target>
+    </edge>
+    <edge>
+      <source>DoorExternal</source><target>Hallway</target>
+    </edge>
+    <edge>
+      <source>Hallway</source><target>Outside</target>
+    </edge>
+    <edge>
+      <source>Hallway</source><target>DoorInternal</target>
+    </edge>
+    <edge>
+      <source>DoorInternal</source><target>RoomInternal</target>
+    </edge>
+    <edge>
+      <source>RoomInternal</source><target>Hallway</target>
+    </edge>    
+    <edge directed="false">
+      <source>RoomInternal</source><target>WindowInternal</target>
+    </edge>
+    <edge directed="false">
+      <source>Outside</source><target>WindowInternal</target>
+    </edge>
+    <edge directed="false">
+      <source>RoomInternal</source><target>DoorDatacenter</target>
+    </edge>
+    <edge directed="false">
+      <source>DoorDatacenter</source><target>RoomDatacenter</target>
+    </edge>
+    <edge directed="false">
+      <source>WindowDatacenter</source><target>RoomDatacenter</target>
+    </edge>
+    <edge directed="false">
+      <source>Hallway</source><target>WindowDatacenter</target>
+    </edge>
+    <!-- connectivity cyber -->
+    <edge directed="false">
+      <source>Laptop</source><target>Switch1</target>
+    </edge>
+    <edge directed="false">
+      <source>Switch1</source><target>Server1</target>
+    </edge>
+    <!-- connectivity switch -->
+    <edge directed="false">
+      <source>Server1</source><target>Switch2</target>
+    </edge>
+    <edge directed="false">
+      <source>Server2</source><target>Switch2</target>
+    </edge>
+  </edges>
+  <assets>
+    <item name="idcard" id="x002">
+      <atLocations>Sydney</atLocations>
+    </item>
+    <item name="idcard" id="x003">
+      <atLocations>Terry</atLocations>
+    </item>
+    <item name="idcard" id="x004">
+      <atLocations>Ethan</atLocations>
+    </item>
+    <item name="idcard" id="x005">
+      <atLocations>Finn</atLocations>
+    </item>
+    <!-- cyber infrastructure -->
+    <item name="Laptop" id="Laptop">
+      <atLocations>RoomInternal</atLocations>
+    </item>
+    <item name="Switch1" id="Switch1">
+      <atLocations>RoomInternal</atLocations>
+    </item>
+    <!-- cyber infrastructure server 1-->
+    <item name="Server1" id="Server1">
+      <atLocations>RoomDatacenter</atLocations>
+    </item>
+    <item name="Switch2" id="Switch2">
+      <atLocations>RoomDatacenter</atLocations>
+    </item>
+    <!-- cyber infrastructure server 2-->
+    <item name="Server2" id="Server2">
+      <atLocations>RoomDatacenter</atLocations>
+    </item>
+    <item name="VM1" id="VM1">
+      <atLocations>Server1</atLocations>
+    </item>
+    <data name="pin" id="x006" value="1">
+      <atLocations>Sydney x002</atLocations>
+    </data>
+    <data name="pin" id="x007" value="2">
+      <atLocations>Terry x003</atLocations>
+    </data>
+    <data name="pin" id="x008" value="3">
+      <atLocations>Ethan x004</atLocations>
+    </data>
+    <data name="pin" id="x009" value="4">
+      <atLocations>Finn x005</atLocations>
+    </data>
+    <data name="owner" id="x010" value="Sydney">
+      <atLocations>x002</atLocations>
+    </data>
+    <data name="owner" id="x011" value="Terry">
+      <atLocations>x003</atLocations>
+    </data>
+    <data name="owner" id="x012" value="Ethan">
+      <atLocations>x004</atLocations>
+    </data>
+    <data name="owner" id="x013" value="Finn">
+      <atLocations>x005</atLocations>
+    </data>
+    <data name="fileX" id="fileX" value="42">
+      <atLocations>VM1 Laptop Switch1 Switch2</atLocations>      
+    </data>
+    <data name="password" id="pwdethan" value="1234">
+      <atLocations>Ethan</atLocations>      
+    </data>
+    <data name="password" id="pwdsydney" value="2345">
+      <atLocations>Sydney</atLocations>      
+    </data>
+    <data name="password" id="admpwdsydney" value="3456">
+      <atLocations>Sydney</atLocations>      
+    </data>
+  </assets>
+  <actors>
+    <actor id="Finn">
+      <atLocations>Outside</atLocations>
+    </actor>
+    <actor id="Ethan">
+      <atLocations>Outside</atLocations>
+    </actor>
+    <actor id="Sydney">
+      <atLocations>Outside</atLocations>
+    </actor>
+    <actor id="Terry">
+      <atLocations>Outside</atLocations>
+    </actor>
+  </actors>
+  <policies>
+    <policy id="p001">
+      <credentials>
+        <credItem name="idcard"><credData name="pin"><variable>Y</variable></credData></credItem>
+        <credData name="pin"><variable>Y</variable></credData>
+      </credentials>    
+      <enabled><move /></enabled>
+      <atLocations>DoorExternal</atLocations>                        
+    </policy>
+    <policy id="p002">
+      <credentials>
+        <credItem name="idcard"><credData name="owner"><variable>X</variable></credData><credData name="pin"><variable>Y</variable></credData></credItem>
+        <credPredicate name="role"><value>employee</value><variable>X</variable></credPredicate>
+        <credData name="pin"><variable>Y</variable></credData>
+      </credentials>    
+      <enabled><move /></enabled>
+      <atLocations>DoorInternal</atLocations>                        
+    </policy>
+    <policy id="p003">
+      <credentials>
+        <credItem name="idcard"><credData name="owner"><variable>X</variable></credData><credData name="pin"><variable>Y</variable></credData></credItem>
+        <credPredicate name="role"><value>administrator</value><variable>X</variable></credPredicate>
+        <credData name="pin"><variable>Y</variable></credData>
+      </credentials>    
+      <enabled><move /></enabled>
+      <atLocations>DoorDatacenter</atLocations>                        
+    </policy>
+    <policy id="p004">
+      <credentials>
+        <credItem name="idcard"><credData name="owner"><variable>X</variable></credData><credData name="pin"><variable>Y</variable></credData></credItem>
+        <credPredicate name="role"><value>technician</value><variable>X</variable></credPredicate>
+        <credData name="pin"><variable>Y</variable></credData>
+      </credentials>    
+      <enabled><move /></enabled>
+      <atLocations>DoorDatacenter</atLocations>                        
+    </policy>
+    <policy id="p005">
+      <credentials>
+        <credData name="password"><value>1234</value></credData>
+      </credentials>    
+      <enabled><in /></enabled>
+      <atLocations>VM1 Laptop</atLocations>                        
+    </policy>
+  </policies>
+  <processes>
+  </processes>
+  <predicates>
+    <predicate id="role" arity="2">
+      <value>administrator Sydney</value> 
+      <value>technician Terry</value> 
+      <value>accountant Finn</value> 
+      <value>investigator Ethan</value> 
+      <value>employee Finn</value>
+      <value>employee Ethan</value>
+      <value>employee Sydney</value>
+      <value>employee Terry</value>
+    </predicate>
+    <predicate id="isPassword" arity="3">
+      <value>vm1 Ethan pwdethan</value>
+      <value>laptop Ethan pwdethan</value>
+      <value>laptop Sydney pwdsydney</value>
+      <value>hypervisor1 Sydney admpwdsydney</value>
+    </predicate>
+  </predicates> 
+</system>

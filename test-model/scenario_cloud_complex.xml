@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scenario 
+    xmlns="https://www.trespass-project.eu/schemas/TREsPASS_scenario"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.trespass-project.eu/schemas/TREsPASS_scenario.xsd"
+    id="Cloud-in-a-Box" 
+    author="CW Probst" 
+    date="10-09-2015" 
+    version="1.0">
+   <model>merged.graphml.xml</model>
+   <assetGoal attacker="X">
+      <asset>fileX</asset>
+   </assetGoal>
+</scenario>

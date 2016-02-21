@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scenario 
+    xmlns="https://www.trespass-project.eu/schemas/TREsPASS_scenario"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.trespass-project.eu/schemas/TREsPASS_scenario.xsd"
+    id="IPTV_scenario" 
+    author="Marieta G Ivanova" 
+    date="25-05-2014" 
+    version="1.0">
+   <model>model_IPTV.xml</model>
+   <actionGoal attacker="Z">
+      <credentials>
+      		<credPredicate name="role">
+      		    <value>Employee</value>
+      				<variable>Z</variable>
+      		</credPredicate>
+      		<credItem name="card">
+      				<credData name="owner">
+      					<variable>O</variable>
+      				</credData>
+      		</credItem>
+      		<credPredicate name="role">
+      		    <value>Customer</value>
+      				<variable>O</variable>
+      		</credPredicate>
+      		<credPredicate name="isActor">
+      				<variable>Z</variable>
+      		</credPredicate>
+      </credentials>
+      <enabled>
+         <in></in>
+      </enabled>
+   </actionGoal>
+</scenario>

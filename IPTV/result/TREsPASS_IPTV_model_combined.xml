@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<adtree>
+  <node refinement="disjunctive">
+    <label>attack</label>
+    <node refinement="disjunctive">
+      <label>Attacker Fred</label>
+      <node refinement="disjunctive">
+        <label>Attacker Fredget items  x004 x009</label>
+        <node refinement="disjunctive">
+          <label>to get or not to get</label>
+          <node refinement="conjunctive">
+            <label>test</label>
+            <node refinement="conjunctive">
+              <label>test</label>
+              <node refinement="disjunctive">
+                <label>test</label>
+                <node refinement="disjunctive">
+                  <label> FULFILL Fred trusts Margrethe </label>
+                </node>
+                <node refinement="disjunctive">
+                  <label> FORCE Fred LOCATION door door</label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label> MOVE Fred LOCATION door door</label>
+              </node>
+            </node>
+            <node refinement="disjunctive">
+              <label> IN Fred ITEM card x004 ACTOR Margrethe Margrethe</label>
+            </node>
+          </node>
+          <node refinement="disjunctive">
+            <label>make somebody get it</label>
+            <node refinement="disjunctive">
+              <label>make Margrethe get x004</label>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="disjunctive">
+                  <label>test</label>
+                  <node refinement="disjunctive">
+                    <label> FULFILL Fred trusts Margrethe </label>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label> FORCE Fred LOCATION door door</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> MOVE Fred LOCATION door door</label>
+                </node>
+              </node>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="disjunctive">
+                  <label>MAKE Fred Margrethe IN Margrethe ITEM card x004 ACTOR Margrethe Margrethe</label>
+                </node>
+              </node>
+            </node>
+            <node refinement="disjunctive">
+              <label>make Charlie get x004</label>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="conjunctive">
+                  <label>test</label>
+                  <node refinement="disjunctive">
+                    <label>test</label>
+                    <node refinement="disjunctive">
+                      <label>MAKE Fred Charlie FULFILL Charlie trusts Margrethe </label>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>MAKE Fred Charlie FORCE Charlie LOCATION door door</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>MAKE Fred Charlie MOVE Charlie LOCATION door door</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label>MAKE Fred Charlie IN Charlie ITEM card x004 ACTOR Margrethe Margrethe</label>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node refinement="disjunctive">
+          <label>to get or not to get</label>
+          <node refinement="disjunctive">
+            <label>get x009</label>
+            <node refinement="conjunctive">
+              <label>get data x009 at actor Margrethe</label>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="disjunctive">
+                  <label>test</label>
+                  <node refinement="disjunctive">
+                    <label> FULFILL Fred trusts Margrethe </label>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label> FORCE Fred LOCATION door door</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> MOVE Fred LOCATION door door</label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label> IN Fred DATA pin x009 ACTOR Margrethe Margrethe</label>
+              </node>
+            </node>
+            <node refinement="conjunctive">
+              <label>get item x004 and extract data x009</label>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="conjunctive">
+                  <label>test</label>
+                  <node refinement="disjunctive">
+                    <label>test</label>
+                    <node refinement="disjunctive">
+                      <label> FULFILL Fred trusts Margrethe </label>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label> FORCE Fred LOCATION door door</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label> MOVE Fred LOCATION door door</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> IN Fred ITEM card x004 ACTOR Margrethe Margrethe</label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label> IN Fred DATA pin x009 ITEM card x004</label>
+              </node>
+            </node>
+          </node>
+          <node refinement="disjunctive">
+            <label>make somebody get it</label>
+            <node refinement="disjunctive">
+              <label>make Margrethe get x009</label>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="disjunctive">
+                  <label>test</label>
+                  <node refinement="disjunctive">
+                    <label> FULFILL Fred trusts Margrethe </label>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label> FORCE Fred LOCATION door door</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> MOVE Fred LOCATION door door</label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label>get x009</label>
+                <node refinement="conjunctive">
+                  <label>get data x009 at actor Margrethe</label>
+                  <node refinement="disjunctive">
+                    <label>MAKE Fred Margrethe IN Margrethe DATA pin x009 ACTOR Margrethe Margrethe</label>
+                  </node>
+                </node>
+                <node refinement="conjunctive">
+                  <label>get item x004 and extract data x009</label>
+                  <node refinement="conjunctive">
+                    <label>test</label>
+                    <node refinement="disjunctive">
+                      <label>MAKE Fred Margrethe IN Margrethe ITEM card x004 ACTOR Margrethe Margrethe</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>MAKE Fred Margrethe IN Margrethe DATA pin x009 ITEM card x004</label>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node refinement="disjunctive">
+              <label>make Charlie get x009</label>
+              <node refinement="disjunctive">
+                <label>get x009</label>
+                <node refinement="conjunctive">
+                  <label>get data x009 at actor Margrethe</label>
+                  <node refinement="conjunctive">
+                    <label>test</label>
+                    <node refinement="disjunctive">
+                      <label>test</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Fred Charlie FULFILL Charlie trusts Margrethe </label>
+                      </node>
+                      <node refinement="disjunctive">
+                        <label>MAKE Fred Charlie FORCE Charlie LOCATION door door</label>
+                      </node>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>MAKE Fred Charlie MOVE Charlie LOCATION door door</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>MAKE Fred Charlie IN Charlie DATA pin x009 ACTOR Margrethe Margrethe</label>
+                  </node>
+                </node>
+                <node refinement="conjunctive">
+                  <label>get item x004 and extract data x009</label>
+                  <node refinement="conjunctive">
+                    <label>test</label>
+                    <node refinement="conjunctive">
+                      <label>test</label>
+                      <node refinement="disjunctive">
+                        <label>test</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Fred Charlie FULFILL Charlie trusts Margrethe </label>
+                        </node>
+                        <node refinement="disjunctive">
+                          <label>MAKE Fred Charlie FORCE Charlie LOCATION door door</label>
+                        </node>
+                      </node>
+                      <node refinement="disjunctive">
+                        <label>MAKE Fred Charlie MOVE Charlie LOCATION door door</label>
+                      </node>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>MAKE Fred Charlie IN Charlie ITEM card x004 ACTOR Margrethe Margrethe</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>MAKE Fred Charlie IN Charlie DATA pin x009 ITEM card x004</label>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node refinement="disjunctive">
+        <label>Attacker Fredget items  x004 x009</label>
+        <node refinement="disjunctive">
+          <label>to get or not to get</label>
+          <node refinement="conjunctive">
+            <label>test</label>
+            <node refinement="conjunctive">
+              <label>test</label>
+              <node refinement="disjunctive">
+                <label>test</label>
+                <node refinement="disjunctive">
+                  <label> FULFILL Fred trusts Margrethe </label>
+                </node>
+                <node refinement="disjunctive">
+                  <label> FORCE Fred LOCATION door door</label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label> MOVE Fred LOCATION door door</label>
+              </node>
+            </node>
+            <node refinement="disjunctive">
+              <label> IN Fred ITEM card x004 ACTOR Margrethe Margrethe</label>
+            </node>
+          </node>
+          <node refinement="disjunctive">
+            <label>make somebody get it</label>
+            <node refinement="disjunctive">
+              <label>make Margrethe get x004</label>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="disjunctive">
+                  <label>test</label>
+                  <node refinement="disjunctive">
+                    <label> FULFILL Fred trusts Margrethe </label>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label> FORCE Fred LOCATION door door</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> MOVE Fred LOCATION door door</label>
+                </node>
+              </node>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="disjunctive">
+                  <label>MAKE Fred Margrethe IN Margrethe ITEM card x004 ACTOR Margrethe Margrethe</label>
+                </node>
+              </node>
+            </node>
+            <node refinement="disjunctive">
+              <label>make Charlie get x004</label>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="conjunctive">
+                  <label>test</label>
+                  <node refinement="disjunctive">
+                    <label>test</label>
+                    <node refinement="disjunctive">
+                      <label>MAKE Fred Charlie FULFILL Charlie trusts Margrethe </label>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>MAKE Fred Charlie FORCE Charlie LOCATION door door</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>MAKE Fred Charlie MOVE Charlie LOCATION door door</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label>MAKE Fred Charlie IN Charlie ITEM card x004 ACTOR Margrethe Margrethe</label>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node refinement="disjunctive">
+          <label>to get or not to get</label>
+          <node refinement="disjunctive">
+            <label>get x009</label>
+            <node refinement="conjunctive">
+              <label>get data x009 at actor Margrethe</label>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="disjunctive">
+                  <label>test</label>
+                  <node refinement="disjunctive">
+                    <label> FULFILL Fred trusts Margrethe </label>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label> FORCE Fred LOCATION door door</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> MOVE Fred LOCATION door door</label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label> IN Fred DATA pin x009 ACTOR Margrethe Margrethe</label>
+              </node>
+            </node>
+            <node refinement="conjunctive">
+              <label>get item x004 and extract data x009</label>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="conjunctive">
+                  <label>test</label>
+                  <node refinement="disjunctive">
+                    <label>test</label>
+                    <node refinement="disjunctive">
+                      <label> FULFILL Fred trusts Margrethe </label>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label> FORCE Fred LOCATION door door</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label> MOVE Fred LOCATION door door</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> IN Fred ITEM card x004 ACTOR Margrethe Margrethe</label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label> IN Fred DATA pin x009 ITEM card x004</label>
+              </node>
+            </node>
+          </node>
+          <node refinement="disjunctive">
+            <label>make somebody get it</label>
+            <node refinement="disjunctive">
+              <label>make Margrethe get x009</label>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="disjunctive">
+                  <label>test</label>
+                  <node refinement="disjunctive">
+                    <label> FULFILL Fred trusts Margrethe </label>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label> FORCE Fred LOCATION door door</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> MOVE Fred LOCATION door door</label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label>get x009</label>
+                <node refinement="conjunctive">
+                  <label>get data x009 at actor Margrethe</label>
+                  <node refinement="disjunctive">
+                    <label>MAKE Fred Margrethe IN Margrethe DATA pin x009 ACTOR Margrethe Margrethe</label>
+                  </node>
+                </node>
+                <node refinement="conjunctive">
+                  <label>get item x004 and extract data x009</label>
+                  <node refinement="conjunctive">
+                    <label>test</label>
+                    <node refinement="disjunctive">
+                      <label>MAKE Fred Margrethe IN Margrethe ITEM card x004 ACTOR Margrethe Margrethe</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>MAKE Fred Margrethe IN Margrethe DATA pin x009 ITEM card x004</label>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node refinement="disjunctive">
+              <label>make Charlie get x009</label>
+              <node refinement="disjunctive">
+                <label>get x009</label>
+                <node refinement="conjunctive">
+                  <label>get data x009 at actor Margrethe</label>
+                  <node refinement="conjunctive">
+                    <label>test</label>
+                    <node refinement="disjunctive">
+                      <label>test</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Fred Charlie FULFILL Charlie trusts Margrethe </label>
+                      </node>
+                      <node refinement="disjunctive">
+                        <label>MAKE Fred Charlie FORCE Charlie LOCATION door door</label>
+                      </node>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>MAKE Fred Charlie MOVE Charlie LOCATION door door</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>MAKE Fred Charlie IN Charlie DATA pin x009 ACTOR Margrethe Margrethe</label>
+                  </node>
+                </node>
+                <node refinement="conjunctive">
+                  <label>get item x004 and extract data x009</label>
+                  <node refinement="conjunctive">
+                    <label>test</label>
+                    <node refinement="conjunctive">
+                      <label>test</label>
+                      <node refinement="disjunctive">
+                        <label>test</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Fred Charlie FULFILL Charlie trusts Margrethe </label>
+                        </node>
+                        <node refinement="disjunctive">
+                          <label>MAKE Fred Charlie FORCE Charlie LOCATION door door</label>
+                        </node>
+                      </node>
+                      <node refinement="disjunctive">
+                        <label>MAKE Fred Charlie MOVE Charlie LOCATION door door</label>
+                      </node>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>MAKE Fred Charlie IN Charlie ITEM card x004 ACTOR Margrethe Margrethe</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>MAKE Fred Charlie IN Charlie DATA pin x009 ITEM card x004</label>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node refinement="disjunctive">
+      <label>Attacker Charlie</label>
+      <node refinement="disjunctive">
+        <label>Attacker Charlieget items  x004 x009</label>
+        <node refinement="disjunctive">
+          <label>to get or not to get</label>
+          <node refinement="conjunctive">
+            <label>test</label>
+            <node refinement="conjunctive">
+              <label>test</label>
+              <node refinement="disjunctive">
+                <label>test</label>
+                <node refinement="disjunctive">
+                  <label> FULFILL Charlie trusts Margrethe </label>
+                </node>
+                <node refinement="disjunctive">
+                  <label> FORCE Charlie LOCATION door door</label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label> MOVE Charlie LOCATION door door</label>
+              </node>
+            </node>
+            <node refinement="disjunctive">
+              <label> IN Charlie ITEM card x004 ACTOR Margrethe Margrethe</label>
+            </node>
+          </node>
+          <node refinement="disjunctive">
+            <label>make somebody get it</label>
+            <node refinement="disjunctive">
+              <label>make Fred get x004</label>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="conjunctive">
+                  <label>test</label>
+                  <node refinement="disjunctive">
+                    <label>test</label>
+                    <node refinement="disjunctive">
+                      <label>MAKE Charlie Fred FULFILL Fred trusts Margrethe </label>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>MAKE Charlie Fred FORCE Fred LOCATION door door</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>MAKE Charlie Fred MOVE Fred LOCATION door door</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label>MAKE Charlie Fred IN Fred ITEM card x004 ACTOR Margrethe Margrethe</label>
+                </node>
+              </node>
+            </node>
+            <node refinement="disjunctive">
+              <label>make Margrethe get x004</label>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="disjunctive">
+                  <label>test</label>
+                  <node refinement="disjunctive">
+                    <label> FULFILL Charlie trusts Margrethe </label>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label> FORCE Charlie LOCATION door door</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> MOVE Charlie LOCATION door door</label>
+                </node>
+              </node>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="disjunctive">
+                  <label>MAKE Charlie Margrethe IN Margrethe ITEM card x004 ACTOR Margrethe Margrethe</label>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node refinement="disjunctive">
+          <label>to get or not to get</label>
+          <node refinement="disjunctive">
+            <label>get x009</label>
+            <node refinement="conjunctive">
+              <label>get data x009 at actor Margrethe</label>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="disjunctive">
+                  <label>test</label>
+                  <node refinement="disjunctive">
+                    <label> FULFILL Charlie trusts Margrethe </label>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label> FORCE Charlie LOCATION door door</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> MOVE Charlie LOCATION door door</label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label> IN Charlie DATA pin x009 ACTOR Margrethe Margrethe</label>
+              </node>
+            </node>
+            <node refinement="conjunctive">
+              <label>get item x004 and extract data x009</label>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="conjunctive">
+                  <label>test</label>
+                  <node refinement="disjunctive">
+                    <label>test</label>
+                    <node refinement="disjunctive">
+                      <label> FULFILL Charlie trusts Margrethe </label>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label> FORCE Charlie LOCATION door door</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label> MOVE Charlie LOCATION door door</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> IN Charlie ITEM card x004 ACTOR Margrethe Margrethe</label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label> IN Charlie DATA pin x009 ITEM card x004</label>
+              </node>
+            </node>
+          </node>
+          <node refinement="disjunctive">
+            <label>make somebody get it</label>
+            <node refinement="disjunctive">
+              <label>make Fred get x009</label>
+              <node refinement="disjunctive">
+                <label>get x009</label>
+                <node refinement="conjunctive">
+                  <label>get data x009 at actor Margrethe</label>
+                  <node refinement="conjunctive">
+                    <label>test</label>
+                    <node refinement="disjunctive">
+                      <label>test</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Charlie Fred FULFILL Fred trusts Margrethe </label>
+                      </node>
+                      <node refinement="disjunctive">
+                        <label>MAKE Charlie Fred FORCE Fred LOCATION door door</label>
+                      </node>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>MAKE Charlie Fred MOVE Fred LOCATION door door</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>MAKE Charlie Fred IN Fred DATA pin x009 ACTOR Margrethe Margrethe</label>
+                  </node>
+                </node>
+                <node refinement="conjunctive">
+                  <label>get item x004 and extract data x009</label>
+                  <node refinement="conjunctive">
+                    <label>test</label>
+                    <node refinement="conjunctive">
+                      <label>test</label>
+                      <node refinement="disjunctive">
+                        <label>test</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Charlie Fred FULFILL Fred trusts Margrethe </label>
+                        </node>
+                        <node refinement="disjunctive">
+                          <label>MAKE Charlie Fred FORCE Fred LOCATION door door</label>
+                        </node>
+                      </node>
+                      <node refinement="disjunctive">
+                        <label>MAKE Charlie Fred MOVE Fred LOCATION door door</label>
+                      </node>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>MAKE Charlie Fred IN Fred ITEM card x004 ACTOR Margrethe Margrethe</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>MAKE Charlie Fred IN Fred DATA pin x009 ITEM card x004</label>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node refinement="disjunctive">
+              <label>make Margrethe get x009</label>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="disjunctive">
+                  <label>test</label>
+                  <node refinement="disjunctive">
+                    <label> FULFILL Charlie trusts Margrethe </label>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label> FORCE Charlie LOCATION door door</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> MOVE Charlie LOCATION door door</label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label>get x009</label>
+                <node refinement="conjunctive">
+                  <label>get data x009 at actor Margrethe</label>
+                  <node refinement="disjunctive">
+                    <label>MAKE Charlie Margrethe IN Margrethe DATA pin x009 ACTOR Margrethe Margrethe</label>
+                  </node>
+                </node>
+                <node refinement="conjunctive">
+                  <label>get item x004 and extract data x009</label>
+                  <node refinement="conjunctive">
+                    <label>test</label>
+                    <node refinement="disjunctive">
+                      <label>MAKE Charlie Margrethe IN Margrethe ITEM card x004 ACTOR Margrethe Margrethe</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>MAKE Charlie Margrethe IN Margrethe DATA pin x009 ITEM card x004</label>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node refinement="disjunctive">
+        <label>Attacker Charlieget items  x004 x009</label>
+        <node refinement="disjunctive">
+          <label>to get or not to get</label>
+          <node refinement="conjunctive">
+            <label>test</label>
+            <node refinement="conjunctive">
+              <label>test</label>
+              <node refinement="disjunctive">
+                <label>test</label>
+                <node refinement="disjunctive">
+                  <label> FULFILL Charlie trusts Margrethe </label>
+                </node>
+                <node refinement="disjunctive">
+                  <label> FORCE Charlie LOCATION door door</label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label> MOVE Charlie LOCATION door door</label>
+              </node>
+            </node>
+            <node refinement="disjunctive">
+              <label> IN Charlie ITEM card x004 ACTOR Margrethe Margrethe</label>
+            </node>
+          </node>
+          <node refinement="disjunctive">
+            <label>make somebody get it</label>
+            <node refinement="disjunctive">
+              <label>make Fred get x004</label>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="conjunctive">
+                  <label>test</label>
+                  <node refinement="disjunctive">
+                    <label>test</label>
+                    <node refinement="disjunctive">
+                      <label>MAKE Charlie Fred FULFILL Fred trusts Margrethe </label>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>MAKE Charlie Fred FORCE Fred LOCATION door door</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>MAKE Charlie Fred MOVE Fred LOCATION door door</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label>MAKE Charlie Fred IN Fred ITEM card x004 ACTOR Margrethe Margrethe</label>
+                </node>
+              </node>
+            </node>
+            <node refinement="disjunctive">
+              <label>make Margrethe get x004</label>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="disjunctive">
+                  <label>test</label>
+                  <node refinement="disjunctive">
+                    <label> FULFILL Charlie trusts Margrethe </label>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label> FORCE Charlie LOCATION door door</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> MOVE Charlie LOCATION door door</label>
+                </node>
+              </node>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="disjunctive">
+                  <label>MAKE Charlie Margrethe IN Margrethe ITEM card x004 ACTOR Margrethe Margrethe</label>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node refinement="disjunctive">
+          <label>to get or not to get</label>
+          <node refinement="disjunctive">
+            <label>get x009</label>
+            <node refinement="conjunctive">
+              <label>get data x009 at actor Margrethe</label>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="disjunctive">
+                  <label>test</label>
+                  <node refinement="disjunctive">
+                    <label> FULFILL Charlie trusts Margrethe </label>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label> FORCE Charlie LOCATION door door</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> MOVE Charlie LOCATION door door</label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label> IN Charlie DATA pin x009 ACTOR Margrethe Margrethe</label>
+              </node>
+            </node>
+            <node refinement="conjunctive">
+              <label>get item x004 and extract data x009</label>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="conjunctive">
+                  <label>test</label>
+                  <node refinement="disjunctive">
+                    <label>test</label>
+                    <node refinement="disjunctive">
+                      <label> FULFILL Charlie trusts Margrethe </label>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label> FORCE Charlie LOCATION door door</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label> MOVE Charlie LOCATION door door</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> IN Charlie ITEM card x004 ACTOR Margrethe Margrethe</label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label> IN Charlie DATA pin x009 ITEM card x004</label>
+              </node>
+            </node>
+          </node>
+          <node refinement="disjunctive">
+            <label>make somebody get it</label>
+            <node refinement="disjunctive">
+              <label>make Fred get x009</label>
+              <node refinement="disjunctive">
+                <label>get x009</label>
+                <node refinement="conjunctive">
+                  <label>get data x009 at actor Margrethe</label>
+                  <node refinement="conjunctive">
+                    <label>test</label>
+                    <node refinement="disjunctive">
+                      <label>test</label>
+                      <node refinement="disjunctive">
+                        <label>MAKE Charlie Fred FULFILL Fred trusts Margrethe </label>
+                      </node>
+                      <node refinement="disjunctive">
+                        <label>MAKE Charlie Fred FORCE Fred LOCATION door door</label>
+                      </node>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>MAKE Charlie Fred MOVE Fred LOCATION door door</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>MAKE Charlie Fred IN Fred DATA pin x009 ACTOR Margrethe Margrethe</label>
+                  </node>
+                </node>
+                <node refinement="conjunctive">
+                  <label>get item x004 and extract data x009</label>
+                  <node refinement="conjunctive">
+                    <label>test</label>
+                    <node refinement="conjunctive">
+                      <label>test</label>
+                      <node refinement="disjunctive">
+                        <label>test</label>
+                        <node refinement="disjunctive">
+                          <label>MAKE Charlie Fred FULFILL Fred trusts Margrethe </label>
+                        </node>
+                        <node refinement="disjunctive">
+                          <label>MAKE Charlie Fred FORCE Fred LOCATION door door</label>
+                        </node>
+                      </node>
+                      <node refinement="disjunctive">
+                        <label>MAKE Charlie Fred MOVE Fred LOCATION door door</label>
+                      </node>
+                    </node>
+                    <node refinement="disjunctive">
+                      <label>MAKE Charlie Fred IN Fred ITEM card x004 ACTOR Margrethe Margrethe</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>MAKE Charlie Fred IN Fred DATA pin x009 ITEM card x004</label>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node refinement="disjunctive">
+              <label>make Margrethe get x009</label>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="disjunctive">
+                  <label>test</label>
+                  <node refinement="disjunctive">
+                    <label> FULFILL Charlie trusts Margrethe </label>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label> FORCE Charlie LOCATION door door</label>
+                  </node>
+                </node>
+                <node refinement="disjunctive">
+                  <label> MOVE Charlie LOCATION door door</label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label>get x009</label>
+                <node refinement="conjunctive">
+                  <label>get data x009 at actor Margrethe</label>
+                  <node refinement="disjunctive">
+                    <label>MAKE Charlie Margrethe IN Margrethe DATA pin x009 ACTOR Margrethe Margrethe</label>
+                  </node>
+                </node>
+                <node refinement="conjunctive">
+                  <label>get item x004 and extract data x009</label>
+                  <node refinement="conjunctive">
+                    <label>test</label>
+                    <node refinement="disjunctive">
+                      <label>MAKE Charlie Margrethe IN Margrethe ITEM card x004 ACTOR Margrethe Margrethe</label>
+                    </node>
+                  </node>
+                  <node refinement="disjunctive">
+                    <label>MAKE Charlie Margrethe IN Margrethe DATA pin x009 ITEM card x004</label>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+</adtree>

@@ -1,0 +1,415 @@
+<?xml version='1.0' encoding='utf-8'?>
+<system author="attack navigator map (trespass.js)" date="21-09-2015" version="0.0.0" 
+  xmlns="https://www.trespass-project.eu/schemas/TREsPASS_model" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.trespass-project.eu/schemas/TREsPASS_model.xsd">
+  <title>ANM-generated TREsPASS model</title>
+  <locations>
+    <location id="Outside" />
+    <location id="Hallway" />
+    <location id="RoomInternal" />
+    <location id="RoomDatacenter" />
+    <location id="DoorOutside" />
+    <location id="DoorInternal" />
+    <location id="DoorDatacenter" />
+    <location id="WindowInternal" />
+    <location id="WindowDatacenter" />
+  </locations>
+  <edges>
+    <edge directed="true">
+      <source>Outside</source>
+      <target>DoorOutside</target>
+    </edge>
+    <edge directed="true">
+      <source>DoorOutside</source>
+      <target>Hallway</target>
+    </edge>
+    <edge directed="true">
+      <source>Hallway</source>
+      <target>Outside</target>
+    </edge>
+    <edge directed="true">
+      <source>Hallway</source>
+      <target>DoorInternal</target>
+    </edge>
+    <edge directed="true">
+      <source>DoorInternal</source>
+      <target>RoomInternal</target>
+    </edge>
+    <edge directed="true">
+      <source>RoomInternal</source>
+      <target>Hallway</target>
+    </edge>
+    <edge directed="true">
+      <source>RoomInternal</source>
+      <target>DoorDatacenter</target>
+    </edge>
+    <edge directed="true">
+      <source>DoorDatacenter</source>
+      <target>RoomDatacenter</target>
+    </edge>
+    <edge directed="true">
+      <source>RoomDatacenter</source>
+      <target>RoomInternal</target>
+    </edge>
+    <edge directed="true">
+      <source>WindowInternal</source>
+      <target>Outside</target>
+    </edge>
+    <edge directed="true">
+      <source>WindowInternal</source>
+      <target>RoomInternal</target>
+    </edge>
+    <edge directed="true">
+      <source>WindowDatacenter</source>
+      <target>Hallway</target>
+    </edge>
+    <edge directed="true">
+      <source>WindowDatacenter</source>
+      <target>RoomDatacenter</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.VirtualMachine-vm-12</source>
+      <target>entity_vim.Network-network-11</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.VirtualMachine-vm-12</source>
+      <target>entity_vim.Datastore-datastore-10</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.VirtualMachine-vm-76</source>
+      <target>entity_vim.Network-network-11</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.VirtualMachine-vm-76</source>
+      <target>entity_vim.Datastore-datastore-10</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.Folder-group-s5</source>
+      <target>entity_vim.Datastore-datastore-10</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.ClusterComputeResource-domain-c71</source>
+      <target>entity_vim.ResourcePool-resgroup-72</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.VirtualMachine-vm-75</source>
+      <target>entity_vim.Network-network-11</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.VirtualMachine-vm-75</source>
+      <target>entity_vim.Datastore-datastore-10</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.Datacenter-datacenter-2</source>
+      <target>entity_vim.Network-network-11</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.Datacenter-datacenter-2</source>
+      <target>entity_vim.Datastore-datastore-10</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.Datacenter-datacenter-2</source>
+      <target>entity_vim.Folder-group-v3</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.Datacenter-datacenter-2</source>
+      <target>entity_vim.Folder-group-h4</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.Datacenter-datacenter-2</source>
+      <target>entity_vim.Folder-group-s5</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.Datacenter-datacenter-2</source>
+      <target>entity_vim.Folder-group-n6</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.VirtualMachine-vm-73</source>
+      <target>entity_vim.Network-network-11</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.VirtualMachine-vm-73</source>
+      <target>entity_vim.Datastore-datastore-10</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.Folder-group-v3</source>
+      <target>entity_vim.VirtualMachine-vm-101</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.Folder-group-v3</source>
+      <target>entity_vim.VirtualMachine-vm-12</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.Folder-group-v3</source>
+      <target>entity_vim.VirtualMachine-vm-76</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.Folder-group-v3</source>
+      <target>entity_vim.VirtualMachine-vm-74</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.Folder-group-v3</source>
+      <target>entity_vim.VirtualMachine-vm-41</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.Folder-group-v3</source>
+      <target>entity_vim.VirtualMachine-vm-75</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.Folder-group-v3</source>
+      <target>entity_vim.VirtualMachine-vm-73</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.VirtualMachine-vm-101</source>
+      <target>entity_vim.Network-network-11</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.VirtualMachine-vm-101</source>
+      <target>entity_vim.Datastore-datastore-10</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.ResourcePool-resgroup-72</source>
+      <target>entity_vim.ResourcePool-resgroup-142</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.ResourcePool-resgroup-72</source>
+      <target>entity_vim.ResourcePool-resgroup-141</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.Folder-group-d1</source>
+      <target>entity_vim.Datacenter-datacenter-2</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.ClusterComputeResource-domain-c19</source>
+      <target>entity_vim.Network-network-11</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.ClusterComputeResource-domain-c19</source>
+      <target>entity_vim.Datastore-datastore-10</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.ClusterComputeResource-domain-c19</source>
+      <target>entity_vim.HostSystem-host-9</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.ClusterComputeResource-domain-c19</source>
+      <target>entity_vim.HostSystem-host-15</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.ClusterComputeResource-domain-c19</source>
+      <target>entity_vim.ResourcePool-resgroup-20</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.ClusterComputeResource-domain-c19</source>
+      <target>entity_vim.HostSystem-host-18</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.Folder-group-h4</source>
+      <target>entity_vim.ClusterComputeResource-domain-c19</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.Folder-group-h4</source>
+      <target>entity_vim.ClusterComputeResource-domain-c71</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.HostSystem-host-15</source>
+      <target>entity_vim.Network-network-11</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.HostSystem-host-15</source>
+      <target>entity_vim.Datastore-datastore-10</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.HostSystem-host-9</source>
+      <target>entity_vim.Network-network-11</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.HostSystem-host-9</source>
+      <target>entity_vim.Datastore-datastore-10</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.HostSystem-host-18</source>
+      <target>entity_vim.Network-network-11</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.HostSystem-host-18</source>
+      <target>entity_vim.Datastore-datastore-10</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.VirtualMachine-vm-74</source>
+      <target>entity_vim.Network-network-11</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.VirtualMachine-vm-74</source>
+      <target>entity_vim.Datastore-datastore-10</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.VirtualMachine-vm-41</source>
+      <target>entity_vim.Network-network-11</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.VirtualMachine-vm-41</source>
+      <target>entity_vim.Datastore-datastore-10</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.ResourcePool-resgroup-20</source>
+      <target>entity_vim.ResourcePool-resgroup-66</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.ResourcePool-resgroup-20</source>
+      <target>entity_vim.ResourcePool-resgroup-67</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.ResourcePool-resgroup-20</source>
+      <target>entity_vim.ResourcePool-resgroup-70</target>
+    </edge>
+    <edge directed="true">
+      <source>entity_vim.Folder-group-n6</source>
+      <target>entity_vim.Network-network-11</target>
+    </edge>
+  </edges>
+  <assets>
+    <item id="entity_vim.ResourcePool-resgroup-142" name="entity_vim.ResourcePool-resgroup-142">
+      <atLocations>entity_vim.ResourcePool-resgroup-72</atLocations>
+    </item>
+    <item id="entity_vim.VirtualMachine-vm-12" name="entity_vim.VirtualMachine-vm-12">
+      <atLocations>entity_vim.HostSystem-host-9</atLocations>
+    </item>
+    <item id="entity_vim.ResourcePool-resgroup-70" name="entity_vim.ResourcePool-resgroup-70">
+      <atLocations>entity_vim.ResourcePool-resgroup-20</atLocations>
+    </item>
+    <item id="entity_vim.Network-network-11" name="entity_vim.Network-network-11">
+      <atLocations>RoomDatacenter</atLocations>
+    </item>
+    <item id="entity_vim.Datastore-datastore-10" name="entity_vim.Datastore-datastore-10">
+      <atLocations>RoomDatacenter</atLocations>
+    </item>
+    <item id="entity_vim.VirtualMachine-vm-76" name="entity_vim.VirtualMachine-vm-76">
+      <atLocations>entity_vim.Datastore-datastore-10</atLocations>
+    </item>
+    <item id="entity_vim.ResourcePool-resgroup-67" name="entity_vim.ResourcePool-resgroup-67">
+      <atLocations>entity_vim.ResourcePool-resgroup-20</atLocations>
+    </item>
+    <item id="entity_vim.Folder-group-s5" name="entity_vim.Folder-group-s5">
+      <atLocations>entity_vim.Datastore-datastore-10</atLocations>
+    </item>
+    <item id="entity_vim.ResourcePool-resgroup-141" name="entity_vim.ResourcePool-resgroup-141">
+      <atLocations>entity_vim.ResourcePool-resgroup-72</atLocations>
+    </item>
+    <item id="entity_vim.ClusterComputeResource-domain-c71" name="entity_vim.ClusterComputeResource-domain-c71">
+      <atLocations>RoomDatacenter</atLocations>
+    </item>
+    <item id="entity_vim.ResourcePool-resgroup-72" name="entity_vim.ResourcePool-resgroup-72">
+      <atLocations>entity_vim.ClusterComputeResource-domain-c71</atLocations>
+    </item>
+    <item id="entity_vim.ResourcePool-resgroup-66" name="entity_vim.ResourcePool-resgroup-66">
+      <atLocations>entity_vim.ResourcePool-resgroup-20</atLocations>
+    </item>
+    <item id="entity_vim.VirtualMachine-vm-73" name="entity_vim.VirtualMachine-vm-73">
+      <atLocations>entity_vim.Datastore-datastore-10</atLocations>
+    </item>
+    <item id="entity_vim.VirtualMachine-vm-75" name="entity_vim.VirtualMachine-vm-75">
+      <atLocations>entity_vim.Datastore-datastore-10</atLocations>
+    </item>
+    <item id="entity_vim.Datacenter-datacenter-2" name="entity_vim.Datacenter-datacenter-2">
+      <atLocations>RoomDatacenter</atLocations>
+    </item>
+    <item id="entity_vim.Folder-group-h4" name="entity_vim.Folder-group-h4">
+      <atLocations>entity_vim.ClusterComputeResource-domain-c71</atLocations>
+    </item>
+    <item id="entity_vim.Folder-group-v3" name="entity_vim.Folder-group-v3">
+      <atLocations>entity_vim.VirtualMachine-vm-12</atLocations>
+    </item>
+    <item id="entity_vim.Folder-group-n6" name="entity_vim.Folder-group-n6">
+      <atLocations>entity_vim.Network-network-11</atLocations>
+    </item>
+    <item id="entity_vim.HostSystem-host-9" name="entity_vim.HostSystem-host-9">
+      <atLocations>entity_vim.ClusterComputeResource-domain-c19</atLocations>
+    </item>
+    <item id="entity_vim.HostSystem-host-15" name="entity_vim.HostSystem-host-15">
+      <atLocations>entity_vim.ClusterComputeResource-domain-c19</atLocations>
+    </item>
+    <item id="entity_vim.HostSystem-host-18" name="entity_vim.HostSystem-host-18">
+      <atLocations>entity_vim.ClusterComputeResource-domain-c19</atLocations>
+    </item>
+    <item id="entity_vim.VirtualMachine-vm-74" name="entity_vim.VirtualMachine-vm-74">
+      <atLocations>entity_vim.HostSystem-host-18</atLocations>
+    </item>
+    <item id="entity_vim.VirtualMachine-vm-101" name="entity_vim.VirtualMachine-vm-101">
+      <atLocations>entity_vim.HostSystem-host-18</atLocations>
+    </item>
+    <item id="entity_vim.VirtualMachine-vm-41" name="entity_vim.VirtualMachine-vm-41">
+      <atLocations>entity_vim.HostSystem-host-18</atLocations>
+    </item>
+    <item id="entity_vim.Folder-group-d1" name="entity_vim.Folder-group-d1">
+      <atLocations>entity_vim.Datacenter-datacenter-2</atLocations>
+    </item>
+    <item id="entity_vim.ClusterComputeResource-domain-c19" name="entity_vim.ClusterComputeResource-domain-c19">
+      <atLocations>RoomDatacenter</atLocations>
+    </item>
+    <item id="entity_vim.ResourcePool-resgroup-20" name="entity_vim.ResourcePool-resgroup-20">
+      <atLocations>entity_vim.ClusterComputeResource-domain-c19</atLocations>
+    </item>
+    <item name="idcard" id="x002">
+      <atLocations>terry</atLocations>
+    </item>
+    <data name="pin" id="x006" value="1">
+      <atLocations>terry x002</atLocations>
+    </data>
+    <data id="fileX" name="fileX" value="TODO">
+      <atLocations>entity_vim.VirtualMachine-vm-73</atLocations>
+    </data>
+  </assets>
+  <actors>
+    <actor id="sydney">
+      <atLocations>Outside</atLocations>
+    </actor>
+    <actor id="cleo">
+      <atLocations>Outside</atLocations>
+    </actor>
+    <actor id="terry">
+      <atLocations>Outside</atLocations>
+    </actor>
+    <actor id="finn">
+      <atLocations>Outside</atLocations>
+    </actor>
+    <actor id="administrators">
+      <atLocations>Outside</atLocations>
+    </actor>
+    <actor id="big">
+      <atLocations>Outside</atLocations>
+    </actor>
+    <actor id="administrator">
+      <atLocations>Outside</atLocations>
+    </actor>
+    <actor id="ethan">
+      <atLocations>Outside</atLocations>
+    </actor>
+    <actor id="grey">
+      <atLocations>Outside</atLocations>
+    </actor>
+  </actors>
+  <policies>
+    <policy id="p001">
+      <credentials><credPredicate name="hasUserID"><value>terry</value><variable>X</variable></credPredicate>
+      </credentials>    
+      <enabled><move /></enabled>
+      <atLocations>DoorDatacenter</atLocations>                        
+    </policy>
+  </policies>
+  <predicates>
+    <predicate arity="2" id="hasUserID">
+      <value>terry terry</value>
+    </predicate>
+    <predicate arity="2" id="userID">
+      <value>sydney principal_VSPHERE.LOCAL%5Csydney</value>
+      <value>cleo principal_VSPHERE.LOCAL%5Ccleo</value>
+      <value>terry principal_VSPHERE.LOCAL%5Cterry</value>
+      <value>finn principal_VSPHERE.LOCAL%5Cfinn</value>
+      <value>administrators principal_VSPHERE.LOCAL%5CAdministrators</value>
+      <value>big principal_VSPHERE.LOCAL%5Cbig</value>
+      <value>administrator principal_VSPHERE.LOCAL%5CAdministrator</value>
+      <value>ethan principal_VSPHERE.LOCAL%5Cethan</value>
+    </predicate>
+  </predicates>
+</system>

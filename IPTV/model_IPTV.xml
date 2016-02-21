@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system 
+    xmlns="https://www.trespass-project.eu/schemas/TREsPASS_model"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.trespass-project.eu/schemas/TREsPASS_model.xsd" 
+    author="Marieta G Ivanova" 
+    date="23-05-2014" 
+    version="1.1">
+  <title>TREsPASS IPTV model</title>
+  <locations> 
+    <location id="door"/>
+    <location id="home"/>
+    <location id="city"/>
+    <location id="bank"/>
+    <location id="A1"/>         
+  </locations>
+  <edges>
+    <edge directed="true">
+      <source>door</source>
+      <target>home</target>
+    </edge>
+    <edge directed="true">
+      <source>home</source>
+      <target>city</target>
+    </edge>
+    <edge directed="true">
+      <source>city</source>
+      <target>A1</target>
+    </edge>
+    <edge directed="true">
+      <source>city</source>
+      <target>bank</target>
+    </edge>
+    <edge directed="true">
+      <source>city</source>
+      <target>door</target>
+    </edge>
+    <edge directed="true">
+      <source>bank</source>
+      <target>city</target>
+    </edge>
+    <edge directed="true">
+      <source>A1</source>
+      <target>city</target>
+    </edge>
+  </edges>
+  <assets>
+    <item name="computer" id="C">
+      <atLocations>bank</atLocations>
+    </item>
+    <item name="settopbox" id="STB">
+      <atLocations>home</atLocations>
+    </item>
+    <item name="remotecontrol" id="REM">
+      <atLocations>home</atLocations>
+    </item>
+    <item name="money" id="x001">
+      <atLocations>A1</atLocations>      
+    </item>          
+    <item name="money" id="x002">
+      <atLocations>Margrethe</atLocations>
+    </item>
+    <item name ="money" id="x003">
+      <atLocations>C</atLocations>
+    </item>
+    <item name="card" id="x004">
+      <atLocations>Margrethe</atLocations>
+    </item>
+    <item name="card" id="x007">
+      <atLocations>Charlie</atLocations>
+    </item>      
+    <data name="owner" id="x008" value="Margrethe">
+      <atLocations>x004</atLocations>
+    </data>
+    <data name="pin" id="x009" value="42">
+      <atLocations>Margrethe x004</atLocations>
+    </data>
+    <data name="owner" id="x010" value="Charlie">
+      <atLocations>x007</atLocations>
+    </data>
+    <data name="pin" id="x011" value="96">
+      <atLocations>Charlie x007</atLocations>
+    </data>
+  </assets>
+  <actors>
+    <actor id="Margrethe">
+      <atLocations>home</atLocations>
+    </actor>
+    <actor id="Fred">
+      <atLocations>city</atLocations>
+    </actor>
+    <actor id="Charlie">
+      <atLocations>A1</atLocations>
+    </actor>
+  </actors>
+  <policies>
+    <policy id="p001">
+      <credentials>
+        <credPredicate name="trusts">
+          <value>Margrethe</value>
+          <variable>X</variable>
+        </credPredicate>
+      </credentials>
+      <enabled>
+        <move />
+      </enabled>
+      <atLocations>door</atLocations>
+    </policy>
+    <policy id="p002">
+      <credentials>
+        <credLocation id="REM"/>
+      </credentials>
+      <enabled>
+        <eval />
+      </enabled>
+      <atLocations>STB</atLocations>
+    </policy>
+    <policy id="p003">
+      <credentials>
+        <credPredicate name="isActor">
+          <value>Margrethe</value>
+        </credPredicate>
+      </credentials>
+      <enabled>
+        <out />
+      </enabled> 
+      <atLocations>REM</atLocations>                   
+    </policy>
+    <policy id="p004">
+      <credentials>
+        <credItem name="card">
+          <credData name="pin">
+            <variable>Y</variable>  
+          </credData>
+        </credItem>
+        <credData name="pin">                  
+          <variable>Y</variable>
+        </credData>
+      </credentials>    
+      <enabled>
+        <in />
+      </enabled>
+      <atLocations>A1</atLocations>                        
+    </policy>
+    <policy id="p005">
+      <credentials>
+        <credPredicate name="isActor">
+          <value>Margrethe</value>
+        </credPredicate>
+      </credentials>
+      <enabled>
+        <in />
+      </enabled>
+      <atLocations>x002</atLocations>
+    </policy>
+    <policy id="p006">
+      <credentials>
+        <credLocation id="C" />
+      </credentials>
+      <enabled>
+        <in />
+      </enabled>
+      <atLocations>x003</atLocations>
+    </policy>
+  </policies>
+  <predicates>
+    <predicate id="trusts" arity="2">
+      <value>Margrethe Fred</value> 
+    </predicate>
+    <predicate id="role" arity="2">
+      <value>Employee Fred</value>
+      <value>Employee Charlie</value>
+      <value>Customer Margrethe</value>
+    </predicate>
+  </predicates> 
+</system>
