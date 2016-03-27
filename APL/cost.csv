@@ -1,254 +1,77 @@
 id,Cost,children,connection,label
-0,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN terry ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41 LOCATION RoomDatacenter RoomDatacenter
-1,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN terry ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41
-2,{'cost': 1000},"{0, 1}",add,get item entity_vim.Datastore_datastore-41 get entity_vim.VirtualMachine_vm-51
-3,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN terry ITEM entity_vim.Network_network-43 entity_vim.Network_network-43 LOCATION RoomDatacenter RoomDatacenter
-4,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN terry ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.Network_network-43 entity_vim.Network_network-43
-5,{'cost': 1000},"{3, 4}",add,get item entity_vim.Network_network-43 get entity_vim.VirtualMachine_vm-51
-6,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN terry ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41 LOCATION RoomDatacenter RoomDatacenter
-7,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN terry ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41
-8,{'cost': 1000},"{6, 7}",add,get item entity_vim.Datastore_datastore-41 get entity_vim.HostSystem_host-49
-9,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN terry ITEM entity_vim.Network_network-43 entity_vim.Network_network-43 LOCATION RoomDatacenter RoomDatacenter
-10,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN terry ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-43 entity_vim.Network_network-43
-11,{'cost': 1000},"{9, 10}",add,get item entity_vim.Network_network-43 get entity_vim.HostSystem_host-49
-12,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN terry ITEM entity_vim.Network_network-44 entity_vim.Network_network-44 LOCATION RoomDatacenter RoomDatacenter
-13,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN terry ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-44 entity_vim.Network_network-44
-14,{'cost': 1000},"{12, 13}",add,get item entity_vim.Network_network-44 get entity_vim.HostSystem_host-49
-15,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN terry ITEM entity_vim.Network_network-42 entity_vim.Network_network-42 LOCATION RoomDatacenter RoomDatacenter
-16,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN terry ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-42 entity_vim.Network_network-42
-17,{'cost': 1000},"{16, 15}",add,get item entity_vim.Network_network-42 get entity_vim.HostSystem_host-49
-18,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN terry ITEM entity_vim.Network_network-45 entity_vim.Network_network-45 LOCATION RoomDatacenter RoomDatacenter
-19,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN terry ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-45 entity_vim.Network_network-45
-20,{'cost': 1000},"{18, 19}",add,get item entity_vim.Network_network-45 get entity_vim.HostSystem_host-49
-21,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN terry ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 LOCATION RoomDatacenter RoomDatacenter
-22,{'cost': 500},"{8, 11, 14, 17, 20, 21}",or,get  entity_vim.HostSystem_host-49
-23,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN terry ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49
-24,{'cost': 1000},"{22, 23}",add,get item entity_vim.HostSystem_host-49 get entity_vim.VirtualMachine_vm-51
-25,{'cost': 1000},"{24, 2, 5}",or,get  entity_vim.VirtualMachine_vm-51
-26,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN terry DATA fileX fileX ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51
-27,{'cost': 1500},"{25, 26}",add,get item entity_vim.VirtualMachine_vm-51 get fileX
-28,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN big ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41 LOCATION RoomDatacenter RoomDatacenter
-29,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN big ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41
-30,{'cost': 1000},"{28, 29}",add,get item entity_vim.Datastore_datastore-41 get entity_vim.VirtualMachine_vm-51
-31,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN big ITEM entity_vim.Network_network-43 entity_vim.Network_network-43 LOCATION RoomDatacenter RoomDatacenter
-32,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN big ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.Network_network-43 entity_vim.Network_network-43
-33,{'cost': 1000},"{32, 31}",add,get item entity_vim.Network_network-43 get entity_vim.VirtualMachine_vm-51
-34,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN big ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41 LOCATION RoomDatacenter RoomDatacenter
-35,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN big ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41
-36,{'cost': 1000},"{34, 35}",add,get item entity_vim.Datastore_datastore-41 get entity_vim.HostSystem_host-49
-37,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN big ITEM entity_vim.Network_network-43 entity_vim.Network_network-43 LOCATION RoomDatacenter RoomDatacenter
-38,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN big ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-43 entity_vim.Network_network-43
-39,{'cost': 1000},"{37, 38}",add,get item entity_vim.Network_network-43 get entity_vim.HostSystem_host-49
-40,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN big ITEM entity_vim.Network_network-44 entity_vim.Network_network-44 LOCATION RoomDatacenter RoomDatacenter
-41,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN big ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-44 entity_vim.Network_network-44
-42,{'cost': 1000},"{40, 41}",add,get item entity_vim.Network_network-44 get entity_vim.HostSystem_host-49
-43,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN big ITEM entity_vim.Network_network-42 entity_vim.Network_network-42 LOCATION RoomDatacenter RoomDatacenter
-44,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN big ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-42 entity_vim.Network_network-42
-45,{'cost': 1000},"{43, 44}",add,get item entity_vim.Network_network-42 get entity_vim.HostSystem_host-49
-46,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN big ITEM entity_vim.Network_network-45 entity_vim.Network_network-45 LOCATION RoomDatacenter RoomDatacenter
-47,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN big ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-45 entity_vim.Network_network-45
-48,{'cost': 1000},"{46, 47}",add,get item entity_vim.Network_network-45 get entity_vim.HostSystem_host-49
-49,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN big ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 LOCATION RoomDatacenter RoomDatacenter
-50,{'cost': 500},"{36, 39, 42, 45, 48, 49}",or,get  entity_vim.HostSystem_host-49
-51,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN big ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49
-52,{'cost': 1000},"{50, 51}",add,get item entity_vim.HostSystem_host-49 get entity_vim.VirtualMachine_vm-51
-53,{'cost': 1000},"{33, 52, 30}",or,get  entity_vim.VirtualMachine_vm-51
-54,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN big DATA fileX fileX ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51
-55,{'cost': 1500},"{53, 54}",add,get item entity_vim.VirtualMachine_vm-51 get fileX
-56,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN grey ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41 LOCATION RoomDatacenter RoomDatacenter
-57,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN grey ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41
-58,{'cost': 1000},"{56, 57}",add,get item entity_vim.Datastore_datastore-41 get entity_vim.VirtualMachine_vm-51
-59,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN grey ITEM entity_vim.Network_network-43 entity_vim.Network_network-43 LOCATION RoomDatacenter RoomDatacenter
-60,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN grey ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.Network_network-43 entity_vim.Network_network-43
-61,{'cost': 1000},"{59, 60}",add,get item entity_vim.Network_network-43 get entity_vim.VirtualMachine_vm-51
-62,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN grey ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41 LOCATION RoomDatacenter RoomDatacenter
-63,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN grey ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41
-64,{'cost': 1000},"{62, 63}",add,get item entity_vim.Datastore_datastore-41 get entity_vim.HostSystem_host-49
-65,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN grey ITEM entity_vim.Network_network-43 entity_vim.Network_network-43 LOCATION RoomDatacenter RoomDatacenter
-66,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN grey ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-43 entity_vim.Network_network-43
-67,{'cost': 1000},"{65, 66}",add,get item entity_vim.Network_network-43 get entity_vim.HostSystem_host-49
-68,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN grey ITEM entity_vim.Network_network-44 entity_vim.Network_network-44 LOCATION RoomDatacenter RoomDatacenter
-69,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN grey ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-44 entity_vim.Network_network-44
-70,{'cost': 1000},"{68, 69}",add,get item entity_vim.Network_network-44 get entity_vim.HostSystem_host-49
-71,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN grey ITEM entity_vim.Network_network-42 entity_vim.Network_network-42 LOCATION RoomDatacenter RoomDatacenter
-72,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN grey ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-42 entity_vim.Network_network-42
-73,{'cost': 1000},"{72, 71}",add,get item entity_vim.Network_network-42 get entity_vim.HostSystem_host-49
-74,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN grey ITEM entity_vim.Network_network-45 entity_vim.Network_network-45 LOCATION RoomDatacenter RoomDatacenter
-75,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN grey ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-45 entity_vim.Network_network-45
-76,{'cost': 1000},"{74, 75}",add,get item entity_vim.Network_network-45 get entity_vim.HostSystem_host-49
-77,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN grey ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 LOCATION RoomDatacenter RoomDatacenter
-78,{'cost': 500},"{64, 67, 70, 73, 76, 77}",or,get  entity_vim.HostSystem_host-49
-79,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN grey ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49
-80,{'cost': 1000},"{78, 79}",add,get item entity_vim.HostSystem_host-49 get entity_vim.VirtualMachine_vm-51
-81,{'cost': 1000},"{80, 58, 61}",or,get  entity_vim.VirtualMachine_vm-51
-82,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN grey DATA fileX fileX ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51
-83,{'cost': 1500},"{81, 82}",add,get item entity_vim.VirtualMachine_vm-51 get fileX
-84,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrator ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41 LOCATION RoomDatacenter RoomDatacenter
-85,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrator ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41
-86,{'cost': 1000},"{84, 85}",add,get item entity_vim.Datastore_datastore-41 get entity_vim.VirtualMachine_vm-51
-87,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrator ITEM entity_vim.Network_network-43 entity_vim.Network_network-43 LOCATION RoomDatacenter RoomDatacenter
-88,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrator ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.Network_network-43 entity_vim.Network_network-43
-89,{'cost': 1000},"{88, 87}",add,get item entity_vim.Network_network-43 get entity_vim.VirtualMachine_vm-51
-90,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrator ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41 LOCATION RoomDatacenter RoomDatacenter
-91,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrator ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41
-92,{'cost': 1000},"{90, 91}",add,get item entity_vim.Datastore_datastore-41 get entity_vim.HostSystem_host-49
-93,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrator ITEM entity_vim.Network_network-43 entity_vim.Network_network-43 LOCATION RoomDatacenter RoomDatacenter
-94,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrator ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-43 entity_vim.Network_network-43
-95,{'cost': 1000},"{93, 94}",add,get item entity_vim.Network_network-43 get entity_vim.HostSystem_host-49
-96,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrator ITEM entity_vim.Network_network-44 entity_vim.Network_network-44 LOCATION RoomDatacenter RoomDatacenter
-97,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrator ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-44 entity_vim.Network_network-44
-98,{'cost': 1000},"{96, 97}",add,get item entity_vim.Network_network-44 get entity_vim.HostSystem_host-49
-99,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrator ITEM entity_vim.Network_network-42 entity_vim.Network_network-42 LOCATION RoomDatacenter RoomDatacenter
-100,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrator ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-42 entity_vim.Network_network-42
-101,{'cost': 1000},"{99, 100}",add,get item entity_vim.Network_network-42 get entity_vim.HostSystem_host-49
-102,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrator ITEM entity_vim.Network_network-45 entity_vim.Network_network-45 LOCATION RoomDatacenter RoomDatacenter
-103,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrator ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-45 entity_vim.Network_network-45
-104,{'cost': 1000},"{102, 103}",add,get item entity_vim.Network_network-45 get entity_vim.HostSystem_host-49
-105,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrator ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 LOCATION RoomDatacenter RoomDatacenter
-106,{'cost': 500},"{98, 101, 104, 105, 92, 95}",or,get  entity_vim.HostSystem_host-49
-107,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrator ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49
-108,{'cost': 1000},"{106, 107}",add,get item entity_vim.HostSystem_host-49 get entity_vim.VirtualMachine_vm-51
-109,{'cost': 1000},"{89, 108, 86}",or,get  entity_vim.VirtualMachine_vm-51
-110,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrator DATA fileX fileX ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51
-111,{'cost': 1500},"{109, 110}",add,get item entity_vim.VirtualMachine_vm-51 get fileX
-112,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrators ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41 LOCATION RoomDatacenter RoomDatacenter
-113,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrators ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41
-114,{'cost': 1000},"{112, 113}",add,get item entity_vim.Datastore_datastore-41 get entity_vim.VirtualMachine_vm-51
-115,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrators ITEM entity_vim.Network_network-43 entity_vim.Network_network-43 LOCATION RoomDatacenter RoomDatacenter
-116,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrators ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.Network_network-43 entity_vim.Network_network-43
-117,{'cost': 1000},"{115, 116}",add,get item entity_vim.Network_network-43 get entity_vim.VirtualMachine_vm-51
-118,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrators ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41 LOCATION RoomDatacenter RoomDatacenter
-119,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrators ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41
-120,{'cost': 1000},"{118, 119}",add,get item entity_vim.Datastore_datastore-41 get entity_vim.HostSystem_host-49
-121,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrators ITEM entity_vim.Network_network-43 entity_vim.Network_network-43 LOCATION RoomDatacenter RoomDatacenter
-122,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrators ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-43 entity_vim.Network_network-43
-123,{'cost': 1000},"{121, 122}",add,get item entity_vim.Network_network-43 get entity_vim.HostSystem_host-49
-124,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrators ITEM entity_vim.Network_network-44 entity_vim.Network_network-44 LOCATION RoomDatacenter RoomDatacenter
-125,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrators ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-44 entity_vim.Network_network-44
-126,{'cost': 1000},"{124, 125}",add,get item entity_vim.Network_network-44 get entity_vim.HostSystem_host-49
-127,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrators ITEM entity_vim.Network_network-42 entity_vim.Network_network-42 LOCATION RoomDatacenter RoomDatacenter
-128,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrators ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-42 entity_vim.Network_network-42
-129,{'cost': 1000},"{128, 127}",add,get item entity_vim.Network_network-42 get entity_vim.HostSystem_host-49
-130,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrators ITEM entity_vim.Network_network-45 entity_vim.Network_network-45 LOCATION RoomDatacenter RoomDatacenter
-131,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrators ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-45 entity_vim.Network_network-45
-132,{'cost': 1000},"{130, 131}",add,get item entity_vim.Network_network-45 get entity_vim.HostSystem_host-49
-133,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrators ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 LOCATION RoomDatacenter RoomDatacenter
-134,{'cost': 500},"{129, 132, 133, 120, 123, 126}",or,get  entity_vim.HostSystem_host-49
-135,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrators ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49
-136,{'cost': 1000},"{134, 135}",add,get item entity_vim.HostSystem_host-49 get entity_vim.VirtualMachine_vm-51
-137,{'cost': 1000},"{136, 114, 117}",or,get  entity_vim.VirtualMachine_vm-51
-138,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN administrators DATA fileX fileX ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51
-139,{'cost': 1500},"{137, 138}",add,get item entity_vim.VirtualMachine_vm-51 get fileX
-140,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN finn ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41 LOCATION RoomDatacenter RoomDatacenter
-141,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN finn ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41
-142,{'cost': 1000},"{140, 141}",add,get item entity_vim.Datastore_datastore-41 get entity_vim.VirtualMachine_vm-51
-143,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN finn ITEM entity_vim.Network_network-43 entity_vim.Network_network-43 LOCATION RoomDatacenter RoomDatacenter
-144,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN finn ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.Network_network-43 entity_vim.Network_network-43
-145,{'cost': 1000},"{144, 143}",add,get item entity_vim.Network_network-43 get entity_vim.VirtualMachine_vm-51
-146,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN finn ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41 LOCATION RoomDatacenter RoomDatacenter
-147,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN finn ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41
-148,{'cost': 1000},"{146, 147}",add,get item entity_vim.Datastore_datastore-41 get entity_vim.HostSystem_host-49
-149,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN finn ITEM entity_vim.Network_network-43 entity_vim.Network_network-43 LOCATION RoomDatacenter RoomDatacenter
-150,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN finn ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-43 entity_vim.Network_network-43
-151,{'cost': 1000},"{149, 150}",add,get item entity_vim.Network_network-43 get entity_vim.HostSystem_host-49
-152,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN finn ITEM entity_vim.Network_network-44 entity_vim.Network_network-44 LOCATION RoomDatacenter RoomDatacenter
-153,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN finn ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-44 entity_vim.Network_network-44
-154,{'cost': 1000},"{152, 153}",add,get item entity_vim.Network_network-44 get entity_vim.HostSystem_host-49
-155,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN finn ITEM entity_vim.Network_network-42 entity_vim.Network_network-42 LOCATION RoomDatacenter RoomDatacenter
-156,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN finn ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-42 entity_vim.Network_network-42
-157,{'cost': 1000},"{155, 156}",add,get item entity_vim.Network_network-42 get entity_vim.HostSystem_host-49
-158,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN finn ITEM entity_vim.Network_network-45 entity_vim.Network_network-45 LOCATION RoomDatacenter RoomDatacenter
-159,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN finn ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-45 entity_vim.Network_network-45
-160,{'cost': 1000},"{158, 159}",add,get item entity_vim.Network_network-45 get entity_vim.HostSystem_host-49
-161,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN finn ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 LOCATION RoomDatacenter RoomDatacenter
-162,{'cost': 500},"{160, 161, 148, 151, 154, 157}",or,get  entity_vim.HostSystem_host-49
-163,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN finn ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49
-164,{'cost': 1000},"{162, 163}",add,get item entity_vim.HostSystem_host-49 get entity_vim.VirtualMachine_vm-51
-165,{'cost': 1000},"{145, 164, 142}",or,get  entity_vim.VirtualMachine_vm-51
-166,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN finn DATA fileX fileX ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51
-167,{'cost': 1500},"{165, 166}",add,get item entity_vim.VirtualMachine_vm-51 get fileX
-168,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN cleo ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41 LOCATION RoomDatacenter RoomDatacenter
-169,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN cleo ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41
-170,{'cost': 1000},"{168, 169}",add,get item entity_vim.Datastore_datastore-41 get entity_vim.VirtualMachine_vm-51
-171,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN cleo ITEM entity_vim.Network_network-43 entity_vim.Network_network-43 LOCATION RoomDatacenter RoomDatacenter
-172,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN cleo ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.Network_network-43 entity_vim.Network_network-43
-173,{'cost': 1000},"{171, 172}",add,get item entity_vim.Network_network-43 get entity_vim.VirtualMachine_vm-51
-174,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN cleo ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41 LOCATION RoomDatacenter RoomDatacenter
-175,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN cleo ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41
-176,{'cost': 1000},"{174, 175}",add,get item entity_vim.Datastore_datastore-41 get entity_vim.HostSystem_host-49
-177,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN cleo ITEM entity_vim.Network_network-43 entity_vim.Network_network-43 LOCATION RoomDatacenter RoomDatacenter
-178,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN cleo ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-43 entity_vim.Network_network-43
-179,{'cost': 1000},"{177, 178}",add,get item entity_vim.Network_network-43 get entity_vim.HostSystem_host-49
-180,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN cleo ITEM entity_vim.Network_network-44 entity_vim.Network_network-44 LOCATION RoomDatacenter RoomDatacenter
-181,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN cleo ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-44 entity_vim.Network_network-44
-182,{'cost': 1000},"{180, 181}",add,get item entity_vim.Network_network-44 get entity_vim.HostSystem_host-49
-183,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN cleo ITEM entity_vim.Network_network-42 entity_vim.Network_network-42 LOCATION RoomDatacenter RoomDatacenter
-184,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN cleo ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-42 entity_vim.Network_network-42
-185,{'cost': 1000},"{184, 183}",add,get item entity_vim.Network_network-42 get entity_vim.HostSystem_host-49
-186,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN cleo ITEM entity_vim.Network_network-45 entity_vim.Network_network-45 LOCATION RoomDatacenter RoomDatacenter
-187,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN cleo ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-45 entity_vim.Network_network-45
-188,{'cost': 1000},"{186, 187}",add,get item entity_vim.Network_network-45 get entity_vim.HostSystem_host-49
-189,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN cleo ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 LOCATION RoomDatacenter RoomDatacenter
-190,{'cost': 500},"{176, 179, 182, 185, 188, 189}",or,get  entity_vim.HostSystem_host-49
-191,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN cleo ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49
-192,{'cost': 1000},"{190, 191}",add,get item entity_vim.HostSystem_host-49 get entity_vim.VirtualMachine_vm-51
-193,{'cost': 1000},"{192, 170, 173}",or,get  entity_vim.VirtualMachine_vm-51
-194,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN cleo DATA fileX fileX ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51
-195,{'cost': 1500},"{193, 194}",add,get item entity_vim.VirtualMachine_vm-51 get fileX
-196,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN ethan ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41 LOCATION RoomDatacenter RoomDatacenter
-197,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN ethan ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41
-198,{'cost': 1000},"{196, 197}",add,get item entity_vim.Datastore_datastore-41 get entity_vim.VirtualMachine_vm-51
-199,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN ethan ITEM entity_vim.Network_network-43 entity_vim.Network_network-43 LOCATION RoomDatacenter RoomDatacenter
-200,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN ethan ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.Network_network-43 entity_vim.Network_network-43
-201,{'cost': 1000},"{200, 199}",add,get item entity_vim.Network_network-43 get entity_vim.VirtualMachine_vm-51
-202,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN ethan ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41 LOCATION RoomDatacenter RoomDatacenter
-203,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN ethan ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41
-204,{'cost': 1000},"{202, 203}",add,get item entity_vim.Datastore_datastore-41 get entity_vim.HostSystem_host-49
-205,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN ethan ITEM entity_vim.Network_network-43 entity_vim.Network_network-43 LOCATION RoomDatacenter RoomDatacenter
-206,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN ethan ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-43 entity_vim.Network_network-43
-207,{'cost': 1000},"{205, 206}",add,get item entity_vim.Network_network-43 get entity_vim.HostSystem_host-49
-208,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN ethan ITEM entity_vim.Network_network-44 entity_vim.Network_network-44 LOCATION RoomDatacenter RoomDatacenter
-209,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN ethan ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-44 entity_vim.Network_network-44
-210,{'cost': 1000},"{208, 209}",add,get item entity_vim.Network_network-44 get entity_vim.HostSystem_host-49
-211,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN ethan ITEM entity_vim.Network_network-42 entity_vim.Network_network-42 LOCATION RoomDatacenter RoomDatacenter
-212,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN ethan ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-42 entity_vim.Network_network-42
-213,{'cost': 1000},"{211, 212}",add,get item entity_vim.Network_network-42 get entity_vim.HostSystem_host-49
-214,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN ethan ITEM entity_vim.Network_network-45 entity_vim.Network_network-45 LOCATION RoomDatacenter RoomDatacenter
-215,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN ethan ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-45 entity_vim.Network_network-45
-216,{'cost': 1000},"{214, 215}",add,get item entity_vim.Network_network-45 get entity_vim.HostSystem_host-49
-217,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN ethan ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 LOCATION RoomDatacenter RoomDatacenter
-218,{'cost': 500},"{204, 207, 210, 213, 216, 217}",or,get  entity_vim.HostSystem_host-49
-219,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN ethan ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49
-220,{'cost': 1000},"{218, 219}",add,get item entity_vim.HostSystem_host-49 get entity_vim.VirtualMachine_vm-51
-221,{'cost': 1000},"{201, 220, 198}",or,get  entity_vim.VirtualMachine_vm-51
-222,"{'cost': '500', 'time': 'MT', 'difficulty': 'H', 'likelihood': 'L'}",set(),or, IN ethan DATA fileX fileX ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51
-223,{'cost': 1500},"{221, 222}",add,get item entity_vim.VirtualMachine_vm-51 get fileX
-224,"{'cost': '0', 'time': 'MT', 'difficulty': 'L', 'likelihood': 'V'}",set(),or, IN sydney ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41 LOCATION RoomDatacenter RoomDatacenter
-225,"{'cost': '0', 'time': 'MT', 'difficulty': 'L', 'likelihood': 'V'}",set(),or, IN sydney ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41
-226,{'cost': 0},"{224, 225}",add,get item entity_vim.Datastore_datastore-41 get entity_vim.VirtualMachine_vm-51
-227,"{'cost': '0', 'time': 'TODO', 'difficulty': 'TODO', 'likelihood': 'TODO'}",set(),or, IN sydney ITEM entity_vim.Network_network-43 entity_vim.Network_network-43 LOCATION RoomDatacenter RoomDatacenter
-228,"{'cost': '0', 'time': 'MT', 'difficulty': 'L', 'likelihood': 'V'}",set(),or, IN sydney ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.Network_network-43 entity_vim.Network_network-43
-229,{'cost': 0},"{227, 228}",add,get item entity_vim.Network_network-43 get entity_vim.VirtualMachine_vm-51
-230,"{'cost': '0', 'time': 'MT', 'difficulty': 'L', 'likelihood': 'V'}",set(),or, IN sydney ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41 LOCATION RoomDatacenter RoomDatacenter
-231,"{'cost': '0', 'time': 'MT', 'difficulty': 'L', 'likelihood': 'V'}",set(),or, IN sydney ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Datastore_datastore-41 entity_vim.Datastore_datastore-41
-232,{'cost': 0},"{230, 231}",add,get item entity_vim.Datastore_datastore-41 get entity_vim.HostSystem_host-49
-233,"{'cost': '0', 'time': 'TODO', 'difficulty': 'TODO', 'likelihood': 'TODO'}",set(),or, IN sydney ITEM entity_vim.Network_network-43 entity_vim.Network_network-43 LOCATION RoomDatacenter RoomDatacenter
-234,"{'cost': '500', 'time': 'MT', 'difficulty': 'M', 'likelihood': 'M'}",set(),or, IN sydney ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-43 entity_vim.Network_network-43
-235,{'cost': 500},"{233, 234}",add,get item entity_vim.Network_network-43 get entity_vim.HostSystem_host-49
-236,"{'cost': '0', 'time': 'TODO', 'difficulty': 'TODO', 'likelihood': 'TODO'}",set(),or, IN sydney ITEM entity_vim.Network_network-44 entity_vim.Network_network-44 LOCATION RoomDatacenter RoomDatacenter
-237,"{'cost': '500', 'time': 'MT', 'difficulty': 'M', 'likelihood': 'M'}",set(),or, IN sydney ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-44 entity_vim.Network_network-44
-238,{'cost': 500},"{236, 237}",add,get item entity_vim.Network_network-44 get entity_vim.HostSystem_host-49
-239,"{'cost': '0', 'time': 'TODO', 'difficulty': 'TODO', 'likelihood': 'TODO'}",set(),or, IN sydney ITEM entity_vim.Network_network-42 entity_vim.Network_network-42 LOCATION RoomDatacenter RoomDatacenter
-240,"{'cost': '500', 'time': 'MT', 'difficulty': 'M', 'likelihood': 'M'}",set(),or, IN sydney ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-42 entity_vim.Network_network-42
-241,{'cost': 500},"{240, 239}",add,get item entity_vim.Network_network-42 get entity_vim.HostSystem_host-49
-242,"{'cost': '0', 'time': 'TODO', 'difficulty': 'TODO', 'likelihood': 'TODO'}",set(),or, IN sydney ITEM entity_vim.Network_network-45 entity_vim.Network_network-45 LOCATION RoomDatacenter RoomDatacenter
-243,"{'cost': '500', 'time': 'MT', 'difficulty': 'M', 'likelihood': 'M'}",set(),or, IN sydney ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 ITEM entity_vim.Network_network-45 entity_vim.Network_network-45
-244,{'cost': 500},"{242, 243}",add,get item entity_vim.Network_network-45 get entity_vim.HostSystem_host-49
-245,"{'cost': '0', 'time': 'MT', 'difficulty': 'L', 'likelihood': 'V'}",set(),or, IN sydney ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49 LOCATION RoomDatacenter RoomDatacenter
-246,{'cost': 0},"{232, 235, 238, 241, 244, 245}",or,get  entity_vim.HostSystem_host-49
-247,"{'cost': '0', 'time': 'MT', 'difficulty': 'L', 'likelihood': 'V'}",set(),or, IN sydney ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51 ITEM entity_vim.HostSystem_host-49 entity_vim.HostSystem_host-49
-248,{'cost': 0},"{246, 247}",add,get item entity_vim.HostSystem_host-49 get entity_vim.VirtualMachine_vm-51
-249,{'cost': 0},"{248, 226, 229}",or,get  entity_vim.VirtualMachine_vm-51
-250,"{'cost': '0', 'time': 'TODO', 'difficulty': 'TODO', 'likelihood': 'TODO'}",set(),or, IN sydney DATA fileX fileX ITEM entity_vim.VirtualMachine_vm-51 entity_vim.VirtualMachine_vm-51
-251,{'cost': 0},"{249, 250}",add,get item entity_vim.VirtualMachine_vm-51 get fileX
-252,{'cost': 0},"{195, 167, 139, 111, 83, 55, 27, 251, 223}",or,get ids
+0,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, FULFILL Fred trusts Margrethe 
+1,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, FORCE Fred door
+2,{'cost': 100},"{0, 1}",or,test
+3,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, MOVE Fred door
+4,{'cost': 200},"{2, 3}",add,test
+5,"{'time': 'DY', 'cost': 100, 'likelihood': 'L', 'difficulty': 'V'}",set(),or, IN Fred x004 Margrethe
+6,{'cost': 300},"{4, 5}",add,test
+7,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, FULFILL Fred trusts Margrethe 
+8,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, FORCE Fred door
+9,{'cost': 100},"{8, 7}",or,test
+10,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, MOVE Fred door
+11,{'cost': 200},"{9, 10}",add,test
+12,"{'time': 'DY', 'cost': 100, 'likelihood': 'L', 'difficulty': 'V'}",set(),or,MAKE Fred Margrethe IN Margrethe x004 Margrethe
+13,"{'time': 'DY', 'cost': 100, 'likelihood': 'L', 'difficulty': 'V'}",{12},add,test
+14,{'cost': 100},"{11, 13}",or,make Margrethe get x004
+15,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or,MAKE Fred Charlie FULFILL Charlie trusts Margrethe 
+16,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or,MAKE Fred Charlie FORCE Charlie door
+17,{'cost': 100},"{16, 15}",or,test
+18,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or,MAKE Fred Charlie MOVE Charlie door
+19,{'cost': 200},"{17, 18}",add,test
+20,"{'time': 'DY', 'cost': 100, 'likelihood': 'L', 'difficulty': 'V'}",set(),or,MAKE Fred Charlie IN Charlie x004 Margrethe
+21,{'cost': 300},"{19, 20}",add,test
+22,{'cost': 300},{21},or,make Charlie get x004
+23,{'cost': 100},"{14, 22}",or,make somebody get it
+24,{'cost': 100},"{6, 23}",or,to get or not to get
+25,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, FULFILL Fred trusts Margrethe 
+26,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, FORCE Fred door
+27,{'cost': 100},"{25, 26}",or,test
+28,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, MOVE Fred door
+29,{'cost': 200},"{27, 28}",add,test
+30,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, IN Fred x009 Margrethe
+31,{'cost': 300},"{29, 30}",add,get data x009 at actor Margrethe
+32,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, FULFILL Fred trusts Margrethe 
+33,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, FORCE Fred door
+34,{'cost': 100},"{32, 33}",or,test
+35,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, MOVE Fred door
+36,{'cost': 200},"{34, 35}",add,test
+37,"{'time': 'DY', 'cost': 100, 'likelihood': 'L', 'difficulty': 'V'}",set(),or, IN Fred x004 Margrethe
+38,{'cost': 300},"{36, 37}",add,test
+39,"{'time': 'DY', 'cost': 100, 'likelihood': 'L', 'difficulty': 'V'}",set(),or, IN Fred x009 x004
+40,{'cost': 400},"{38, 39}",add,get item x004 and extract data x009
+41,{'cost': 300},"{40, 31}",or,get x009
+42,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, FULFILL Fred trusts Margrethe 
+43,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, FORCE Fred door
+44,{'cost': 100},"{42, 43}",or,test
+45,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, MOVE Fred door
+46,{'cost': 200},"{44, 45}",add,test
+47,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or,MAKE Fred Margrethe IN Margrethe x009 Margrethe
+48,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",{47},add,get data x009 at actor Margrethe
+49,"{'time': 'DY', 'cost': 100, 'likelihood': 'L', 'difficulty': 'V'}",set(),or,MAKE Fred Margrethe IN Margrethe x004 Margrethe
+50,"{'time': 'DY', 'cost': 100, 'likelihood': 'L', 'difficulty': 'V'}",{49},add,test
+51,"{'time': 'DY', 'cost': 100, 'likelihood': 'L', 'difficulty': 'V'}",set(),or,MAKE Fred Margrethe IN Margrethe x009 x004
+52,{'cost': 200},"{50, 51}",add,get item x004 and extract data x009
+53,{'cost': 100},"{48, 52}",or,get x009
+54,{'cost': 100},"{53, 46}",or,make Margrethe get x009
+55,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or,MAKE Fred Charlie FULFILL Charlie trusts Margrethe 
+56,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or,MAKE Fred Charlie FORCE Charlie door
+57,{'cost': 100},"{56, 55}",or,test
+58,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or,MAKE Fred Charlie MOVE Charlie door
+59,{'cost': 200},"{57, 58}",add,test
+60,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or,MAKE Fred Charlie IN Charlie x009 Margrethe
+61,{'cost': 300},"{59, 60}",add,get data x009 at actor Margrethe
+62,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or,MAKE Fred Charlie FULFILL Charlie trusts Margrethe 
+63,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or,MAKE Fred Charlie FORCE Charlie door
+64,{'cost': 100},"{62, 63}",or,test
+65,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or,MAKE Fred Charlie MOVE Charlie door
+66,{'cost': 200},"{64, 65}",add,test
+67,"{'time': 'DY', 'cost': 100, 'likelihood': 'L', 'difficulty': 'V'}",set(),or,MAKE Fred Charlie IN Charlie x004 Margrethe
+68,{'cost': 300},"{66, 67}",add,test
+69,"{'time': 'DY', 'cost': 100, 'likelihood': 'L', 'difficulty': 'V'}",set(),or,MAKE Fred Charlie IN Charlie x009 x004
+70,{'cost': 400},"{68, 69}",add,get item x004 and extract data x009
+71,{'cost': 300},"{61, 70}",or,get x009
+72,{'cost': 300},{71},or,make Charlie get x009
+73,{'cost': 100},"{72, 54}",or,make somebody get it
+74,{'cost': 100},"{41, 73}",or,to get or not to get
+75,{'cost': 100},"{24, 74}",or,Attacker Fredget items  x004 x009

@@ -1,6 +1,80 @@
 import csv
+from pathCount import mergeDifficulties,mergeLikelihood,mergeTime
 
 def getQASimpleModel(s):
+    # time: HR means hour, MT means minute, DY means day, MN means month, 
+    # difficulty & likelihood: V means very high, H means high, M means medium, L means Low
+    difficulty = likelihood = time = 'TODO'
+    cost = 0
+
+    if not s.lstrip().startswith('MAKE'):
+        if s.lstrip().startswith('FULFILL'):
+            if 'trusts' in s:
+                cost = 500
+                difficulty = 'H'
+                likelihood = 'H'
+                time = 'DY'
+            elif 'role' in s:
+                cost = 1000
+                difficulty = 'H'
+                likelihood = "L"
+                time = 'MN'
+        elif s.lstrip().startswith('FORCE') or s.lstrip().startswith('MOVE'):
+            if 'LOCATION door' in s:
+                cost = 100
+                difficulty = "L"
+                likelihood = "H"
+                time = "MT"
+            else:
+                cost = 300
+                difficulty = "M"
+                likelihood = "L"
+                time = "HR"
+        elif s.lstrip().startswith('IN'):
+            if 'ACTOR' in s:
+                cost = 100
+                difficulty = "L"
+                likelihood = "V"
+                time = "MT"
+            elif 'LOCATION' in s:
+                cost = 500
+                difficulty = "L"
+                likelihood = "V"
+                time = "MT"                
+            else:
+                cost = 700
+                difficulty = "L"
+                likelihood = "V"
+                time = "MT"                
+        parameterMap = {}
+        parameterMap['cost'] = cost
+        parameterMap['likelihood'] = likelihood
+        parameterMap['difficulty'] =  difficulty
+        parameterMap['time'] = time
+
+        return parameterMap
+    else:
+        parameterMap = {}
+        parameterMap['cost'] = 200
+        parameterMap['likelihood'] = "L"
+        parameterMap['difficulty'] =  "H"
+        parameterMap['time'] = "HR"
+        labelArray = s.split()
+        tempParameterMap = getQASimpleModel(s[s.index(labelArray[3]):])
+        parameterMap['cost'] = parameterMap['cost']  +  tempParameterMap['cost']
+        parameterMap['difficulty'] = mergeDifficulties(parameterMap['difficulty'],tempParameterMap['difficulty'])
+        parameterMap['likelihood'] = mergeLikelihood(parameterMap['likelihood'],tempParameterMap['likelihood'])
+        parameterMap['time'] = mergeTime(parameterMap['time'],tempParameterMap['time'])
+        return parameterMap
+    # print("cost: {0}".format(cost))
+def getQAComplexModel(s):
+    parameterMap = {}
+    parameterMap['cost'] = getLabelCost(s)
+    parameterMap['likelihood'] = getLabelLikelihood(s)
+    parameterMap['difficulty'] =  getLabelDifficulty(s)
+    parameterMap['time'] = getLabelTime(s)
+    return parameterMap
+def getOldQASimpleModel(s):
     difficulty = likelihood = time = 'TODO'
     cost = '0'
     
@@ -184,7 +258,7 @@ def getQASimpleModel(s):
         
     return "\t\t'<parameter name=\"cost\" class=\"numeric\">{0}</parameter>' +\n\t\t'<parameter name=\"likelihood\" class=\"ordinal\">{1}</parameter>' +\n\t\t'<parameter name=\"difficulty\" class=\"ordinal\">{2}</parameter>' +\n\t\t'<parameter name=\"time\" class=\"ordinal\">{3}</parameter>' +\n".format(cost, likelihood, difficulty, time)
     
-def getQAComplexModel(s):
+def getOldQAComplexModel(s):
     difficulty = likelihood = time = 'TODO'
     cost = '0';
 
@@ -305,39 +379,86 @@ def getQAComplexModel(s):
 
     return parameterMap
     # return "\t\t'<parameter name=\"cost\" class=\"numeric\">{0}</parameter>' +\n\t\t'<parameter name=\"likelihood\" class=\"ordinal\">{1}</parameter>' +\n\t\t'<parameter name=\"difficulty\" class=\"ordinal\">{2}</parameter>' +\n\t\t'<parameter name=\"time\" class=\"ordinal\">{3}</parameter>' +\n".format(cost, likelihood, difficulty, time)
-def unionCostMap(mainCostMap,subCostMap):
+def addCostMap(mainCostMap,subCostMap):
     if not mainCostMap:
         mainCostMap['cost'] = subCostMap['cost']
     else:
         mainCostMap['cost'] = int(mainCostMap['cost']) + int(subCostMap['cost'])
     return mainCostMap
 
-def intersectionCostMap(mainCostMap,subCostMap):
+def orCostMap(mainCostMap,subCostMap):
     if not mainCostMap:
         mainCostMap['cost'] = subCostMap['cost']
     elif int(mainCostMap['cost']) > int(subCostMap['cost']):
         mainCostMap['cost'] = int(subCostMap['cost'] ) 
     return mainCostMap  
-def printCost(occuranceCountMap):
+def printCost(nodesMap):
     occuranceData = [['id', 'Cost','children','connection','label']]
-    for nodeName in occuranceCountMap:
-        # print("id:{0} count:{1} children:{2} connection:{3} label:{4}".format(nodeName,repr(occuranceCountMap[nodeName]['childrenCount']),repr(occuranceCountMap[nodeName]['childrenSet']),occuranceCountMap[nodeName]['connection'],occuranceCountMap[nodeName]['label']))
+    for nodeName in nodesMap:
+        # print("id:{0} count:{1} children:{2} connection:{3} label:{4}".format(nodeName,repr(nodesMap[nodeName]['childrenCount']),repr(nodesMap[nodeName]['childrenSet']),nodesMap[nodeName]['connection'],nodesMap[nodeName]['label']))
         occuranceElement = []
         occuranceElement.append(nodeName)
-        occuranceElement.append(repr(occuranceCountMap[nodeName]['cost']))
-        occuranceElement.append(repr(occuranceCountMap[nodeName]['childrenSet']))
-        occuranceElement.append(occuranceCountMap[nodeName]['connection'])
-        occuranceElement.append(occuranceCountMap[nodeName]['label'])
+        occuranceElement.append(repr(nodesMap[nodeName]['cost']))
+        occuranceElement.append(repr(nodesMap[nodeName]['childrenSet']))
+        occuranceElement.append(nodesMap[nodeName]['connection'])
+        occuranceElement.append(nodesMap[nodeName]['label'])
         occuranceData.append(occuranceElement)
     with open('cost.csv', 'w', newline='') as fp:
         a = csv.writer(fp, delimiter=',')
         a.writerows(occuranceData)
 
-
-
-
-
-
+def getLabelTime(label):
+    global TimeMap
+    time = 'MT'
+    labelArray = label.split()
+    for keyword in labelArray:
+        if keyword in TimeMap['MN']:
+            time = mergeTime(time,'MN')
+        elif keyword in TimeMap['DY']:
+            time = mergeTime(time,'DY')
+        elif keyword in TimeMap['HR']:
+            time = mergeTime(time,'HR')
+    return time
+def getLabelLikelihood(label):
+    global LikelihoodMap
+    likelihood = 'V'
+    labelArray = label.split()
+    for keyword in labelArray:
+        if keyword in LikelihoodMap['L']:
+            likelihood = mergeLikelihood(likelihood,'L')
+        elif keyword in LikelihoodMap['M']:
+            likelihood = mergeLikelihood(likelihood,'M')
+        elif keyword in LikelihoodMap['H']:
+            likelihood = mergeLikelihood(likelihood,'H')
+    return likelihood
+def getLabelDifficulty(label):
+    global DifficultyMap
+    difficulty = 'L'
+    labelArray = label.split()
+    for keyword in labelArray:
+        if keyword in DifficultyMap['V']:
+            difficulty = mergeDifficulties(difficulty,'V')
+        elif keyword in DifficultyMap['H']:
+            difficulty = mergeDifficulties(difficulty,'H')
+        elif keyword in DifficultyMap['M']:
+            difficulty = mergeDifficulties(difficulty,'M')
+    return difficulty
+def getLabelCost(label):
+    global CostMap
+    cost = 100
+    labelArray = label.split()
+    for keyword in labelArray:
+        if keyword in CostMap['1000']:
+            cost = mergeCost(cost,1000)
+        elif keyword in CostMap['500']:
+            cost = mergeCost(cost,500)
+        elif keyword in CostMap['300']:
+            cost = mergeCost(cost,300)
+    return cost
+def mergeCost(mainCost,subCost):
+    if subCost > mainCost:
+        mainCost = subCost
+    return mainCost
 
 
 
@@ -396,3 +517,24 @@ def parseqa(label):
             # return replacement
             xml = parseString(replacement)
             return parseParameter(getFirstChildElement(xml))
+TimeMap = {}
+TimeMap['MT'] = ['move','door','card','in','fred','item','pin']
+TimeMap['HR'] = ['fulfill','force','charlie','margrethe']
+TimeMap['DY'] = ['trust','x004']
+TimeMap['MN'] = ['role']
+DifficultyMap = {}
+DifficultyMap['V'] = ['pin','margrethe','x004']
+DifficultyMap['H'] = ['card','force','role']
+DifficultyMap['M'] = ['trust','item','fred','fulfill']
+DifficultyMap['L'] = ['charlie','in','move','door']
+LikelihoodMap = {}
+LikelihoodMap['V'] = ['charlie','in','move','door']
+LikelihoodMap['H'] = ['trust','item','fred','fulfill']
+LikelihoodMap['M'] = ['card','force','role']
+LikelihoodMap['L'] = ['pin','margrethe','x004']
+CostMap = {}
+CostMap['100'] = ['door','move','in','pin','x004']
+CostMap['300'] = ['fred','trust','fulfill','force','item','card']
+CostMap['500'] = ['charlie','role']
+CostMap['1000'] = ['margrethe']
+

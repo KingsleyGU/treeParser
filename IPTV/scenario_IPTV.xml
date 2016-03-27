@@ -8,7 +8,7 @@
     date="25-05-2014" 
     version="1.0">
    <model>model_IPTV.xml</model>
-   <actionGoal attacker="Z">
+   <actionGoal attacker="Z" profit="1000">
       <credentials>
       		<credPredicate name="role">
       		    <value>Employee</value>

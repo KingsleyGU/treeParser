@@ -2,10 +2,11 @@
 <system 
     xmlns="https://www.trespass-project.eu/schemas/TREsPASS_model"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="https://www.trespass-project.eu/schemas/TREsPASS_model.xsd" 
+    xsi:schemaLocation="https://www.trespass-project.eu/schemas/TREsPASS_model https://www.trespass-project.eu/schemas/TREsPASS_model.xsd" 
     author="Marieta G Ivanova" 
     date="23-05-2014" 
-    version="1.1">
+    version="1.1"
+    id="test" >
   <title>TREsPASS IPTV model</title>
   <locations> 
     <location id="door"/>
