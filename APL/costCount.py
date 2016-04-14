@@ -445,15 +445,15 @@ def getLabelDifficulty(label):
     return difficulty
 def getLabelCost(label):
     global CostMap
-    cost = 100
+    cost = 1
     labelArray = label.split()
     for keyword in labelArray:
-        if keyword in CostMap['1000']:
-            cost = mergeCost(cost,1000)
-        elif keyword in CostMap['500']:
-            cost = mergeCost(cost,500)
-        elif keyword in CostMap['300']:
-            cost = mergeCost(cost,300)
+        if keyword in CostMap['10']:
+            cost = mergeCost(cost,10)
+        elif keyword in CostMap['5']:
+            cost = mergeCost(cost,5)
+        elif keyword in CostMap['3']:
+            cost = mergeCost(cost,3)
     return cost
 def mergeCost(mainCost,subCost):
     if subCost > mainCost:
@@ -533,8 +533,8 @@ LikelihoodMap['H'] = ['trust','item','fred','fulfill']
 LikelihoodMap['M'] = ['card','force','role']
 LikelihoodMap['L'] = ['pin','margrethe','x004']
 CostMap = {}
-CostMap['100'] = ['door','move','in','pin','x004']
-CostMap['300'] = ['fred','trust','fulfill','force','item','card']
-CostMap['500'] = ['charlie','role']
-CostMap['1000'] = ['margrethe']
+CostMap['1'] = ['door','move','in','pin','x004']
+CostMap['3'] = ['fred','trust','fulfill','force','item','card']
+CostMap['5'] = ['charlie','role']
+CostMap['10'] = ['margrethe']
 

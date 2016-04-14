@@ -1,77 +1,68 @@
 id,Cost,children,connection,label
-0,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, FULFILL Fred trusts Margrethe 
-1,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, FORCE Fred door
-2,{'cost': 100},"{0, 1}",or,test
-3,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, MOVE Fred door
-4,{'cost': 200},"{2, 3}",add,test
-5,"{'time': 'DY', 'cost': 100, 'likelihood': 'L', 'difficulty': 'V'}",set(),or, IN Fred x004 Margrethe
-6,{'cost': 300},"{4, 5}",add,test
-7,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, FULFILL Fred trusts Margrethe 
-8,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, FORCE Fred door
-9,{'cost': 100},"{8, 7}",or,test
-10,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, MOVE Fred door
-11,{'cost': 200},"{9, 10}",add,test
-12,"{'time': 'DY', 'cost': 100, 'likelihood': 'L', 'difficulty': 'V'}",set(),or,MAKE Fred Margrethe IN Margrethe x004 Margrethe
-13,"{'time': 'DY', 'cost': 100, 'likelihood': 'L', 'difficulty': 'V'}",{12},add,test
-14,{'cost': 100},"{11, 13}",or,make Margrethe get x004
-15,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or,MAKE Fred Charlie FULFILL Charlie trusts Margrethe 
-16,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or,MAKE Fred Charlie FORCE Charlie door
-17,{'cost': 100},"{16, 15}",or,test
-18,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or,MAKE Fred Charlie MOVE Charlie door
-19,{'cost': 200},"{17, 18}",add,test
-20,"{'time': 'DY', 'cost': 100, 'likelihood': 'L', 'difficulty': 'V'}",set(),or,MAKE Fred Charlie IN Charlie x004 Margrethe
-21,{'cost': 300},"{19, 20}",add,test
-22,{'cost': 300},{21},or,make Charlie get x004
-23,{'cost': 100},"{14, 22}",or,make somebody get it
-24,{'cost': 100},"{6, 23}",or,to get or not to get
-25,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, FULFILL Fred trusts Margrethe 
-26,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, FORCE Fred door
-27,{'cost': 100},"{25, 26}",or,test
-28,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, MOVE Fred door
-29,{'cost': 200},"{27, 28}",add,test
-30,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, IN Fred x009 Margrethe
-31,{'cost': 300},"{29, 30}",add,get data x009 at actor Margrethe
-32,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, FULFILL Fred trusts Margrethe 
-33,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, FORCE Fred door
-34,{'cost': 100},"{32, 33}",or,test
-35,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, MOVE Fred door
-36,{'cost': 200},"{34, 35}",add,test
-37,"{'time': 'DY', 'cost': 100, 'likelihood': 'L', 'difficulty': 'V'}",set(),or, IN Fred x004 Margrethe
-38,{'cost': 300},"{36, 37}",add,test
-39,"{'time': 'DY', 'cost': 100, 'likelihood': 'L', 'difficulty': 'V'}",set(),or, IN Fred x009 x004
-40,{'cost': 400},"{38, 39}",add,get item x004 and extract data x009
-41,{'cost': 300},"{40, 31}",or,get x009
-42,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, FULFILL Fred trusts Margrethe 
-43,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, FORCE Fred door
-44,{'cost': 100},"{42, 43}",or,test
-45,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or, MOVE Fred door
-46,{'cost': 200},"{44, 45}",add,test
-47,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or,MAKE Fred Margrethe IN Margrethe x009 Margrethe
-48,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",{47},add,get data x009 at actor Margrethe
-49,"{'time': 'DY', 'cost': 100, 'likelihood': 'L', 'difficulty': 'V'}",set(),or,MAKE Fred Margrethe IN Margrethe x004 Margrethe
-50,"{'time': 'DY', 'cost': 100, 'likelihood': 'L', 'difficulty': 'V'}",{49},add,test
-51,"{'time': 'DY', 'cost': 100, 'likelihood': 'L', 'difficulty': 'V'}",set(),or,MAKE Fred Margrethe IN Margrethe x009 x004
-52,{'cost': 200},"{50, 51}",add,get item x004 and extract data x009
-53,{'cost': 100},"{48, 52}",or,get x009
-54,{'cost': 100},"{53, 46}",or,make Margrethe get x009
-55,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or,MAKE Fred Charlie FULFILL Charlie trusts Margrethe 
-56,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or,MAKE Fred Charlie FORCE Charlie door
-57,{'cost': 100},"{56, 55}",or,test
-58,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or,MAKE Fred Charlie MOVE Charlie door
-59,{'cost': 200},"{57, 58}",add,test
-60,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or,MAKE Fred Charlie IN Charlie x009 Margrethe
-61,{'cost': 300},"{59, 60}",add,get data x009 at actor Margrethe
-62,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or,MAKE Fred Charlie FULFILL Charlie trusts Margrethe 
-63,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or,MAKE Fred Charlie FORCE Charlie door
-64,{'cost': 100},"{62, 63}",or,test
-65,"{'time': 'MT', 'cost': 100, 'likelihood': 'V', 'difficulty': 'L'}",set(),or,MAKE Fred Charlie MOVE Charlie door
-66,{'cost': 200},"{64, 65}",add,test
-67,"{'time': 'DY', 'cost': 100, 'likelihood': 'L', 'difficulty': 'V'}",set(),or,MAKE Fred Charlie IN Charlie x004 Margrethe
-68,{'cost': 300},"{66, 67}",add,test
-69,"{'time': 'DY', 'cost': 100, 'likelihood': 'L', 'difficulty': 'V'}",set(),or,MAKE Fred Charlie IN Charlie x009 x004
-70,{'cost': 400},"{68, 69}",add,get item x004 and extract data x009
-71,{'cost': 300},"{61, 70}",or,get x009
-72,{'cost': 300},{71},or,make Charlie get x009
-73,{'cost': 100},"{72, 54}",or,make somebody get it
-74,{'cost': 100},"{41, 73}",or,to get or not to get
-75,{'cost': 100},"{24, 74}",or,Attacker Fredget items  x004 x009
+0,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or, FULFILL Charlie trusts Margrethe 
+1,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or, FORCE Charlie door
+2,{'cost': 1},"{0, 1}",or,test
+3,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or, MOVE Charlie door
+4,{'cost': 2},"{2, 3}",add,test
+5,"{'cost': 1, 'likelihood': 'L', 'time': 'DY', 'difficulty': 'V'}",set(),or, IN Charlie x004 Margrethe
+6,{'cost': 3},"{4, 5}",add,test
+7,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or,MAKE Charlie Fred FULFILL Fred trusts Margrethe 
+8,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or,MAKE Charlie Fred FORCE Fred door
+9,{'cost': 1},"{8, 7}",or,test
+10,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or,MAKE Charlie Fred MOVE Fred door
+11,{'cost': 2},"{9, 10}",add,test
+12,"{'cost': 1, 'likelihood': 'L', 'time': 'DY', 'difficulty': 'V'}",set(),or,MAKE Charlie Fred IN Fred x004 Margrethe
+13,{'cost': 3},"{11, 12}",add,test
+14,{'cost': 3},{13},or,make Fred get x004
+15,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or, FULFILL Charlie trusts Margrethe 
+16,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or, FORCE Charlie door
+17,{'cost': 1},"{16, 15}",or,test
+18,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or, MOVE Charlie door
+19,{'cost': 2},"{17, 18}",add,test
+20,"{'cost': 1, 'likelihood': 'L', 'time': 'DY', 'difficulty': 'V'}",set(),or,MAKE Charlie Margrethe IN Margrethe x004 Margrethe
+21,"{'cost': 1, 'likelihood': 'L', 'time': 'DY', 'difficulty': 'V'}",{20},add,test
+22,{'cost': 1},"{19, 21}",or,make Margrethe get x004
+23,{'cost': 1},"{14, 22}",or,make somebody get it
+24,{'cost': 1},"{6, 23}",or,to get or not to get
+25,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or, FULFILL Charlie trusts Margrethe 
+26,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or, FORCE Charlie door
+27,{'cost': 1},"{25, 26}",or,test
+28,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or, MOVE Charlie door
+29,{'cost': 2},"{27, 28}",add,test
+30,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or, IN Charlie x009 Margrethe
+31,{'cost': 3},"{29, 30}",add,get data x009 at actor Margrethe
+32,{'cost': 3},{31},or,get x009
+33,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or,MAKE Charlie Fred FULFILL Fred trusts Margrethe 
+34,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or,MAKE Charlie Fred FORCE Fred door
+35,{'cost': 1},"{33, 34}",or,test
+36,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or,MAKE Charlie Fred MOVE Fred door
+37,{'cost': 2},"{35, 36}",add,test
+38,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or,MAKE Charlie Fred IN Fred x009 Margrethe
+39,{'cost': 3},"{37, 38}",add,get data x009 at actor Margrethe
+40,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or,MAKE Charlie Fred FULFILL Fred trusts Margrethe 
+41,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or,MAKE Charlie Fred FORCE Fred door
+42,{'cost': 1},"{40, 41}",or,test
+43,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or,MAKE Charlie Fred MOVE Fred door
+44,{'cost': 2},"{42, 43}",add,test
+45,"{'cost': 1, 'likelihood': 'L', 'time': 'DY', 'difficulty': 'V'}",set(),or,MAKE Charlie Fred IN Fred x004 Margrethe
+46,{'cost': 3},"{44, 45}",add,test
+47,"{'cost': 1, 'likelihood': 'L', 'time': 'DY', 'difficulty': 'V'}",set(),or,MAKE Charlie Fred IN Fred x009 x004
+48,{'cost': 4},"{46, 47}",add,get item x004 and extract data x009
+49,{'cost': 3},"{48, 39}",or,get x009
+50,{'cost': 3},{49},or,make Fred get x009
+51,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or, FULFILL Charlie trusts Margrethe 
+52,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or, FORCE Charlie door
+53,{'cost': 1},"{51, 52}",or,test
+54,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or, MOVE Charlie door
+55,{'cost': 2},"{53, 54}",add,test
+56,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",set(),or,MAKE Charlie Margrethe IN Margrethe x009 Margrethe
+57,"{'cost': 1, 'likelihood': 'V', 'time': 'MT', 'difficulty': 'L'}",{56},add,get data x009 at actor Margrethe
+58,"{'cost': 1, 'likelihood': 'L', 'time': 'DY', 'difficulty': 'V'}",set(),or,MAKE Charlie Margrethe IN Margrethe x004 Margrethe
+59,"{'cost': 1, 'likelihood': 'L', 'time': 'DY', 'difficulty': 'V'}",{58},add,test
+60,"{'cost': 1, 'likelihood': 'L', 'time': 'DY', 'difficulty': 'V'}",set(),or,MAKE Charlie Margrethe IN Margrethe x009 x004
+61,{'cost': 2},"{59, 60}",add,get item x004 and extract data x009
+62,{'cost': 1},"{57, 61}",or,get x009
+63,{'cost': 1},"{62, 55}",or,make Margrethe get x009
+64,{'cost': 1},"{50, 63}",or,make somebody get it
+65,{'cost': 1},"{32, 64}",or,to get or not to get
+66,{'cost': 1},"{24, 65}",or,Attacker Charlieget items  x004 x009

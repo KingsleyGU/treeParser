@@ -71,8 +71,8 @@ def processNodePathCount(nodesMap,profit):
 					finalNodesPathList[index].append(tempNode)
 				tempNode = nodesMap[tempNode]['parent']
 		finalPathCost[index] = calculatePathCost(nodesMap,index,profit)
-	createGraph(nodesMap,finalPathList,finalNodesPathList,finalEdgesList,finalPathCost,profit)
 	printPath(nodesMap)
+	createGraph(nodesMap,finalPathList,finalNodesPathList,finalEdgesList,finalPathCost,profit)
 	# print("Final node paths: {0}".format(repr(finalNodesPathList)))
 def printPath(nodesMap):
 	pathData = [['id', 'Path Leaves','Path Nodes','path edges','cost']]
