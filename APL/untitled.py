@@ -80,18 +80,30 @@ def draw_graph(G,graph, labels=None, graph_layout='shell',
 			H.add_edge(edgeFrom,edgeTo)
 			nx.draw_networkx_edges(H,H_pos,edgelist=[(edgeFrom,edgeTo)],width=2,edge_color='b',style="dashed",arrows=True)			
 		else:
-			if(graph_pos[edge[0]][1] > graph_pos[edge[1]][1]):
+			if(graph_pos[edge[0]][1] > graph_pos[edge[1]][1] + gap):
 				edgeFrom = 12*edge[0]+ 8
 				edgeTo = 12*edge[1]+1
-			elif(graph_pos[edge[0]][1] < graph_pos[edge[1]][1]):
+			elif(graph_pos[edge[0]][1] < graph_pos[edge[1]][1] - gap):
 				edgeFrom = 12*edge[0]+ 6
 				edgeTo = 12*edge[1]+ 11
+			else:
+				edgeFrom = 12*edge[0]+ 7
+				edgeTo = 12*edge[1]+ 0
 
 			H.add_edge(edgeFrom,edgeTo)
 			nx.draw_networkx_edges(H,H_pos,edgelist=[(edgeFrom,edgeTo)],width=2,edge_color='b',style="dashed",arrows=True)			
 			
 	# nx.draw_networkx_nodes(G,graph_pos,node_size=8000,alpha=0.5,node_color='#ff0000',node_shape='s',linewidths=0)
 	# nx.draw_networkx_edges(G,graph_pos,width=2,edge_color='b',style="solid",arrows=False)
+
+	locationAssetNum = {}
+	A = nx.Graph()
+	assetLabels = {}
+	for location in locationIdMap:
+		locationAssetNum[location] = 0
+
+
+
 
 	nx.draw_networkx_labels(G,graph_pos,labels,font_size=16)
 	# nx.draw_networkx_edges(H,H_pos,width=2,edge_color='b',style="solid",arrows=False)
