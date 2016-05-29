@@ -1,5 +1,6 @@
 import csv
 from pathCount import mergeDifficulties,mergeLikelihood,mergeTime
+from visualization import intepreterLevel,interpreterTime
 
 def getQASimpleModel(s):
     # time: HR means hour, MT means minute, DY means day, MN means month, 
@@ -383,7 +384,7 @@ def addCostMap(mainCostMap,subCostMap):
     if not mainCostMap:
         mainCostMap['cost'] = subCostMap['cost']
     else:
-        mainCostMap['cost'] = int(mainCostMap['cost']) + int(subCostMap['cost'])
+        mainCostMap['cost'] =  mergeCost(int(mainCostMap['cost']),int(subCostMap['cost']))
     return mainCostMap
 
 def orCostMap(mainCostMap,subCostMap):
@@ -392,8 +393,107 @@ def orCostMap(mainCostMap,subCostMap):
     elif int(mainCostMap['cost']) > int(subCostMap['cost']):
         mainCostMap['cost'] = int(subCostMap['cost'] ) 
     return mainCostMap  
+
+def andDifficultyMap(mainDifficultyMap,subDifficultyMap):
+    if not mainDifficultyMap:
+        mainDifficultyMap['difficulty'] = subDifficultyMap['difficulty']
+    else:
+        mainDifficultyMap['difficulty'] = mergeDifficulties(mainDifficultyMap['difficulty'],subDifficultyMap['difficulty'])
+    return mainDifficultyMap
+def orDifficultyMap(mainDifficultyMap,subDifficultyMap):
+    if not mainDifficultyMap:
+        mainDifficultyMap['difficulty'] = subDifficultyMap['difficulty']
+    elif intepreterLevel(mainDifficultyMap['difficulty']) > intepreterLevel(subDifficultyMap['difficulty']):
+        mainDifficultyMap['difficulty'] = subDifficultyMap['difficulty']
+    return mainDifficultyMap
+def andLikelihoodMap(mainLikelihoodMap,subLikelihoodMap):
+    if not mainLikelihoodMap:
+        mainLikelihoodMap['likelihood'] = subLikelihoodMap['likelihood']
+    else:
+        mainLikelihoodMap['likelihood'] = mergeLikelihood(mainLikelihoodMap['likelihood'],subLikelihoodMap['likelihood'])
+    return mainLikelihoodMap
+def orLikelihoodMap(mainLikelihoodMap,subLikelihoodMap):
+    if not mainLikelihoodMap:
+        mainLikelihoodMap['likelihood'] = subLikelihoodMap['likelihood']
+    elif intepreterLevel(mainLikelihoodMap['likelihood']) <  intepreterLevel(subLikelihoodMap['likelihood']):
+        mainLikelihoodMap['likelihood'] = subLikelihoodMap['likelihood']
+    return mainLikelihoodMap
+def andTimeMap(mainTimeMap,subTimeMap):
+    if not mainTimeMap:
+        mainTimeMap['time'] = subTimeMap['time']
+    else:
+        mainTimeMap['time'] = mergeTime(mainTimeMap['time'],subTimeMap['time'])
+    return mainTimeMap
+def orTimeMap(mainTimeMap,subTimeMap):
+    if not mainTimeMap:
+        mainTimeMap['time'] = subTimeMap['time']
+    elif interpreterTime(mainTimeMap['time']) > interpreterTime(subTimeMap['time']):
+        mainTimeMap['time'] = subTimeMap['time']
+    return mainTimeMap
+# This is a function for get the Time consumption for a leaf label
+def getLabelTime(label):
+    global TimeMap
+    time = 'MT'
+    labelArray = label.split()
+    for keyword in labelArray:
+        keyword = keyword.lower()
+        if keyword in TimeMap['MN']:
+            time = mergeTime(time,'MN')
+        elif keyword in TimeMap['DY']:
+            time = mergeTime(time,'DY')
+        elif keyword in TimeMap['HR']:
+            time = mergeTime(time,'HR')
+    return time
+
+# This is a function for get the likelihood for a leaf label
+def getLabelLikelihood(label):
+    global LikelihoodMap
+    likelihood = 'V'
+    labelArray = label.split()
+    for keyword in labelArray:
+        keyword = keyword.lower()
+        if keyword in LikelihoodMap['L']:
+            likelihood = mergeLikelihood(likelihood,'L')
+        elif keyword in LikelihoodMap['M']:
+            likelihood = mergeLikelihood(likelihood,'M')
+        elif keyword in LikelihoodMap['H']:
+            likelihood = mergeLikelihood(likelihood,'H')
+    return likelihood
+
+# This is a function for get the Difficulty for a leaf label
+def getLabelDifficulty(label):
+    global DifficultyMap
+    difficulty = 'L'
+    labelArray = label.split()
+    for keyword in labelArray:
+        keyword = keyword.lower()
+        if keyword in DifficultyMap['V']:
+            difficulty = mergeDifficulties(difficulty,'V')
+        elif keyword in DifficultyMap['H']:
+            difficulty = mergeDifficulties(difficulty,'H')
+        elif keyword in DifficultyMap['M']:
+            difficulty = mergeDifficulties(difficulty,'M')
+    return difficulty
+
+# This is a function for get the Cost for a leaf label
+def getLabelCost(label):
+    global CostMap
+    cost = 1
+    labelArray = label.split()
+    for keyword in labelArray:
+        keyword = keyword.lower()
+        if keyword in CostMap['4']:
+            cost = mergeCost(cost,4)
+        elif keyword in CostMap['3']:
+            cost = mergeCost(cost,3)
+        elif keyword in CostMap['2']:
+            cost = mergeCost(cost,2)
+
+    return cost
+
+# This is a function print all the detail weight measurement into a csv file
 def printCost(nodesMap):
-    occuranceData = [['id', 'Cost','children','connection','label']]
+    occuranceData = [['ID', 'Node_Weigth_Measure','Children','Node_Type','Label']]
     for nodeName in nodesMap:
         # print("id:{0} count:{1} children:{2} connection:{3} label:{4}".format(nodeName,repr(nodesMap[nodeName]['childrenCount']),repr(nodesMap[nodeName]['childrenSet']),nodesMap[nodeName]['connection'],nodesMap[nodeName]['label']))
         occuranceElement = []
@@ -403,58 +503,14 @@ def printCost(nodesMap):
         occuranceElement.append(nodesMap[nodeName]['connection'])
         occuranceElement.append(nodesMap[nodeName]['label'])
         occuranceData.append(occuranceElement)
-    with open('cost.csv', 'w', newline='') as fp:
+    with open('weight_measurement.csv', 'w', newline='') as fp:
         a = csv.writer(fp, delimiter=',')
         a.writerows(occuranceData)
 
-def getLabelTime(label):
-    global TimeMap
-    time = 'MT'
-    labelArray = label.split()
-    for keyword in labelArray:
-        if keyword in TimeMap['MN']:
-            time = mergeTime(time,'MN')
-        elif keyword in TimeMap['DY']:
-            time = mergeTime(time,'DY')
-        elif keyword in TimeMap['HR']:
-            time = mergeTime(time,'HR')
-    return time
-def getLabelLikelihood(label):
-    global LikelihoodMap
-    likelihood = 'V'
-    labelArray = label.split()
-    for keyword in labelArray:
-        if keyword in LikelihoodMap['L']:
-            likelihood = mergeLikelihood(likelihood,'L')
-        elif keyword in LikelihoodMap['M']:
-            likelihood = mergeLikelihood(likelihood,'M')
-        elif keyword in LikelihoodMap['H']:
-            likelihood = mergeLikelihood(likelihood,'H')
-    return likelihood
-def getLabelDifficulty(label):
-    global DifficultyMap
-    difficulty = 'L'
-    labelArray = label.split()
-    for keyword in labelArray:
-        if keyword in DifficultyMap['V']:
-            difficulty = mergeDifficulties(difficulty,'V')
-        elif keyword in DifficultyMap['H']:
-            difficulty = mergeDifficulties(difficulty,'H')
-        elif keyword in DifficultyMap['M']:
-            difficulty = mergeDifficulties(difficulty,'M')
-    return difficulty
-def getLabelCost(label):
-    global CostMap
-    cost = 1
-    labelArray = label.split()
-    for keyword in labelArray:
-        if keyword in CostMap['10']:
-            cost = mergeCost(cost,10)
-        elif keyword in CostMap['5']:
-            cost = mergeCost(cost,5)
-        elif keyword in CostMap['3']:
-            cost = mergeCost(cost,3)
-    return cost
+
+
+
+
 def mergeCost(mainCost,subCost):
     if subCost > mainCost:
         mainCost = subCost
@@ -518,23 +574,26 @@ def parseqa(label):
             xml = parseString(replacement)
             return parseParameter(getFirstChildElement(xml))
 TimeMap = {}
-TimeMap['MT'] = ['move','door','card','in','fred','item','pin']
-TimeMap['HR'] = ['fulfill','force','charlie','margrethe']
-TimeMap['DY'] = ['trust','x004']
-TimeMap['MN'] = ['role']
+TimeMap['MT'] = ['move','door','card','in','fred','item','pin','x004']
+TimeMap['HR'] = ['fulfill','force','charlie','x009']
+TimeMap['DY'] = ['trusts']
+TimeMap['MN'] = ['role','margrethe']
 DifficultyMap = {}
-DifficultyMap['V'] = ['pin','margrethe','x004']
-DifficultyMap['H'] = ['card','force','role']
-DifficultyMap['M'] = ['trust','item','fred','fulfill']
-DifficultyMap['L'] = ['charlie','in','move','door']
+DifficultyMap['V'] = ['pin','margrethe']
+DifficultyMap['H'] = ['card','role']
+DifficultyMap['M'] = ['trusts','item','force','fulfill','x009','x004']
+DifficultyMap['L'] = ['charlie','in','move','door','fred']
 LikelihoodMap = {}
-LikelihoodMap['V'] = ['charlie','in','move','door']
-LikelihoodMap['H'] = ['trust','item','fred','fulfill']
+LikelihoodMap['V'] = ['charlie','in','move','door','x004']
+LikelihoodMap['H'] = ['trusts','item','fred','fulfill','margrethe']
 LikelihoodMap['M'] = ['card','force','role']
-LikelihoodMap['L'] = ['pin','margrethe','x004']
+LikelihoodMap['L'] = ['pin','x009']
 CostMap = {}
-CostMap['1'] = ['door','move','in','pin','x004']
-CostMap['3'] = ['fred','trust','fulfill','force','item','card']
-CostMap['5'] = ['charlie','role']
-CostMap['10'] = ['margrethe']
+CostMap['1'] = ['charlie','door','move','in','pin','x004']
+CostMap['2'] = ['fred','trusts','fulfill','force','item','x009','card']
+CostMap['3'] = ['role']
+CostMap['4'] = ['margrethe']
+# print("mergeCost(1,4): {0}".format(mergeCost(4,1)))
+print("getLabelCost(FULFILL Charlie trusts Margrethe): {0}".format(getLabelCost('FULFILL Charlie trusts Margrethe')))
+
 

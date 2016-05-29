@@ -1,6 +1,12 @@
 import csv
 from visualization import createGraph
 from collections import OrderedDict
+import json
+
+
+
+
+# this function is to figure out all the possible paths in an attack tree
 def processPathCount(nodesMap,profit):
 	global finalPathList
 	rootIndex = len(nodesMap) - 1
@@ -52,6 +58,7 @@ def processPathCount(nodesMap,profit):
 	# nodesMap['finalPathList'] = finalPathList
 	processNodePathCount(nodesMap,profit)
 
+# this function is to get all the nodes in each path
 def processNodePathCount(nodesMap,profit):
 	global finalNodesPathList
 	global finalEdgesList
@@ -72,10 +79,14 @@ def processNodePathCount(nodesMap,profit):
 				tempNode = nodesMap[tempNode]['parent']
 		finalPathCost[index] = calculatePathCost(nodesMap,index,profit)
 	printPath(nodesMap)
+	modelData = generateModelVisualiztionJson(nodesMap)
+	print("modelData: {0}".format(repr(modelData)))
 	createGraph(nodesMap,finalPathList,finalNodesPathList,finalEdgesList,finalPathCost,profit)
 	# print("Final node paths: {0}".format(repr(finalNodesPathList)))
+
+# this function is for printing all the detail path information to a csv file
 def printPath(nodesMap):
-	pathData = [['id', 'Path Leaves','Path Nodes','path edges','cost']]
+	pathData = [['ID', 'Path_Leafs','Path_Nodes','Path_Edges','Path_Weight_Measurement']]
 	pathCost = OrderedDict(sorted(finalPathCost.items(),key=lambda kv: kv[1]['colorFactor'], reverse=True))
 	for pathIndex in pathCost:
 		# print("id:{0} count:{1} children:{2} connection:{3} label:{4}".format(nodeName,repr(nodesMap[nodeName]['childrenCount']),repr(nodesMap[nodeName]['childrenSet']),nodesMap[nodeName]['connection'],nodesMap[nodeName]['label']))
@@ -90,6 +101,103 @@ def printPath(nodesMap):
 		a = csv.writer(fp, delimiter=',')
 		a.writerows(pathData)
 
+
+
+
+
+def getSmallestResource():
+	resource = 1;
+	for index in finalPathCost:
+		if finalPathCost[index]['resource'] < resource:
+			resource = finalPathCost[index]['resource']
+	return resource
+def getlargestColorFactor():
+	colorFactor = 0
+	for index in finalPathCost:
+		if colorFactor < finalPathCost[index]['colorFactor']:
+			colorFactor = finalPathCost[index]['colorFactor']
+	return colorFactor
+def getwidth(factor):
+	return 4/(1+1/factor)	
+
+
+
+# Located in pathCount.py
+# this is the function for mapping attack tree to model , 
+# it would use some information regarding the paths in the attack tree
+# It would produce a json file which could be used for model visualization
+def generateModelVisualiztionJson(nodesMap):
+	pathCost = OrderedDict(sorted(finalPathCost.items(),key=lambda kv: kv[1]['colorFactor'], reverse=True))
+	with open('model_element.json') as data_file:
+		data = json.load(data_file)
+	modelData = {}
+	modelData['nodes'] = {}
+	modelData['edges'] = {}
+	modelNodeList = data['MODELnodes'] + data['MODELactors'] + data['MODELassets']
+	smallestResource = getSmallestResource()
+	largestColorFactor = getlargestColorFactor()
+	for pathIndex in pathCost:
+		for leaf in finalPathList[pathIndex]:
+			for modelNode in modelNodeList:
+				if modelNode+" " in nodesMap[leaf]['label']:
+					modelData['nodes'][modelNode] = {}
+					modelData['nodes'][modelNode]['likelihood'] = intepreterLevel(pathCost[pathIndex]['likelihood'])
+					modelData['nodes'][modelNode]['resource'] = int(round(getwidth(pathCost[pathIndex]['resource']/smallestResource)))
+					modelData['nodes'][modelNode]['colorFactor'] = int(round(4*pathCost[pathIndex]['colorFactor']/largestColorFactor))
+					modelNodeList.remove(modelNode)
+			if "MOVE" in nodesMap[leaf]['label'] or "FORCE" in nodesMap[leaf]['label']:
+				label = nodesMap[leaf]['label']
+				labelArray = label.split()
+				endNode = labelArray[len(labelArray)-1]
+				startNode = labelArray[len(labelArray)-2]
+				# print("11111111{0}".format(startNode))
+				while(startNode not in data['MODELnodes']):
+					startNode = data[startNode][0]	
+				# print("2222222222222{0}".format(startNode))
+				if endNode not in data[startNode]:
+					endNode = "city"
+				if startNode+endNode not in modelData['edges']:
+					if startNode not in modelData['nodes']:
+						modelData['nodes'][startNode] = {}
+						modelData['nodes'][startNode]['likelihood'] = intepreterLevel(pathCost[pathIndex]['likelihood'])
+						modelData['nodes'][startNode]['resource'] = int(round(getwidth(pathCost[pathIndex]['resource']/smallestResource)))
+						modelData['nodes'][startNode]['colorFactor'] = int(round(4*pathCost[pathIndex]['colorFactor']/largestColorFactor))						
+					if endNode not in modelData['nodes']:
+						modelData['nodes'][endNode] = {}
+						modelData['nodes'][endNode]['likelihood'] = intepreterLevel(pathCost[pathIndex]['likelihood'])
+						modelData['nodes'][endNode]['resource'] = int(round(getwidth(pathCost[pathIndex]['resource']/smallestResource)))
+						modelData['nodes'][endNode]['colorFactor'] = int(round(4*pathCost[pathIndex]['colorFactor']/largestColorFactor))											
+					modelData['edges'][startNode+endNode]={}
+					modelData['edges'][startNode+endNode]['likelihood'] = intepreterLevel(pathCost[pathIndex]['likelihood'])
+					modelData['edges'][startNode+endNode]['resource'] = int(round(getwidth(pathCost[pathIndex]['resource']/smallestResource)))
+					modelData['edges'][startNode+endNode]['colorFactor'] = int(round(4*pathCost[pathIndex]['colorFactor']/largestColorFactor))
+
+		if len(modelNodeList) == 0:
+			break
+	with open('model_visualization.json', 'w') as outfile:
+		json.dump(modelData, outfile)
+	return modelData
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def calculatePathCost(nodesMap,pathIndex,profit):
 	global finalPathList
 	cost = 0
@@ -98,7 +206,7 @@ def calculatePathCost(nodesMap,pathIndex,profit):
 	time = "MT"
 	parameterMap = {}
 	for nodeIndex in finalPathList[pathIndex]:
-		cost = cost + nodesMap[nodeIndex]['cost']['cost']
+		cost = mergeCost(cost,nodesMap[nodeIndex]['cost']['cost'])
 		difficulty = mergeDifficulties(difficulty,nodesMap[nodeIndex]['cost']['difficulty'])
 		likelihood = mergeLikelihood(likelihood,nodesMap[nodeIndex]['cost']['likelihood'])
 		time = mergeTime(time,nodesMap[nodeIndex]['cost']['time'])
@@ -136,7 +244,12 @@ def mergeTime(mainTime,subTime):
     elif mainTime == 'HR' or subTime == "HR":
         return 'HR'
     else:
-        return 'MT'  	
+        return 'MT'  
+def mergeCost(mainCost,subCost):
+    if subCost > mainCost:
+        mainCost = subCost
+    return mainCost
+
 def isLeafNode(nodesMap,nodeIndex):
 	if not nodesMap[nodeIndex]['childrenSet']:
 		return True

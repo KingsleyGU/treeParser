@@ -5,11 +5,18 @@ except:
 
 import networkx as nx
 from collections import OrderedDict
+
+# def getwidth(originalResource,lowestResource):
+# 	return int(round(originalWidth/(1+4/originalWidth)))
+
+
+# this function is responsible for creating the whole graph and plot it
 def createGraph(nodesMap,finalPathList,finalNodesPathList,finalEdgesList,finalPathCost,profit):
 	G = nx.DiGraph()
 	G.add_nodes_from(range(0,len(nodesMap)))
 	nodeColorFactorList = []
 	nodeColorList = []
+	nodeLineWidth = []
 	for i in range(0,len(nodesMap)):
 		nodeColorFactorList.append(0)
 	# print("color Factor list 1  {0},".format(repr(nodeColorFactorList)))
@@ -47,7 +54,11 @@ def createGraph(nodesMap,finalPathList,finalNodesPathList,finalEdgesList,finalPa
 	# A.write('test.dot') 
 	for i in range(0,len(nodesMap)):
 		tempfactor = nodeColorFactorList[i]/largestColorFactor
-		nodeColorList.append("#" + getHexValue(int(round(255*tempfactor)))+getHexValue(int(round(255 -255*tempfactor)))+"00")	
+		nodeColorList.append("#" + getHexValue(int(round(255*tempfactor)))+getHexValue(int(round(255 -255*tempfactor)))+"00")
+		if nodesMap[i]['connection'] == "or":
+			nodeLineWidth.append(0)
+		else:
+			nodeLineWidth.append(1)	
 	# print("lowest resource: {0}".format(repr(nodeColorList)))
 	pos=nx.drawing.nx_agraph.graphviz_layout(G,prog='dot',root=(len(nodesMap)-1))
 	# pos = hierarchy_pos(G,len(nodesMap)-1)
@@ -62,7 +73,7 @@ def createGraph(nodesMap,finalPathList,finalNodesPathList,finalEdgesList,finalPa
 	# 
 	B = nx.MultiGraph()
 	B.add_nodes_from(range(0,len(nodesMap)))
-	nx.draw_networkx_nodes(B,pos,node_size=250,linewidths=0,node_color=nodeColorList,alpha=0.6)
+	nx.draw_networkx_nodes(B,pos,node_size=250,linewidths=nodeLineWidth,node_color=nodeColorList,alpha=0.6)
 	# labels = getLabelList(nodesMap)
 	# lowestCost = getSmallestCost(nodesMap)
 	pathCost = OrderedDict(sorted(finalPathCost.items(),key=lambda kv: kv[1]['colorFactor']))
@@ -76,7 +87,7 @@ def createGraph(nodesMap,finalPathList,finalNodesPathList,finalEdgesList,finalPa
 			alpha = intepreterLevel(finalPathCost[edgeIndex]['likelihood'])/4
 			# tempfactor = int(profit)*finalPathCost[edgeIndex]['resource']*intepreterLevel(finalPathCost[edgeIndex]['likelihood'])
 			tempfactor = finalPathCost[edgeIndex]['colorFactor']/largestColorFactor
-			print("width: {0}".format(width))
+			# print("width: {0}".format(width))
 			color=("#" + getHexValue(int(round(255*tempfactor)))+getHexValue(int(round(255 -255*tempfactor)))+"00")
 			# if tempWeight>5:
 			# 	color = 'g'
@@ -88,26 +99,50 @@ def createGraph(nodesMap,finalPathList,finalNodesPathList,finalEdgesList,finalPa
 			# B.add_edge(edge[0], edge[1],weight=tempWeight)
 			nx.draw_networkx_edges(B,pos,edgelist=[(edge[0], edge[1])],width=width,edge_color=color,edge_cmap=plt.cm.Blues,length=342,alpha=alpha)
 	
-	nx.draw_networkx_labels(B,pos,labels,font_size=5)
+	nx.draw_networkx_labels(B,pos,labels,font_size=3)
 	plt.savefig('nx_test.png')
 
 	# P = G.plot(layout='tree', tree_root=(len(nodesMap)-1)) 
 	# P.show()
-	# plt.axis('off')
-	# plt.savefig("labels_and_colors.png") # save as png
+	plt.axis('off')
+	plt.savefig("labels_and_colors.png") # save as png
 	plt.show() # display
 
-# def getwidth(originalResource,lowestResource):
-# 	return int(round(originalWidth/(1+4/originalWidth)))
+# this is function to get the width of edges, this would be called by creatGraph
 def getwidth(originalWidth):
 	# if originalWidth >5:
 	# 	return 5
 	# elif originalWidth <1:
 	# 	return 1
 	# else:
-	return 5/(1+4/originalWidth)
-def addEdgeWithWeight(vectorStart,vectorEnd,weight):
-	return false
+	return originalWidth
+	# return 5/(1+4/originalWidth)
+
+# This function is to interprete the 4 levels of Time which is MT,HR,DY,MN to 1, 2, 3, 4
+def interpreterTime(timeLabel):
+	if timeLabel == "MT":
+		return 1
+	elif timeLabel == "HR":
+		return 2
+	elif timeLabel == "DY":
+		return 3
+	else:
+		return 4
+
+# This function is to interprete the 4 levels of Likelihood and difficulty which is L,M,H,V to 1, 2, 3, 4
+def intepreterLevel(levelLable):
+	if levelLable == "V":
+		return 4
+	elif levelLable == "H":
+		return 3
+	elif levelLable == "M":
+		return 2
+	else:
+		return 1
+
+
+
+# this is function to get the Smallest resource value,, this would be called by creatGraph
 def getSmallestResource(finalPathCost):
 	resource = 1;
 	for index in finalPathCost:
@@ -133,21 +168,9 @@ def getLabelList(nodesMap):
 		else:
 			labels[nodeName] = label
 	return labels
-def interpreterTime(timeLabel):
-	if timeLabel == "MT":
-		return 1
-	elif timeLabel == "HR":
-		return 2
-	elif timeLabel == "DY":
-		return 3
-	else:
-		return 4
-def intepreterLevel(levelLable):
-	if levelLable == "V":
-		return 4
-	elif levelLable == "H":
-		return 3
-	elif levelLable == "M":
-		return 2
-	else:
-		return 1
+
+
+
+
+def addEdgeWithWeight(vectorStart,vectorEnd,weight):
+	return false

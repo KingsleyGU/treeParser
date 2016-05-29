@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<adtree profit="900" id="test"  idsonly="true" >
+<adtree profit="1000" id="test"  idsonly="true" >
   <node refinement="disjunctive">
-    <label>Attacker Charlieget items  x004 x009</label>
+    <label>Attacker Fredget items  x004 x009</label>
     <node refinement="disjunctive">
       <label>to get or not to get</label>
       <node refinement="conjunctive">
@@ -11,46 +11,22 @@
           <node refinement="disjunctive">
             <label>test</label>
             <node refinement="disjunctive">
-              <label> FULFILL Charlie trusts Margrethe </label>
+              <label> FULFILL Fred trusts Margrethe </label>
             </node>
             <node refinement="disjunctive">
-              <label> FORCE Charlie door</label>
+              <label> FORCE Fred door</label>
             </node>
           </node>
           <node refinement="disjunctive">
-            <label> MOVE Charlie door</label>
+            <label> MOVE Fred door</label>
           </node>
         </node>
         <node refinement="disjunctive">
-          <label> IN Charlie x004 Margrethe</label>
+          <label> IN Fred x004 Margrethe</label>
         </node>
       </node>
       <node refinement="disjunctive">
         <label>make somebody get it</label>
-        <node refinement="disjunctive">
-          <label>make Fred get x004</label>
-          <node refinement="conjunctive">
-            <label>test</label>
-            <node refinement="conjunctive">
-              <label>test</label>
-              <node refinement="disjunctive">
-                <label>test</label>
-                <node refinement="disjunctive">
-                  <label>MAKE Charlie Fred FULFILL Fred trusts Margrethe </label>
-                </node>
-                <node refinement="disjunctive">
-                  <label>MAKE Charlie Fred FORCE Fred door</label>
-                </node>
-              </node>
-              <node refinement="disjunctive">
-                <label>MAKE Charlie Fred MOVE Fred door</label>
-              </node>
-            </node>
-            <node refinement="disjunctive">
-              <label>MAKE Charlie Fred IN Fred x004 Margrethe</label>
-            </node>
-          </node>
-        </node>
         <node refinement="disjunctive">
           <label>make Margrethe get x004</label>
           <node refinement="conjunctive">
@@ -58,20 +34,44 @@
             <node refinement="disjunctive">
               <label>test</label>
               <node refinement="disjunctive">
-                <label> FULFILL Charlie trusts Margrethe </label>
+                <label> FULFILL Fred trusts Margrethe </label>
               </node>
               <node refinement="disjunctive">
-                <label> FORCE Charlie door</label>
+                <label> FORCE Fred door</label>
               </node>
             </node>
             <node refinement="disjunctive">
-              <label> MOVE Charlie door</label>
+              <label> MOVE Fred door</label>
             </node>
           </node>
           <node refinement="conjunctive">
             <label>test</label>
             <node refinement="disjunctive">
-              <label>MAKE Charlie Margrethe IN Margrethe x004 Margrethe</label>
+              <label>MAKE Fred Margrethe IN Margrethe x004 Margrethe</label>
+            </node>
+          </node>
+        </node>
+        <node refinement="disjunctive">
+          <label>make Charlie get x004</label>
+          <node refinement="conjunctive">
+            <label>test</label>
+            <node refinement="conjunctive">
+              <label>test</label>
+              <node refinement="disjunctive">
+                <label>test</label>
+                <node refinement="disjunctive">
+                  <label>MAKE Fred Charlie FULFILL Charlie trusts Margrethe </label>
+                </node>
+                <node refinement="disjunctive">
+                  <label>MAKE Fred Charlie FORCE Charlie door</label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label>MAKE Fred Charlie MOVE Charlie door</label>
+              </node>
+            </node>
+            <node refinement="disjunctive">
+              <label>MAKE Fred Charlie IN Charlie x004 Margrethe</label>
             </node>
           </node>
         </node>
@@ -88,21 +88,21 @@
             <node refinement="disjunctive">
               <label>test</label>
               <node refinement="disjunctive">
-                <label> FULFILL Charlie trusts Margrethe </label>
+                <label> FULFILL Fred trusts Margrethe </label>
               </node>
               <node refinement="disjunctive">
-                <label> FORCE Charlie door</label>
+                <label> FORCE Fred door</label>
               </node>
             </node>
             <node refinement="disjunctive">
-              <label> MOVE Charlie door</label>
+              <label> MOVE Fred door</label>
             </node>
           </node>
           <node refinement="disjunctive">
-            <label> IN Charlie x009 Margrethe</label>
+            <label> IN Fred x009 Margrethe</label>
           </node>
         </node>
-<!--         <node refinement="conjunctive">
+        <node refinement="conjunctive">
           <label>get item x004 and extract data x009</label>
           <node refinement="conjunctive">
             <label>test</label>
@@ -111,29 +111,68 @@
               <node refinement="disjunctive">
                 <label>test</label>
                 <node refinement="disjunctive">
-                  <label> FULFILL Charlie trusts Margrethe </label>
+                  <label> FULFILL Fred trusts Margrethe </label>
                 </node>
                 <node refinement="disjunctive">
-                  <label> FORCE Charlie door</label>
+                  <label> FORCE Fred door</label>
                 </node>
               </node>
               <node refinement="disjunctive">
-                <label> MOVE Charlie door</label>
+                <label> MOVE Fred door</label>
               </node>
             </node>
             <node refinement="disjunctive">
-              <label> IN Charlie x004 Margrethe</label>
+              <label> IN Fred x004 Margrethe</label>
             </node>
           </node>
           <node refinement="disjunctive">
-            <label> IN Charlie x009 x004</label>
+            <label> IN Fred x009 x004</label>
           </node>
-        </node> -->
+        </node>
       </node>
       <node refinement="disjunctive">
         <label>make somebody get it</label>
         <node refinement="disjunctive">
-          <label>make Fred get x009</label>
+          <label>make Margrethe get x009</label>
+          <node refinement="conjunctive">
+            <label>test</label>
+            <node refinement="disjunctive">
+              <label>test</label>
+              <node refinement="disjunctive">
+                <label> FULFILL Fred trusts Margrethe </label>
+              </node>
+              <node refinement="disjunctive">
+                <label> FORCE Fred door</label>
+              </node>
+            </node>
+            <node refinement="disjunctive">
+              <label> MOVE Fred door</label>
+            </node>
+          </node>
+          <node refinement="disjunctive">
+            <label>get x009</label>
+            <node refinement="conjunctive">
+              <label>get data x009 at actor Margrethe</label>
+              <node refinement="disjunctive">
+                <label>MAKE Fred Margrethe IN Margrethe x009 Margrethe</label>
+              </node>
+            </node>
+            <node refinement="conjunctive">
+              <label>get item x004 and extract data x009</label>
+              <node refinement="conjunctive">
+                <label>test</label>
+                <node refinement="disjunctive">
+                  <label>MAKE Fred Margrethe IN Margrethe x004 Margrethe</label>
+                </node>
+              </node>
+              <node refinement="disjunctive">
+                <label>MAKE Fred Margrethe IN Margrethe x009 x004</label>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node refinement="disjunctive">
+          <label>make Charlie get x009</label>
           <node refinement="disjunctive">
             <label>get x009</label>
             <node refinement="conjunctive">
@@ -143,18 +182,18 @@
                 <node refinement="disjunctive">
                   <label>test</label>
                   <node refinement="disjunctive">
-                    <label>MAKE Charlie Fred FULFILL Fred trusts Margrethe </label>
+                    <label>MAKE Fred Charlie FULFILL Charlie trusts Margrethe </label>
                   </node>
                   <node refinement="disjunctive">
-                    <label>MAKE Charlie Fred FORCE Fred door</label>
+                    <label>MAKE Fred Charlie FORCE Charlie door</label>
                   </node>
                 </node>
                 <node refinement="disjunctive">
-                  <label>MAKE Charlie Fred MOVE Fred door</label>
+                  <label>MAKE Fred Charlie MOVE Charlie door</label>
                 </node>
               </node>
               <node refinement="disjunctive">
-                <label>MAKE Charlie Fred IN Fred x009 Margrethe</label>
+                <label>MAKE Fred Charlie IN Charlie x009 Margrethe</label>
               </node>
             </node>
             <node refinement="conjunctive">
@@ -166,61 +205,22 @@
                   <node refinement="disjunctive">
                     <label>test</label>
                     <node refinement="disjunctive">
-                      <label>MAKE Charlie Fred FULFILL Fred trusts Margrethe </label>
+                      <label>MAKE Fred Charlie FULFILL Charlie trusts Margrethe </label>
                     </node>
                     <node refinement="disjunctive">
-                      <label>MAKE Charlie Fred FORCE Fred door</label>
+                      <label>MAKE Fred Charlie FORCE Charlie door</label>
                     </node>
                   </node>
                   <node refinement="disjunctive">
-                    <label>MAKE Charlie Fred MOVE Fred door</label>
+                    <label>MAKE Fred Charlie MOVE Charlie door</label>
                   </node>
                 </node>
                 <node refinement="disjunctive">
-                  <label>MAKE Charlie Fred IN Fred x004 Margrethe</label>
+                  <label>MAKE Fred Charlie IN Charlie x004 Margrethe</label>
                 </node>
               </node>
               <node refinement="disjunctive">
-                <label>MAKE Charlie Fred IN Fred x009 x004</label>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node refinement="disjunctive">
-          <label>make Margrethe get x009</label>
-          <node refinement="conjunctive">
-            <label>test</label>
-            <node refinement="disjunctive">
-              <label>test</label>
-              <node refinement="disjunctive">
-                <label> FULFILL Charlie trusts Margrethe </label>
-              </node>
-              <node refinement="disjunctive">
-                <label> FORCE Charlie door</label>
-              </node>
-            </node>
-            <node refinement="disjunctive">
-              <label> MOVE Charlie door</label>
-            </node>
-          </node>
-          <node refinement="disjunctive">
-            <label>get x009</label>
-            <node refinement="conjunctive">
-              <label>get data x009 at actor Margrethe</label>
-              <node refinement="disjunctive">
-                <label>MAKE Charlie Margrethe IN Margrethe x009 Margrethe</label>
-              </node>
-            </node>
-            <node refinement="conjunctive">
-              <label>get item x004 and extract data x009</label>
-              <node refinement="conjunctive">
-                <label>test</label>
-                <node refinement="disjunctive">
-                  <label>MAKE Charlie Margrethe IN Margrethe x004 Margrethe</label>
-                </node>
-              </node>
-              <node refinement="disjunctive">
-                <label>MAKE Charlie Margrethe IN Margrethe x009 x004</label>
+                <label>MAKE Fred Charlie IN Charlie x009 x004</label>
               </node>
             </node>
           </node>

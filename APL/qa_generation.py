@@ -1,6 +1,6 @@
 ﻿import re
 from xml.dom.minidom import parse, parseString
-from costCount import getQAComplexModel,getQASimpleModel,addCostMap,orCostMap,printCost
+from costCount import getQAComplexModel,addCostMap,orCostMap,printCost,andDifficultyMap,orDifficultyMap,andLikelihoodMap,orLikelihoodMap,andTimeMap,orTimeMap
 from occuranceCount import getPatternMap,getLabelCount,addCountMap,orCountMap,printOccurance
 # from visualization import createGraph
 # from occuranceCount import *

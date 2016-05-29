@@ -54,6 +54,39 @@ def updatePatternMap(patternType,patternName):
     else:
         patternMap[patternType][patternName] = 1
 
+
+# This is the main function to get the elements count in a leaf label
+def getLabelCount(label):
+    countMap = {}
+    global patternMap
+    # Format: FULFILL is fulfill actor trusts actor
+    labelArray = label.split()
+    updateActionPatternMap(labelArray[0])
+    if label.strip().upper().startswith('FULFILL'):       
+        countMap = updateCountMap(countMap,labelArray[1])
+        countMap = updateCountMap(countMap,labelArray[3])
+        return countMap
+    # Format: force/move actor location locality
+    elif label.strip().upper().startswith('FORCE') or label.strip().upper().startswith('MOVE'):
+        # updateTargetPatternMap(labelArray[3])
+        countMap = updateCountMap(countMap,labelArray[1])
+        countMap = updateCountMap(countMap,labelArray[2])
+        return countMap     
+    # Format: IN actor component Actor/Location some extra stuff also be added 
+    elif label.strip().upper().startswith('IN'):
+        # updateAssetPatternMap(labelArray[3])
+        # updateTargetPatternMap(labelArray[6])
+        countMap = updateCountMap(countMap,labelArray[1])
+        countMap = updateCountMap(countMap,labelArray[2])
+        countMap = updateCountMap(countMap,labelArray[3])
+        return countMap   
+    # Format:  MAKE actor victim + previous cases
+    elif label.strip().upper().startswith('MAKE'):
+        countMap = updateCountMap(countMap,labelArray[1])
+        # countMap = updateCountMap(countMap,labelArray[2])
+        return addCountMap(countMap,getLabelCount(label[label.index(labelArray[3]):]))
+
+# This function is to get the occurrence for non-leaf conjunctive nodes
 def addCountMap(mainCountMap,subCountMap):    
     for key in subCountMap:
         if key in mainCountMap:
@@ -65,6 +98,7 @@ def addCountMap(mainCountMap,subCountMap):
             mainCountMap[key]['max'] = subCountMap[key]['max']
     return mainCountMap
 
+# This function is to get the occurrence for non-leaf disjunctive nodes
 def orCountMap(mainCountMap,subCountMap):
     if not mainCountMap:
        for key in subCountMap:
@@ -87,7 +121,7 @@ def orCountMap(mainCountMap,subCountMap):
                 mainCountMap[key]['min'] = 0
     return mainCountMap
 
-
+# A function for updating the occurrence count map, this function would be called by getLabelCount
 def updateCountMap(countMap,componentName):
     if componentName in countMap:
         countMap[componentName]['min'] += 1
@@ -98,9 +132,9 @@ def updateCountMap(countMap,componentName):
         countMap[componentName]['max'] = 1
     return countMap
 
-
+# This function is for printing all the emlemt count occurrence to a csv file
 def printOccurance(nodesMap):
-    occuranceData = [['id', 'Count','children','connection','label','parent']]
+    occuranceData = [['ID', 'Node_Occurrence_Count','Children','Node_Type','Label','Parent']]
     for nodeName in nodesMap:
         # print("id:{0} count:{1} children:{2} connection:{3} label:{4}".format(nodeName,repr(nodesMap[nodeName]['childrenCount']),repr(nodesMap[nodeName]['childrenSet']),nodesMap[nodeName]['connection'],nodesMap[nodeName]['label']))
         occuranceElement = []

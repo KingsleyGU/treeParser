@@ -1,68 +1,77 @@
-id,Count,children,connection,label,parent
-0,"{'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 1, 'min': 1}}",set(),or, FULFILL Charlie trusts Margrethe ,2
-1,"{'Charlie': {'max': 1, 'min': 1}, 'door': {'max': 1, 'min': 1}}",set(),or, FORCE Charlie door,2
-2,"{'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 1, 'min': 0}, 'door': {'max': 1, 'min': 0}}","{0, 1}",or,test,4
-3,"{'Charlie': {'max': 1, 'min': 1}, 'door': {'max': 1, 'min': 1}}",set(),or, MOVE Charlie door,4
-4,"{'Charlie': {'max': 2, 'min': 2}, 'Margrethe': {'max': 1, 'min': 0}, 'door': {'max': 2, 'min': 1}}","{2, 3}",add,test,6
-5,"{'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 1, 'min': 1}, 'x004': {'max': 1, 'min': 1}}",set(),or, IN Charlie x004 Margrethe,6
-6,"{'Charlie': {'max': 3, 'min': 3}, 'x004': {'max': 1, 'min': 1}, 'Margrethe': {'max': 2, 'min': 1}, 'door': {'max': 2, 'min': 1}}","{4, 5}",add,test,24
-7,"{'Fred': {'max': 1, 'min': 1}, 'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 1, 'min': 1}}",set(),or,MAKE Charlie Fred FULFILL Fred trusts Margrethe ,9
-8,"{'Fred': {'max': 1, 'min': 1}, 'Charlie': {'max': 1, 'min': 1}, 'door': {'max': 1, 'min': 1}}",set(),or,MAKE Charlie Fred FORCE Fred door,9
-9,"{'Fred': {'max': 1, 'min': 1}, 'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 1, 'min': 0}, 'door': {'max': 1, 'min': 0}}","{8, 7}",or,test,11
-10,"{'Fred': {'max': 1, 'min': 1}, 'Charlie': {'max': 1, 'min': 1}, 'door': {'max': 1, 'min': 1}}",set(),or,MAKE Charlie Fred MOVE Fred door,11
-11,"{'Fred': {'max': 2, 'min': 2}, 'Charlie': {'max': 2, 'min': 2}, 'Margrethe': {'max': 1, 'min': 0}, 'door': {'max': 2, 'min': 1}}","{9, 10}",add,test,13
-12,"{'Fred': {'max': 1, 'min': 1}, 'Charlie': {'max': 1, 'min': 1}, 'x004': {'max': 1, 'min': 1}, 'Margrethe': {'max': 1, 'min': 1}}",set(),or,MAKE Charlie Fred IN Fred x004 Margrethe,13
-13,"{'Fred': {'max': 3, 'min': 3}, 'Charlie': {'max': 3, 'min': 3}, 'x004': {'max': 1, 'min': 1}, 'Margrethe': {'max': 2, 'min': 1}, 'door': {'max': 2, 'min': 1}}","{11, 12}",add,test,14
-14,"{'Fred': {'max': 3, 'min': 3}, 'Charlie': {'max': 3, 'min': 3}, 'x004': {'max': 1, 'min': 1}, 'Margrethe': {'max': 2, 'min': 1}, 'door': {'max': 2, 'min': 1}}",{13},or,make Fred get x004,23
-15,"{'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 1, 'min': 1}}",set(),or, FULFILL Charlie trusts Margrethe ,17
-16,"{'Charlie': {'max': 1, 'min': 1}, 'door': {'max': 1, 'min': 1}}",set(),or, FORCE Charlie door,17
-17,"{'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 1, 'min': 0}, 'door': {'max': 1, 'min': 0}}","{16, 15}",or,test,19
-18,"{'Charlie': {'max': 1, 'min': 1}, 'door': {'max': 1, 'min': 1}}",set(),or, MOVE Charlie door,19
-19,"{'Charlie': {'max': 2, 'min': 2}, 'Margrethe': {'max': 1, 'min': 0}, 'door': {'max': 2, 'min': 1}}","{17, 18}",add,test,22
-20,"{'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 2, 'min': 2}, 'x004': {'max': 1, 'min': 1}}",set(),or,MAKE Charlie Margrethe IN Margrethe x004 Margrethe,21
-21,"{'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 2, 'min': 2}, 'x004': {'max': 1, 'min': 1}}",{20},add,test,22
-22,"{'Charlie': {'max': 2, 'min': 1}, 'x004': {'max': 1, 'min': 0}, 'Margrethe': {'max': 2, 'min': 0}, 'door': {'max': 2, 'min': 0}}","{19, 21}",or,make Margrethe get x004,23
-23,"{'Fred': {'max': 3, 'min': 0}, 'Charlie': {'max': 3, 'min': 1}, 'Margrethe': {'max': 2, 'min': 0}, 'x004': {'max': 1, 'min': 0}, 'door': {'max': 2, 'min': 0}}","{14, 22}",or,make somebody get it,24
-24,"{'Fred': {'max': 3, 'min': 0}, 'Charlie': {'max': 3, 'min': 1}, 'Margrethe': {'max': 2, 'min': 0}, 'x004': {'max': 1, 'min': 0}, 'door': {'max': 2, 'min': 0}}","{6, 23}",or,to get or not to get,66
-25,"{'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 1, 'min': 1}}",set(),or, FULFILL Charlie trusts Margrethe ,27
-26,"{'Charlie': {'max': 1, 'min': 1}, 'door': {'max': 1, 'min': 1}}",set(),or, FORCE Charlie door,27
-27,"{'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 1, 'min': 0}, 'door': {'max': 1, 'min': 0}}","{25, 26}",or,test,29
-28,"{'Charlie': {'max': 1, 'min': 1}, 'door': {'max': 1, 'min': 1}}",set(),or, MOVE Charlie door,29
-29,"{'Charlie': {'max': 2, 'min': 2}, 'Margrethe': {'max': 1, 'min': 0}, 'door': {'max': 2, 'min': 1}}","{27, 28}",add,test,31
-30,"{'x009': {'max': 1, 'min': 1}, 'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 1, 'min': 1}}",set(),or, IN Charlie x009 Margrethe,31
-31,"{'x009': {'max': 1, 'min': 1}, 'Charlie': {'max': 3, 'min': 3}, 'Margrethe': {'max': 2, 'min': 1}, 'door': {'max': 2, 'min': 1}}","{29, 30}",add,get data x009 at actor Margrethe,32
-32,"{'x009': {'max': 1, 'min': 1}, 'Charlie': {'max': 3, 'min': 3}, 'Margrethe': {'max': 2, 'min': 1}, 'door': {'max': 2, 'min': 1}}",{31},or,get x009,65
-33,"{'Fred': {'max': 1, 'min': 1}, 'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 1, 'min': 1}}",set(),or,MAKE Charlie Fred FULFILL Fred trusts Margrethe ,35
-34,"{'Fred': {'max': 1, 'min': 1}, 'Charlie': {'max': 1, 'min': 1}, 'door': {'max': 1, 'min': 1}}",set(),or,MAKE Charlie Fred FORCE Fred door,35
-35,"{'Fred': {'max': 1, 'min': 1}, 'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 1, 'min': 0}, 'door': {'max': 1, 'min': 0}}","{33, 34}",or,test,37
-36,"{'Fred': {'max': 1, 'min': 1}, 'Charlie': {'max': 1, 'min': 1}, 'door': {'max': 1, 'min': 1}}",set(),or,MAKE Charlie Fred MOVE Fred door,37
-37,"{'Fred': {'max': 2, 'min': 2}, 'Charlie': {'max': 2, 'min': 2}, 'Margrethe': {'max': 1, 'min': 0}, 'door': {'max': 2, 'min': 1}}","{35, 36}",add,test,39
-38,"{'Fred': {'max': 1, 'min': 1}, 'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 1, 'min': 1}, 'x009': {'max': 1, 'min': 1}}",set(),or,MAKE Charlie Fred IN Fred x009 Margrethe,39
-39,"{'Fred': {'max': 3, 'min': 3}, 'Charlie': {'max': 3, 'min': 3}, 'x009': {'max': 1, 'min': 1}, 'Margrethe': {'max': 2, 'min': 1}, 'door': {'max': 2, 'min': 1}}","{37, 38}",add,get data x009 at actor Margrethe,49
-40,"{'Fred': {'max': 1, 'min': 1}, 'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 1, 'min': 1}}",set(),or,MAKE Charlie Fred FULFILL Fred trusts Margrethe ,42
-41,"{'Fred': {'max': 1, 'min': 1}, 'Charlie': {'max': 1, 'min': 1}, 'door': {'max': 1, 'min': 1}}",set(),or,MAKE Charlie Fred FORCE Fred door,42
-42,"{'Fred': {'max': 1, 'min': 1}, 'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 1, 'min': 0}, 'door': {'max': 1, 'min': 0}}","{40, 41}",or,test,44
-43,"{'Fred': {'max': 1, 'min': 1}, 'Charlie': {'max': 1, 'min': 1}, 'door': {'max': 1, 'min': 1}}",set(),or,MAKE Charlie Fred MOVE Fred door,44
-44,"{'Fred': {'max': 2, 'min': 2}, 'Charlie': {'max': 2, 'min': 2}, 'Margrethe': {'max': 1, 'min': 0}, 'door': {'max': 2, 'min': 1}}","{42, 43}",add,test,46
-45,"{'Fred': {'max': 1, 'min': 1}, 'Charlie': {'max': 1, 'min': 1}, 'x004': {'max': 1, 'min': 1}, 'Margrethe': {'max': 1, 'min': 1}}",set(),or,MAKE Charlie Fred IN Fred x004 Margrethe,46
-46,"{'Fred': {'max': 3, 'min': 3}, 'Charlie': {'max': 3, 'min': 3}, 'x004': {'max': 1, 'min': 1}, 'Margrethe': {'max': 2, 'min': 1}, 'door': {'max': 2, 'min': 1}}","{44, 45}",add,test,48
-47,"{'Fred': {'max': 1, 'min': 1}, 'Charlie': {'max': 1, 'min': 1}, 'x004': {'max': 1, 'min': 1}, 'x009': {'max': 1, 'min': 1}}",set(),or,MAKE Charlie Fred IN Fred x009 x004,48
-48,"{'Fred': {'max': 4, 'min': 4}, 'Charlie': {'max': 4, 'min': 4}, 'Margrethe': {'max': 2, 'min': 1}, 'x009': {'max': 1, 'min': 1}, 'x004': {'max': 2, 'min': 2}, 'door': {'max': 2, 'min': 1}}","{46, 47}",add,get item x004 and extract data x009,49
-49,"{'Fred': {'max': 4, 'min': 3}, 'Charlie': {'max': 4, 'min': 3}, 'Margrethe': {'max': 2, 'min': 1}, 'x009': {'max': 1, 'min': 1}, 'x004': {'max': 2, 'min': 0}, 'door': {'max': 2, 'min': 1}}","{48, 39}",or,get x009,50
-50,"{'Fred': {'max': 4, 'min': 3}, 'Charlie': {'max': 4, 'min': 3}, 'Margrethe': {'max': 2, 'min': 1}, 'x009': {'max': 1, 'min': 1}, 'x004': {'max': 2, 'min': 0}, 'door': {'max': 2, 'min': 1}}",{49},or,make Fred get x009,64
-51,"{'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 1, 'min': 1}}",set(),or, FULFILL Charlie trusts Margrethe ,53
-52,"{'Charlie': {'max': 1, 'min': 1}, 'door': {'max': 1, 'min': 1}}",set(),or, FORCE Charlie door,53
-53,"{'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 1, 'min': 0}, 'door': {'max': 1, 'min': 0}}","{51, 52}",or,test,55
-54,"{'Charlie': {'max': 1, 'min': 1}, 'door': {'max': 1, 'min': 1}}",set(),or, MOVE Charlie door,55
-55,"{'Charlie': {'max': 2, 'min': 2}, 'Margrethe': {'max': 1, 'min': 0}, 'door': {'max': 2, 'min': 1}}","{53, 54}",add,test,63
-56,"{'x009': {'max': 1, 'min': 1}, 'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 2, 'min': 2}}",set(),or,MAKE Charlie Margrethe IN Margrethe x009 Margrethe,57
-57,"{'x009': {'max': 1, 'min': 1}, 'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 2, 'min': 2}}",{56},add,get data x009 at actor Margrethe,62
-58,"{'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 2, 'min': 2}, 'x004': {'max': 1, 'min': 1}}",set(),or,MAKE Charlie Margrethe IN Margrethe x004 Margrethe,59
-59,"{'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 2, 'min': 2}, 'x004': {'max': 1, 'min': 1}}",{58},add,test,61
-60,"{'x009': {'max': 1, 'min': 1}, 'Charlie': {'max': 1, 'min': 1}, 'Margrethe': {'max': 1, 'min': 1}, 'x004': {'max': 1, 'min': 1}}",set(),or,MAKE Charlie Margrethe IN Margrethe x009 x004,61
-61,"{'x009': {'max': 1, 'min': 1}, 'Charlie': {'max': 2, 'min': 2}, 'x004': {'max': 2, 'min': 2}, 'Margrethe': {'max': 3, 'min': 3}}","{59, 60}",add,get item x004 and extract data x009,62
-62,"{'x009': {'max': 1, 'min': 1}, 'Charlie': {'max': 2, 'min': 1}, 'x004': {'max': 2, 'min': 0}, 'Margrethe': {'max': 3, 'min': 2}}","{57, 61}",or,get x009,63
-63,"{'x009': {'max': 1, 'min': 0}, 'Charlie': {'max': 2, 'min': 1}, 'x004': {'max': 2, 'min': 0}, 'Margrethe': {'max': 3, 'min': 0}, 'door': {'max': 2, 'min': 0}}","{62, 55}",or,make Margrethe get x009,64
-64,"{'Fred': {'max': 4, 'min': 0}, 'Charlie': {'max': 4, 'min': 1}, 'Margrethe': {'max': 3, 'min': 0}, 'x009': {'max': 1, 'min': 0}, 'x004': {'max': 2, 'min': 0}, 'door': {'max': 2, 'min': 0}}","{50, 63}",or,make somebody get it,65
-65,"{'x009': {'max': 1, 'min': 0}, 'Charlie': {'max': 4, 'min': 1}, 'Margrethe': {'max': 3, 'min': 0}, 'Fred': {'max': 4, 'min': 0}, 'x004': {'max': 2, 'min': 0}, 'door': {'max': 2, 'min': 0}}","{32, 64}",or,to get or not to get,66
-66,"{'Fred': {'max': 4, 'min': 0}, 'Charlie': {'max': 4, 'min': 1}, 'Margrethe': {'max': 3, 'min': 0}, 'x009': {'max': 1, 'min': 0}, 'x004': {'max': 2, 'min': 0}, 'door': {'max': 2, 'min': 0}}","{24, 65}",or,Attacker Charlieget items  x004 x009,-1
+ID,Node_Occurrence_Count,Children,Node_Type,Label,Parent
+0,"{'Fred': {'min': 1, 'max': 1}, 'Margrethe': {'min': 1, 'max': 1}}",set(),or, FULFILL Fred trusts Margrethe ,2
+1,"{'door': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}}",set(),or, FORCE Fred door,2
+2,"{'door': {'min': 0, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Margrethe': {'min': 0, 'max': 1}}","{0, 1}",or,test,4
+3,"{'door': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}}",set(),or, MOVE Fred door,4
+4,"{'door': {'min': 1, 'max': 2}, 'Fred': {'min': 2, 'max': 2}, 'Margrethe': {'min': 0, 'max': 1}}","{2, 3}",add,test,6
+5,"{'x004': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Margrethe': {'min': 1, 'max': 1}}",set(),or, IN Fred x004 Margrethe,6
+6,"{'x004': {'min': 1, 'max': 1}, 'door': {'min': 1, 'max': 2}, 'Fred': {'min': 3, 'max': 3}, 'Margrethe': {'min': 1, 'max': 2}}","{4, 5}",add,test,24
+7,"{'Fred': {'min': 1, 'max': 1}, 'Margrethe': {'min': 1, 'max': 1}}",set(),or, FULFILL Fred trusts Margrethe ,9
+8,"{'door': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}}",set(),or, FORCE Fred door,9
+9,"{'door': {'min': 0, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Margrethe': {'min': 0, 'max': 1}}","{8, 7}",or,test,11
+10,"{'door': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}}",set(),or, MOVE Fred door,11
+11,"{'door': {'min': 1, 'max': 2}, 'Fred': {'min': 2, 'max': 2}, 'Margrethe': {'min': 0, 'max': 1}}","{9, 10}",add,test,14
+12,"{'x004': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Margrethe': {'min': 2, 'max': 2}}",set(),or,MAKE Fred Margrethe IN Margrethe x004 Margrethe,13
+13,"{'x004': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Margrethe': {'min': 2, 'max': 2}}",{12},add,test,14
+14,"{'x004': {'min': 0, 'max': 1}, 'door': {'min': 0, 'max': 2}, 'Fred': {'min': 1, 'max': 2}, 'Margrethe': {'min': 0, 'max': 2}}","{11, 13}",or,make Margrethe get x004,23
+15,"{'Fred': {'min': 1, 'max': 1}, 'Charlie': {'min': 1, 'max': 1}, 'Margrethe': {'min': 1, 'max': 1}}",set(),or,MAKE Fred Charlie FULFILL Charlie trusts Margrethe ,17
+16,"{'door': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Charlie': {'min': 1, 'max': 1}}",set(),or,MAKE Fred Charlie FORCE Charlie door,17
+17,"{'door': {'min': 0, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Charlie': {'min': 1, 'max': 1}, 'Margrethe': {'min': 0, 'max': 1}}","{16, 15}",or,test,19
+18,"{'door': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Charlie': {'min': 1, 'max': 1}}",set(),or,MAKE Fred Charlie MOVE Charlie door,19
+19,"{'door': {'min': 1, 'max': 2}, 'Fred': {'min': 2, 'max': 2}, 'Charlie': {'min': 2, 'max': 2}, 'Margrethe': {'min': 0, 'max': 1}}","{17, 18}",add,test,21
+20,"{'x004': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Charlie': {'min': 1, 'max': 1}, 'Margrethe': {'min': 1, 'max': 1}}",set(),or,MAKE Fred Charlie IN Charlie x004 Margrethe,21
+21,"{'x004': {'min': 1, 'max': 1}, 'door': {'min': 1, 'max': 2}, 'Fred': {'min': 3, 'max': 3}, 'Charlie': {'min': 3, 'max': 3}, 'Margrethe': {'min': 1, 'max': 2}}","{19, 20}",add,test,22
+22,"{'x004': {'min': 1, 'max': 1}, 'door': {'min': 1, 'max': 2}, 'Fred': {'min': 3, 'max': 3}, 'Charlie': {'min': 3, 'max': 3}, 'Margrethe': {'min': 1, 'max': 2}}",{21},or,make Charlie get x004,23
+23,"{'x004': {'min': 0, 'max': 1}, 'door': {'min': 0, 'max': 2}, 'Fred': {'min': 1, 'max': 3}, 'Charlie': {'min': 0, 'max': 3}, 'Margrethe': {'min': 0, 'max': 2}}","{14, 22}",or,make somebody get it,24
+24,"{'x004': {'min': 0, 'max': 1}, 'door': {'min': 0, 'max': 2}, 'Fred': {'min': 1, 'max': 3}, 'Charlie': {'min': 0, 'max': 3}, 'Margrethe': {'min': 0, 'max': 2}}","{6, 23}",or,to get or not to get,75
+25,"{'Fred': {'min': 1, 'max': 1}, 'Margrethe': {'min': 1, 'max': 1}}",set(),or, FULFILL Fred trusts Margrethe ,27
+26,"{'door': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}}",set(),or, FORCE Fred door,27
+27,"{'door': {'min': 0, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Margrethe': {'min': 0, 'max': 1}}","{25, 26}",or,test,29
+28,"{'door': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}}",set(),or, MOVE Fred door,29
+29,"{'door': {'min': 1, 'max': 2}, 'Fred': {'min': 2, 'max': 2}, 'Margrethe': {'min': 0, 'max': 1}}","{27, 28}",add,test,31
+30,"{'x009': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Margrethe': {'min': 1, 'max': 1}}",set(),or, IN Fred x009 Margrethe,31
+31,"{'x009': {'min': 1, 'max': 1}, 'door': {'min': 1, 'max': 2}, 'Fred': {'min': 3, 'max': 3}, 'Margrethe': {'min': 1, 'max': 2}}","{29, 30}",add,get data x009 at actor Margrethe,41
+32,"{'Fred': {'min': 1, 'max': 1}, 'Margrethe': {'min': 1, 'max': 1}}",set(),or, FULFILL Fred trusts Margrethe ,34
+33,"{'door': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}}",set(),or, FORCE Fred door,34
+34,"{'door': {'min': 0, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Margrethe': {'min': 0, 'max': 1}}","{32, 33}",or,test,36
+35,"{'door': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}}",set(),or, MOVE Fred door,36
+36,"{'door': {'min': 1, 'max': 2}, 'Fred': {'min': 2, 'max': 2}, 'Margrethe': {'min': 0, 'max': 1}}","{34, 35}",add,test,38
+37,"{'x004': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Margrethe': {'min': 1, 'max': 1}}",set(),or, IN Fred x004 Margrethe,38
+38,"{'x004': {'min': 1, 'max': 1}, 'door': {'min': 1, 'max': 2}, 'Fred': {'min': 3, 'max': 3}, 'Margrethe': {'min': 1, 'max': 2}}","{36, 37}",add,test,40
+39,"{'x004': {'min': 1, 'max': 1}, 'x009': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}}",set(),or, IN Fred x009 x004,40
+40,"{'x009': {'min': 1, 'max': 1}, 'x004': {'min': 2, 'max': 2}, 'door': {'min': 1, 'max': 2}, 'Fred': {'min': 4, 'max': 4}, 'Margrethe': {'min': 1, 'max': 2}}","{38, 39}",add,get item x004 and extract data x009,41
+41,"{'door': {'min': 1, 'max': 2}, 'x004': {'min': 0, 'max': 2}, 'x009': {'min': 1, 'max': 1}, 'Fred': {'min': 3, 'max': 4}, 'Margrethe': {'min': 1, 'max': 2}}","{40, 31}",or,get x009,74
+42,"{'Fred': {'min': 1, 'max': 1}, 'Margrethe': {'min': 1, 'max': 1}}",set(),or, FULFILL Fred trusts Margrethe ,44
+43,"{'door': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}}",set(),or, FORCE Fred door,44
+44,"{'door': {'min': 0, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Margrethe': {'min': 0, 'max': 1}}","{42, 43}",or,test,46
+45,"{'door': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}}",set(),or, MOVE Fred door,46
+46,"{'door': {'min': 1, 'max': 2}, 'Fred': {'min': 2, 'max': 2}, 'Margrethe': {'min': 0, 'max': 1}}","{44, 45}",add,test,54
+47,"{'x009': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Margrethe': {'min': 2, 'max': 2}}",set(),or,MAKE Fred Margrethe IN Margrethe x009 Margrethe,48
+48,"{'x009': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Margrethe': {'min': 2, 'max': 2}}",{47},add,get data x009 at actor Margrethe,53
+49,"{'x004': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Margrethe': {'min': 2, 'max': 2}}",set(),or,MAKE Fred Margrethe IN Margrethe x004 Margrethe,50
+50,"{'x004': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Margrethe': {'min': 2, 'max': 2}}",{49},add,test,52
+51,"{'x004': {'min': 1, 'max': 1}, 'x009': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Margrethe': {'min': 1, 'max': 1}}",set(),or,MAKE Fred Margrethe IN Margrethe x009 x004,52
+52,"{'x004': {'min': 2, 'max': 2}, 'x009': {'min': 1, 'max': 1}, 'Fred': {'min': 2, 'max': 2}, 'Margrethe': {'min': 3, 'max': 3}}","{50, 51}",add,get item x004 and extract data x009,53
+53,"{'x004': {'min': 0, 'max': 2}, 'x009': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 2}, 'Margrethe': {'min': 2, 'max': 3}}","{48, 52}",or,get x009,54
+54,"{'x009': {'min': 0, 'max': 1}, 'x004': {'min': 0, 'max': 2}, 'door': {'min': 0, 'max': 2}, 'Fred': {'min': 1, 'max': 2}, 'Margrethe': {'min': 0, 'max': 3}}","{53, 46}",or,make Margrethe get x009,73
+55,"{'Fred': {'min': 1, 'max': 1}, 'Charlie': {'min': 1, 'max': 1}, 'Margrethe': {'min': 1, 'max': 1}}",set(),or,MAKE Fred Charlie FULFILL Charlie trusts Margrethe ,57
+56,"{'door': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Charlie': {'min': 1, 'max': 1}}",set(),or,MAKE Fred Charlie FORCE Charlie door,57
+57,"{'door': {'min': 0, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Charlie': {'min': 1, 'max': 1}, 'Margrethe': {'min': 0, 'max': 1}}","{56, 55}",or,test,59
+58,"{'door': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Charlie': {'min': 1, 'max': 1}}",set(),or,MAKE Fred Charlie MOVE Charlie door,59
+59,"{'door': {'min': 1, 'max': 2}, 'Fred': {'min': 2, 'max': 2}, 'Charlie': {'min': 2, 'max': 2}, 'Margrethe': {'min': 0, 'max': 1}}","{57, 58}",add,test,61
+60,"{'x009': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Charlie': {'min': 1, 'max': 1}, 'Margrethe': {'min': 1, 'max': 1}}",set(),or,MAKE Fred Charlie IN Charlie x009 Margrethe,61
+61,"{'x009': {'min': 1, 'max': 1}, 'door': {'min': 1, 'max': 2}, 'Fred': {'min': 3, 'max': 3}, 'Charlie': {'min': 3, 'max': 3}, 'Margrethe': {'min': 1, 'max': 2}}","{59, 60}",add,get data x009 at actor Margrethe,71
+62,"{'Fred': {'min': 1, 'max': 1}, 'Charlie': {'min': 1, 'max': 1}, 'Margrethe': {'min': 1, 'max': 1}}",set(),or,MAKE Fred Charlie FULFILL Charlie trusts Margrethe ,64
+63,"{'door': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Charlie': {'min': 1, 'max': 1}}",set(),or,MAKE Fred Charlie FORCE Charlie door,64
+64,"{'door': {'min': 0, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Charlie': {'min': 1, 'max': 1}, 'Margrethe': {'min': 0, 'max': 1}}","{62, 63}",or,test,66
+65,"{'door': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Charlie': {'min': 1, 'max': 1}}",set(),or,MAKE Fred Charlie MOVE Charlie door,66
+66,"{'door': {'min': 1, 'max': 2}, 'Fred': {'min': 2, 'max': 2}, 'Charlie': {'min': 2, 'max': 2}, 'Margrethe': {'min': 0, 'max': 1}}","{64, 65}",add,test,68
+67,"{'x004': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Charlie': {'min': 1, 'max': 1}, 'Margrethe': {'min': 1, 'max': 1}}",set(),or,MAKE Fred Charlie IN Charlie x004 Margrethe,68
+68,"{'x004': {'min': 1, 'max': 1}, 'door': {'min': 1, 'max': 2}, 'Fred': {'min': 3, 'max': 3}, 'Charlie': {'min': 3, 'max': 3}, 'Margrethe': {'min': 1, 'max': 2}}","{66, 67}",add,test,70
+69,"{'x004': {'min': 1, 'max': 1}, 'x009': {'min': 1, 'max': 1}, 'Fred': {'min': 1, 'max': 1}, 'Charlie': {'min': 1, 'max': 1}}",set(),or,MAKE Fred Charlie IN Charlie x009 x004,70
+70,"{'door': {'min': 1, 'max': 2}, 'Fred': {'min': 4, 'max': 4}, 'Charlie': {'min': 4, 'max': 4}, 'x004': {'min': 2, 'max': 2}, 'x009': {'min': 1, 'max': 1}, 'Margrethe': {'min': 1, 'max': 2}}","{68, 69}",add,get item x004 and extract data x009,71
+71,"{'door': {'min': 1, 'max': 2}, 'Fred': {'min': 3, 'max': 4}, 'Charlie': {'min': 3, 'max': 4}, 'x004': {'min': 0, 'max': 2}, 'x009': {'min': 1, 'max': 1}, 'Margrethe': {'min': 1, 'max': 2}}","{61, 70}",or,get x009,72
+72,"{'door': {'min': 1, 'max': 2}, 'Fred': {'min': 3, 'max': 4}, 'Charlie': {'min': 3, 'max': 4}, 'x004': {'min': 0, 'max': 2}, 'x009': {'min': 1, 'max': 1}, 'Margrethe': {'min': 1, 'max': 2}}",{71},or,make Charlie get x009,73
+73,"{'door': {'min': 0, 'max': 2}, 'Fred': {'min': 1, 'max': 4}, 'Charlie': {'min': 0, 'max': 4}, 'x004': {'min': 0, 'max': 2}, 'x009': {'min': 0, 'max': 1}, 'Margrethe': {'min': 0, 'max': 3}}","{72, 54}",or,make somebody get it,74
+74,"{'door': {'min': 0, 'max': 2}, 'Fred': {'min': 1, 'max': 4}, 'Charlie': {'min': 0, 'max': 4}, 'x004': {'min': 0, 'max': 2}, 'x009': {'min': 0, 'max': 1}, 'Margrethe': {'min': 0, 'max': 3}}","{41, 73}",or,to get or not to get,75
+75,"{'door': {'min': 0, 'max': 2}, 'Fred': {'min': 1, 'max': 4}, 'Charlie': {'min': 0, 'max': 4}, 'x004': {'min': 0, 'max': 2}, 'x009': {'min': 0, 'max': 1}, 'Margrethe': {'min': 0, 'max': 3}}","{24, 74}",or,Attacker Fredget items  x004 x009,-1
